@@ -82,21 +82,21 @@ a{
 }
 
 #sec1{
-	background-image: url("../images/prayer.jpeg");
+	background-image: url("../images/prayer.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
 }
 
 #sec2{
-	background-image: url("../images/hand.jpeg");
+	background-image: url("../images/hand.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
 }
 
 section{
-	height: 700px;
+	
 	min-height: 700px;	
 	width: 100%;	
 	margin:0 auto;
