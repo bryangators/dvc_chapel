@@ -1,0 +1,32 @@
+/****************************************************
+**Stylesheet for Deltona Victory Chapel home page.
+**Author: Bryan Kristofferson
+**Date: 1/26/2017
+****************************************************/
+
+body{	
+	width: 100%;
+	min-width: 1000px;
+	max-width: 1400px;
+}
+
+body *{
+	display: block;
+}
+
+/*Navigation bar styling*/
+#navbar{
+	width: 100%;
+	max-width: 1400px;
+	height: 100px;
+}
+
+img{
+	display: inline;
+	width: 200px;
+	height: 100px;	
+}
+
+.navLinks{
+	color: #B53737;
+	}
