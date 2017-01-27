@@ -18,12 +18,12 @@
 		<div id="header">
 			<header>
 			<!-- Navigation Bar -->
-			
-			<div id="navbar">
-			<nav>
 			<!-- Logo Image -->
-			<img id="logoImg" src="images/webuse2.png" >	
+			<div id="navbar">
+			<span id="links">			
+			<img id="logoImg" src="images/logo1.png" >
 			<!-- Links for Nav Bar -->
+			
 			<ul>			
 				<li><a href="about.html">About</a></li>
 				<li><a href="about.html">Ministries</a></li>
@@ -32,7 +32,7 @@
 				<li><a href="about.html">Media</a></li>
 				<li><a href="about.html">Contact</a></li>			
 			</ul>			
-			</nav>
+			</span>
 			</div>
 			
 			</header>
@@ -40,7 +40,9 @@
 
 		<!-- content -->
 		<div id="content">
-		<section id="sec1"></section>
+		<section id="sec1">
+			<div></div>
+		</section>
 		<section id="sec2"></section>		
 		</div><!-- #content -->
 		
@@ -52,8 +54,7 @@
 				<i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
 				1200 Deltona blvd, Deltona FL 32725
 				</a>				
-				</li>
-				
+				</li>				
 				<li>
 				<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
 				<i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
@@ -88,7 +89,7 @@
     var y = $(document).scrollTop(), //get page y value 
         header = $("#header");
         image = $("#logoImg");
-    if(y >= 70)  {
+    if(y >= 100)  {
         header.css({position: "fixed", "top" : "-50", "left" : "0"});
         $("navbar").css("height", "50px");
         image.hide();
