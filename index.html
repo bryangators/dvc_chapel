@@ -21,7 +21,7 @@
 			<!-- Logo Image -->
 			<div id="navbar">
 						
-			<img id="logoImg" src="images/logo2.png" >
+			<img id="logoImg" src="images/logo1.png" >
 			<!-- Links for Nav Bar -->
 			<span id="links">
 			<ul>			
@@ -41,9 +41,41 @@
 		<!-- content -->
 		<div id="content">
 		<section id="sec1">
-			<div></div>
+			<div style="height: 180px;"></div>
+			
+			<div class="flyerWrap">
+			<div class="flyer logoBox mainLogo">
+			<span>Deltona</span>
+			<br>
+			<br>
+			<br>
+			<span style="font-size: 8em; font-weight: bolder;">Changing Lives</span>
+			<br>
+			<br>
+			<br>
+			<span>Victory Chapel</span>
+			</div>			
+			</div>
+
+		<!-- <div style="height: 200px;"></div> -->
 		</section>
-		<section id="sec2"></section>		
+		<section id="sec2">
+			
+		</section>
+		<section id="sec3">
+		<div style="height: 200px;">
+			
+		</div>
+			<div class="flyerWrap">
+
+			
+			<div class="flyer logoBox">
+			
+			</div>
+
+			</div>
+			<div style="height: 200px;"></div>
+		</section>		
 		</div><!-- #content -->
 		
 		<div id="footer">	
@@ -83,18 +115,3 @@
 
 </html>
 
-<script type="text/javascript">
-	$(document).scroll(function() {
-    var y = $(document).scrollTop(), //get page y value 
-        header = $("#header");
-        image = $("#logoImg");
-    if(y >= 150)  {
-        header.css({position: "fixed", "top" : "0", "left" : "0", "z-index" : "100"});
-        $("navbar").css("height", "50px");
-        image.hide();
-    } else {
-        header.css("position", "relative");
-        image.show();
-    }
-})
-</script>
