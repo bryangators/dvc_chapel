@@ -15,12 +15,6 @@ body{
 	height:100%;	
 }
 
-* {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 a{ 
 	text-decoration: none;
 	color: inherit;
@@ -79,7 +73,7 @@ p{
 }
 
  #navbar li{
- 	font-size: 125%;
+ 	font-size: 1.3em;	
 	display: inline;	
 	padding: 10px;
 	
@@ -116,17 +110,20 @@ p{
 	background-color: rgba(255,255,255,.9);
 	width: 80%;
 	padding:10px;
-	min-height: 450px
+	
 
 }
+
 
 .mainLogo{
+	line-height: 3.5em;
+	min-height: 300px;
 	border:8px solid;
-	border-color: rgba(255,255,255,.9); 
+	border-color: rgba(255,255,255,.6); 
 }
 .mainLogo span{	
-	font-size: 4em;
-	color: rgba(255,255,255,.9);
+	font-size: 3em;
+	color: rgba(255,255,255,.6);
 }
 .logoBox{
 	text-align: center;
@@ -168,7 +165,7 @@ section{
 }
 
 #footer ul{
-	font-size: 90%;	
+	font-size: 1.3em;	
 	color: #B53737;
 	margin:0 auto;
 	display: inline;
