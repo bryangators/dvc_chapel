@@ -118,7 +118,7 @@ section{
 .text_box{
 	width: 20%;
 	/*min-height: 500px;*/
-	min-width: 300px;
+	min-width: 350px;
 }
 
 .text_box h3{
