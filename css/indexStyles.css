@@ -173,6 +173,10 @@ section{
 	background-size: 100% 100%;
 }
 
+.connectBtn{
+	margin:0 auto;
+}
+
 .connectBtn button{
 	font-size: 5em;
 	font-weight: bold;
