@@ -117,7 +117,7 @@ section{
 
 .text_box{
 	width: 20%;
-	/*min-height: 500px;*/
+	max-height: 500px;
 	min-width: 350px;
 }
 
@@ -207,10 +207,19 @@ section{
 
 .flyerWrap{
 	margin:0 auto;
-	display: flex;
-	justify-content: space-around;
-	flex-direction: row;
-	flex-wrap: wrap;
+	/*Flexbox code for different browsers*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex; 
+	-webkit-box-orient: horizontal; 
+    -webkit-box-direction: normal; 
+    -webkit-flex-direction: row; 
+    -ms-flex-direction: row; 
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+	/*justify-content: space-around;*/
 	max-width: 1200px;
 }
 
