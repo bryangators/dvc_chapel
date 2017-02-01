@@ -325,9 +325,14 @@ hr {
 /***Mobile phone Styles****/
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
+    body{
+    	max-width: 100%;
+
+    }
+
     .text_box{
-    	width: 70%;
-    	max-height: 750px;
+    	width: 90%;
+    	/*max-height: 750px;*/
     }
     
     .mobile_show{
@@ -351,7 +356,7 @@ hr {
 	}
 
     #logoImg{
-    	min-width: 50%;
+    	max-width: 60%;
     }
 
     #menuBar{
@@ -359,8 +364,12 @@ hr {
     }
 
     #footer li{
-		font-size: 3em;
+		font-size: 2.5em;
 		padding: 10px;
+	}
+
+	.title{
+		font-size: 2em;
 	}
 }
 
