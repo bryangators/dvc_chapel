@@ -327,7 +327,7 @@ hr {
     /* For mobile phones: */
     .text_box{
     	width: 70%;
-    	max-height: 650px;
+    	max-height: 750px;
     }
     
     .mobile_show{
@@ -369,6 +369,10 @@ hr {
     .mobile_show{
     	display: none;
     }
+
+    /*#footer i{
+    	display: none;
+    }*/
 
 
 }
