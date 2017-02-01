@@ -4,12 +4,13 @@
 	<title>Deltona Victory Chapel</title>
 </head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/indexStyles.css">
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <script src="js/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
-
+<script src="js/index.js"></script>
 
 
 <body>
@@ -25,7 +26,7 @@
 						
 			<img id="logoImg" src="images/logo1.png" >
 			<!-- Links for Nav Bar -->
-			<span id="links">
+			<span id="links" class="mobile_hidden">
 			<ul>			
 				<li><a href="about.html">About</a></li>
 				<li><a href="about.html">Ministries</a></li>
@@ -35,6 +36,9 @@
 				<li><a href="about.html">Contact</a></li>			
 			</ul>			
 			</span>
+			<span id="menuBar" class="mobile_show">
+				<i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+			</span>
 			</div>
 			
 			</header>
@@ -43,15 +47,20 @@
 		<!-- content -->
 		<div id="content">
 		<!-- First Section of Homepage -->
+		
 		<div style="height: 96px;"></div>
-		<section id="sec1">
-			<div style="height: 80px;"></div>			
+		<!-- Spacer for mobile screens -->
+		<section id="sec1">			
+			<!-- Spacer for normal screens -->
+			<div class="mobile_hidden" style="height: 80px;"></div>
+			<!-- Spacer for mobile screens -->
+			<div class="mobile_show" style="height: 160px;"></div>
 			<div class="flyerWrap">
 			<div class="displayBox">
 			<img src="images/changinglives.png">
 			<br>
 			<br>	
-			<img style="width: 30%;" src="images/days.png">		
+			<img id="serviceDays" src="images/days.png">		
 			</div>				
 			</div>
 		</section>
@@ -60,26 +69,78 @@
 		<!-- Second Section of homepage -->
 		<section id="sec2">
 			<div class="flyerWrap">
-				<div class="link_box">
-				<a href="contactForm.php">
-				<button id="conncet">Testimonials</button>
-				</a>
-				</div>
-				<div class="link_box">
-				<a href="contactForm.php">
-				<button id="conncet">News</button>
-				</a>
-				</div>
-				<div class="link_box">
-					<a href="contactForm.php">
-					<button id="conncet">Events</button>
-					</a>
-				</div>
-				<div class="link_box">
-					<a href="contactForm.php">
-					<button id="conncet">Donate</button>
-					</a>
-				</div>				
+				<span class="title">Upcoming Events</span> 
+				<br>
+				<br>
+				<hr>
+				<br>
+				<br>
+				<table id="week" class="mobile_hidden">
+				<tr class="calHead">
+				<td><i class="fa fa-step-backward fa-lg" aria-hidden="true"></i></td>
+				<td colspan="5" style="border:none; text-align: center;">
+				<span id="month">February 2017</span>
+				</td>
+				<td><i class="fa fa-step-forward fa-lg" aria-hidden="true"></i></td>
+				</tr>
+				<tr style="height: 15px;"></tr>
+				<tr class="daysHead">
+					<th>Sunday</th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
+				</tr>
+				<tr id="weekRow">
+					<td id="sun">
+					<span class="day">1</span>
+					<ul id="sunEvents" class="events">
+						<li>Church Service 11:00AM</li>
+						<li>Church Service 7:00PM</li>
+					</ul>					
+					</td>
+					<td id="mon">
+					<span class="day">2</span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td id="tue">
+					<span class="day">3</span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td id="wed">
+					<span class="day">4</span>
+					<ul id="monEvents" class="events">
+					<li>Church Service 7:00PM</li>	
+					</ul>
+					</td>
+					<td id="thurs">
+					<span class="day">5</span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td id="fri">
+					<span class="day">6</span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td id="sat">
+					<span class="day">7</span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+				</tr>
+				
+				</table>
+
 			</div>
 			<div style="height: 40px;"></div>
 			<div class="flyerWrap">
@@ -91,41 +152,47 @@
 			</div>
 			</div>
 			<div style="height: 40px;"></div>
-			<div class="flyerWrap textWrap">
+			<div class="flyerWrap">
 				<div class="text_box box">
 				<div class="img_container">
 				<img src="images/child.png">
 				</div>
+				<div class="textDesc">
 					<h3>Changing Lives</h3>
 					<p>
 						CHANGE! Jesus told a prostitute, "Go and sin no more," Paul told the Romans to reckon themselves dead unto sin and not to let sin reign in their mortal bodies. Though you are still able to sin, you no longer need to. You don't need to spend years picking at your sins, just believe God and change your way of living based on the power of what Christ has done. It is our goal as a church to learn and live the truths of Scripture. We live in the last days and an hour when the most exciting challenge in life is to be a disciple of Jesus Christ.
 					</p>
 				</div>
+				</div>
 				<div class="text_box box">
 				<div class="img_container">
 				<img src="images/worship.png">
 				</div>
+				<div class="textDesc">
 					<h3>Disciples</h3>
 					<p>
-					Discipleship is the shaping of an individual's destiny. Each church in the New Testament copied Jesus' method of calling those whom God had chosen and training them through example and release. The book of Acts demonstrates the powerful impact that is possible to those who take Jesus' command and pattern seriously. Our vision is the restoration of the Biblical pattern of church growth. We believe that honest, direct and anointed preaching has always been used by God to shake the nations.						
+					Discipleship is the shaping of an individual's destiny. Each church in the New Testament copied Jesus' method of calling those whom God had chosen and training them through example and release. The book of Acts demonstrates the powerful impact that is possible to those who take Jesus' command and pattern seriously. Our vision is the restoration of the Biblical pattern of church growth. We believe that honest, direct and anointed preaching has always been used by God to shake the nations.			
 					</p>
 				</div>
+				</div>
 				<div class="text_box box">
-					<div class="img_container">
-					<img src="images/crowd.png">
-					</div>
+				<div class="img_container">
+				<img src="images/crowd.png">
+				</div>
+				<div class="textDesc">
 					<h3>Reaching the World</h3>
 					<p>
 					The Bible is the guidebook of the Christian life and preaching is Gods method of bringing it to the hearts of God's people. We believe that honest, direct and anointed preaching has always been used by God to shake the nations. In an age of low commitment, many seek to hear a watered-down message, but it is our firm belief that God is raising up a people hungry for the meat of the word. That is why our order of worship is centered around the preaching of the gospel.	
 					</p>
 				</div>
+				</div>
 			</div>
-			<div style="height: 80px;">
+			<div style="height: 180px;">
 		</section>
 		<!-- End of second section -->
 
 		<!-- Third section of homepage -->
-		<section id="sec3">
+	<!-- 	<section id="sec3">
 		<div style="height: 160px;">			
 		</div>
 			<div class="flyerWrap">
@@ -136,7 +203,7 @@
 			</div>
 			</div>
 			<div style="height: 200px;"></div>
-		</section>		
+		</section>	 -->	
 		<!-- End of third section -->
 		
 		</div><!-- end of page content -->
@@ -145,21 +212,21 @@
 			<div id="footerContent">
 			<ul>
 				<li>
-				<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
-				<i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-				&nbsp&nbsppastor@deltonavictorychapel.com
-				</a>				
+				<a href="tel:(407)-803-1682">
+				<i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+				<span class="mobile_hidden">&nbsp&nbsp(407)-803-1682</span>
+				</a>
 				</li>
 				<li>
-				<a href="tel:(407)-803-1682">
-				<i class="fa fa-phone fa-2x" aria-hidden="true"></i>
-				&nbsp&nbsp(407)-803-1682
-				</a>
+				<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
+				<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+				<span class="mobile_hidden">&nbsp&nbsppastor@deltonavictorychapel.com</span>
+				</a>				
 				</li>
 				<li>				
 				<a href="https://maps.google.com?q=1200+Deltona+blvd+Deltona+FL+32725" target="_blank">
-				<i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-				&nbsp&nbsp1200 Deltona blvd, Deltona FL 32725
+				<i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+				<span class="mobile_hidden">&nbsp&nbsp1200 Deltona blvd, Deltona FL 32725</span>
 				</a>				
 				</li>
 				<br>				

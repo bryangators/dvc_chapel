@@ -36,7 +36,7 @@ a{
 	position: relative;
 	margin:0 auto;
 	width: inherit;	
-	min-width: 971px;
+	min-width: 768px;
 	/*max-width: 1400px;*/
 	padding-bottom: 10px;
 	/*border-bottom-left-radius: 7px;
@@ -46,13 +46,6 @@ a{
 	background-color: rgba(255,255,255,1);
 }
 
-/*p{
-	color: #B53737;
-	font-size: 110%;
-	font-weight: bold;
-
-}*/
-
 #logoImg{
 	display: inline;
 	margin-top: 10px;
@@ -61,7 +54,7 @@ a{
 	width: 300px;	
 }
 
- #navbar ul{	
+#navbar ul{	
 	margin:0 auto;	
 	list-style-type: none;
 	display: inline-block;	
@@ -71,9 +64,9 @@ a{
  #navbar li{
  	font-size: 1.3em;	
 	display: inline;	
-	padding: 10px;
-	
+	padding: 10px;	
 }
+
 
 /****End of Navigation Style*****/
 
@@ -83,6 +76,7 @@ section{
 	margin:0 auto;
 	/*height: inherit;*/
 	min-height: 650px;
+
 }
 
 /*section one styles*/
@@ -101,6 +95,10 @@ section{
 	text-align: center;
 	margin:0 auto;
 }
+
+#serviceDays{
+		width: 30%;
+}
 /*End of section 1 styles*/
 
 /*Section 2 styles*/
@@ -110,15 +108,92 @@ section{
 	/*min-height: 1200px;*/
 }
 
+/*****Styles for Calendar******/
+.title{
+	font-size: 3em;
+	display: block;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 85%;               
+  background-color:black;
+  height: 2px;
+}
+
+#week {	
+	border-collapse: separate;
+	width: 85%;
+	border-radius: 100px;
+	border-spacing: 5px 0;
+
+}
+
+#week th{
+	border-radius: 7px 7px 0px 0px;
+	border:solid 1px;
+	border-color: rgb(181,55,55);
+	background-color: rgb(181,55,55);
+	color: white;
+	border-collapse: collapse;
+	padding: 10px;
+	width: 14%;	
+	margin:15px;
+}
+
+#weekRow td{
+	position: relative;
+	margin:15px;
+	padding: 10px;
+	border:1px solid;
+	border-top: 0;
+	border-radius: 0px 0px 7px 7px;
+}
+
+.calHead{
+	border:none;
+	text-align: center;
+	padding: 10px;
+}
+
+#weekRow{
+	height: 100px;
+}
+
+#month{
+	font-size: 2em;
+}
+
+.day{
+	position: absolute;
+	top:0;
+	right: 0;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.events{
+	padding-left: 10px;
+	font-size: .9em;
+
+}
+
+#week td {
+	vertical-align: top;
+}
+/*****End of calendar styles***/
+
+/*Styles for text boxes with images*/
 .box{		
 	margin:15px;
 	padding: 10px;
 }
 
 .text_box{
-	width: 20%;
-	max-height: 500px;
-	min-width: 350px;
+	width: 27%;	
+	clear: both;
 }
 
 .text_box h3{
@@ -126,35 +201,23 @@ section{
 	color: #B53737;
 }
 
+
+.img_container img{
+	width: 100%;
+	height: 100%;	
+}
+
 .img_container{
-	width: 100%;
-	height: 30%;
+	height: 40%;
 }
 
-.text_box img{
-	width: 100%;
-	height: 100%;
+.textDesc{
+	height: 60%;	
 }
 
-.link_box button{
-	min-height: 40px;
-	min-width: 190px;
-	width: 15%;
-	margin:10px;
-	padding: 30px;
-	background-color: rgb(181,55,55);
-	color: white;
-	text-align: center;
-	font-size: 125%;
-	border:none;
-}
-
-.link_box button:hover{
-	cursor: pointer;
-}
-
+/*Styles for prayer*/
 .quote_box{
-	width: 70%;
+	width: 85%;
 	font-size: 2em;
 	color: rgb(60,60,60);
 	font-style: italic;
@@ -219,11 +282,6 @@ section{
 	max-width: 1200px;
 }
 
-.textWrap{
-	justify-content: center;
-}
-
-
 /******End of Content styling******/
 
 
@@ -262,7 +320,55 @@ section{
 	margin:0 auto;
 
 }
-
-
-
 /*End of footer styling
+
+/***Mobile phone Styles****/
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .text_box{
+    	width: 70%;
+    	max-height: 650px;
+    }
+    
+    .mobile_show{
+    	display: inline-block;
+    }
+
+    .mobile_hidden{
+    	display: none;
+    } 
+
+    #navbar{
+    	min-width: 300px;
+    }
+
+    .displayBox img{
+		width: 90%;	
+	}
+
+	#serviceDays{
+		width: 50%;
+	}
+
+    #logoImg{
+    	text-align: left;
+    }
+
+    #menuBar{
+    	text-align: right;
+    }
+
+    #footer li{
+		font-size: 3em;
+		padding: 10px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+    /*Hides mobile elements*/
+    .mobile_show{
+    	display: none;
+    }
+
+
+}
