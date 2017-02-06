@@ -7,18 +7,15 @@ html,
 body{
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
-	min-height: 99%;
-	width: 100%;
-	margin:0;
 	padding:0;
-	height:100%;
 	background-color: #e0dfe4;	
+	height: 100%;
+	width: 100%;
 }
 
 .sec1wrap,
 .bgImage,
 #header,
-#footer,
 .flyerWrap,
 section{
 	max-width: 1600px;
@@ -100,6 +97,7 @@ section{
 	margin:0 auto;
 	width: 100%;
 	height: 100%;
+	min-height: 400px;
 	background-image: url("../images/prayer.png");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -135,20 +133,17 @@ section{
 
 /*****Styles for Calendar******/
 .title{
-	font-size: 3em;
+	text-align: center;
+	width: 40%;
+	font-size: 2em;
+	padding: 10px;
+	margin-bottom: 40px;
 	display: block;
+	border-bottom: 1px solid;
+	border-color: gray;
+	min-width: 280px;
 }
 
-hr {
-	margin:0 auto;
-  border: 0;
-  clear:both;
-  display:block;
-  width: 95%;  
-  max-width: 1250px;             
-  background-color:black;
-  height: 2px;
-}
 
 #week {	
 	border-collapse: separate;
@@ -173,6 +168,7 @@ hr {
 
 #weekRow td{
 	position: relative;
+	vertical-align: top;
 	margin:15px;
 	padding: 10px;
 	border:1px solid;
@@ -190,7 +186,7 @@ hr {
 	height: 100px;
 }
 
-#month{
+#weekName{
 	font-size: 2em;
 }
 
@@ -203,13 +199,24 @@ hr {
 }
 
 .events{
-	padding-left: 10px;
-	font-size: .9em;
+	padding-left: 5px;
+	font-size: .8em;
+	list-style-type: none;
+}	
 
+.events ul{
+	list-style-type: none;
+}
+
+.calBtn:hover{
+	cursor: pointer;
+	text-shadow: 0px 5px 7px #000;
+    -webkit-text-shadow:0px 5px 7px #000;
+    -moz-text-shadow: 0px 5px 7px #000;
 }
 
 #week td {
-	vertical-align: top;
+	
 }
 /*****End of calendar styles***/
 
@@ -253,12 +260,15 @@ hr {
 
 /*Styles for prayer*/
 .quote_box{
-	width: 95%;
+	width: 75%;
 	max-width: 1100px;
-	font-size: 2em;
+
+	font-size: 1.6em;
 	color: rgb(60,60,60);
 	font-style: italic;
+
 }
+
 
 .quote_box span{
 	float: right;
@@ -266,37 +276,10 @@ hr {
 
 /*End of section 2 styles*/
 
-/*Section 3 styles*/
-#sec3{
-	background-image: url("../images/hand.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
 
-.connectBtn{
-	margin:0 auto;
-}
 
-.connectBtn button{
-	font-size: 5em;
-	font-weight: bold;
-	font-variant: small-caps;
-	color:rgba(181,51,51,.8);
-	border-color: rgba(181,51,51,.8);
-	background-color: rgba(255,255,255,.1);	
-	border-collapse: collapse;
-	border:2px solid;
-	outline: none;
-	
-}
 
-.connectBtn button:hover{
-	color: rgb(181,51,51);
-	border-color: rgb(181,51,51);
-	cursor: pointer;
-}
 
-/*End of section 3 styles*/
 
 /*styling used with in content throughout sections*/
 
@@ -328,7 +311,6 @@ hr {
 	margin:0 auto;
 	background-color: #B53737;
 	width:100%;
-	max-width: 1400px;
 	text-align: center;
 	position:absolute;
 	bottom:0;
@@ -400,6 +382,10 @@ hr {
     }
 
     /*Content mobile styles*/
+
+    .displayBox img{
+    	width: 95%;
+    }
 	.title{
 		font-size: 2em;
 	}
@@ -410,9 +396,9 @@ hr {
     	
     }
 
-    .quote_box{
+    /*.quote_box{
     	font-size: 1.8em;
-    }
+    }*/
     
     /*footer mobile styles*/
     #footer li{

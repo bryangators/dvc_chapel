@@ -6,8 +6,11 @@
 <link rel="stylesheet" type="text/css" href="css/indexStyles.css?ver=1.0">
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<script src="js/modernizr-1.5.js"></script>
+<!-- Javascript files -->
+<script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
+<script src="resources/moment.js"></script>
+<script src="js/displayCalendar.js"></script>
 <script src="js/index.js"></script>
 <!-- Favicon links for different devices -->
 <link rel="apple-touch-icon" sizes="180x180" href="http://bryankristofferson.com/dvc_chapel/apple-touch-icon.png">
@@ -21,8 +24,6 @@
 
 <title>Deltona Victory Chapel</title>
 </head>
-
-
 
 <body>
 <!-- Wrapper used to position footer and header on page -->
@@ -98,72 +99,73 @@
 			<!-- calendar -->
 			<div class="flyerWrap">
 				<span class="title">Upcoming Events</span> 
-				<br>
-				<br>
-				<hr>
-				<br>
-				<br>
-				<table id="week" class="mobile_hidden">
+				
+				<table id="week" class="mobile_hidden">	
+
 				<tr class="calHead">
-				<td><i class="fa fa-step-backward fa-lg" aria-hidden="true"></i></td>
+				<td><i id="back" class="fa fa-step-backward fa-2x calBtn" aria-hidden="true"></i></td>
 				<td colspan="5" style="border:none; text-align: center;">
-				<span id="month">February 2017</span>
+				<span id="weekName"></span>
 				</td>
-				<td><i class="fa fa-step-forward fa-lg" aria-hidden="true"></i></td>
+				<td><i id="fwd" class="fa fa-step-forward fa-2x calBtn" aria-hidden="true"></i></td>
 				</tr>
 				<tr style="height: 15px;"></tr>
-				<tr class="daysHead">
-					<th>Sunday</th>
-					<th>Monday</th>
-					<th>Tuesday</th>
-					<th>Wednesday</th>
-					<th>Thursday</th>
-					<th>Friday</th>
-					<th>Saturday</th>
+				<tr class="daysHead calBox">
+					<th class="sun">Monday</th>
+					<th class="mon">Tuesday</th>
+					<th class="tue">Wednesday</th>
+					<th class="wed">Thursday</th>
+					<th class="thu">Friday</th>
+					<th class="fri">Saturday</th>
+					<th class="sat">Sunday</th>
 				</tr>
-				<tr id="weekRow">
-					<td id="sun">
-					<span class="day">1</span>
+				<tr class="calBox" id="weekRow">
+					
+					<td class="mon">
+					<span id="1" class="day"></span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td class="tue">
+					<span id='2' class="day"></span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td class="wed">
+					<span id="3" class="day"></span>
+					<ul id="monEvents" class="events">
+					<li>Worship Service 
+					<br><i>7:00PM</i></li>	
+					</ul>
+					</td>
+					<td class="thu">
+					<span id="4" class="day"></span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td class="fri">
+					<span id="5" class="day"></span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td class="sat">
+					<span id="6" class="day"></span>
+					<ul id="monEvents" class="events">
+						
+					</ul>
+					</td>
+					<td class="sun">
+					<span id="7" class="day"></span>
 					<ul id="sunEvents" class="events">
-						<li>Church Service 11:00AM</li>
-						<li>Church Service 7:00PM</li>
+						<li>Worship Service 
+					<br><i>11:00AM</i></li>
+						<li>Worship Service 
+					<br><i>7:00PM</i></li>
 					</ul>					
-					</td>
-					<td id="mon">
-					<span class="day">2</span>
-					<ul id="monEvents" class="events">
-						
-					</ul>
-					</td>
-					<td id="tue">
-					<span class="day">3</span>
-					<ul id="monEvents" class="events">
-						
-					</ul>
-					</td>
-					<td id="wed">
-					<span class="day">4</span>
-					<ul id="monEvents" class="events">
-					<li>Church Service 7:00PM</li>	
-					</ul>
-					</td>
-					<td id="thurs">
-					<span class="day">5</span>
-					<ul id="monEvents" class="events">
-						
-					</ul>
-					</td>
-					<td id="fri">
-					<span class="day">6</span>
-					<ul id="monEvents" class="events">
-						
-					</ul>
-					</td>
-					<td id="sat">
-					<span class="day">7</span>
-					<ul id="monEvents" class="events">
-						
-					</ul>
 					</td>
 				</tr>
 				
