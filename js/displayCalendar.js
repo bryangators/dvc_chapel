@@ -17,12 +17,17 @@ function startCalendar(){
 	$("#back").click(function (e){
 		
 		if(active){ return; }
-
+		
 		active = true;
-		$('.calBox').fadeOut(300, function(){
-		prevWeek();
+		
+		$('#daysHead').fadeOut(500);
+		$('#weekRow').fadeOut(500, function(){	
+		prevWeek();	
 		e.stopImmediatePropagation();
-		$('.calBox').fadeIn(300, function(){active = false;});
+		console.log("finished prev week");
+		e.stopImmediatePropagation();
+		$('#daysHead').fadeIn(500);
+		$('#weekRow').fadeIn(500, function(){active = false;});
 		});
 		
 	});
@@ -31,10 +36,15 @@ function startCalendar(){
 		if(active){ return; }
 		
 		active = true;
-		$('.calBox').fadeOut(500, function(){
-		nextWeek();
+		
+		$('#daysHead').fadeOut(500);
+		$('#weekRow').fadeOut(500, function(){	
+		nextWeek();	
 		e.stopImmediatePropagation();
-		$('.calBox').fadeIn(500, function(){active = false;});
+		console.log("finished prev week");
+		e.stopImmediatePropagation();
+		$('#daysHead').fadeIn(500);
+		$('#weekRow').fadeIn(500, function(){active = false;});
 		});
 	});
 }
