@@ -3,87 +3,7 @@ Styles applied to Deltona Victory Chaple Home page
 Author: Bryan Kristofferson
 Date: 1/26/2017
 **************************************************/
-html,
-body{
-	font-family: 'Open Sans', sans-serif;
-	margin: 0;
-	padding:0;
-	background-color: #e0dfe4;	
-	height: 100%;
-	width: 100%;
-}
 
-.sec1wrap,
-.bgImage,
-.flyerWrap,
-section{
-	max-width: 1600px;
-}
-
-a{ 
-	text-decoration: none;
-	color: inherit;
-}
-
-#wrapper {
-	min-height:100%;
-	position:relative;
-}
-
-
-/*****Navigation Styling*****/
-#header{
-	width: 100%;
-	position: absolute;
-	top:0;
-	right:-50%;
-	left: -50%;
-	margin:0 auto;
-}
-
-#navbar{
-	position: relative;
-	margin:0 auto;
-	width: inherit;	
-	min-width: 768px;
-	padding-bottom: 10px;	
-	text-align: center;
-	color: rgb(181,55,55);
-	background-color: rgba(255,255,255,1);
-}
-
-#logoImg{
-	display: inline;
-	margin-top: 10px;
-	/*padding-right: 1rem;*/
-	/*height: 70px;*/
-	width: 300px;	
-}
-
-#navbar ul{	
-	margin:0 auto;	
-	list-style-type: none;
-	display: inline-block;	
-	padding: 0;
-	
-}
-
- #navbar li{
- 	font-size: 1em;	
-	display: inline;	
-	padding: 10px;	
-}
-
-
-/****End of Navigation Style*****/
-
-/*Content styling*/
-
-section{	
-	margin:0 auto;
-	background-color: #f4f4f4;
-
-}
 
 #sec1{
 	text-align: center;
@@ -94,31 +14,9 @@ section{
 .bgImage img{
 	text-align: center;
 	margin:0 auto;
-	width: 100%;
-	/*height: 80%;
-	height: 700px;*/
-
-
+	width: 100%;	
 }
 
-.displayBox img{
-	width: 85%;
-	opacity: 0.9;
-}
-
-.sec1wrap{
-
-	text-align: center;
-}
-
-.displayBox {	
-	margin:0 auto;
-	width: 90%;
-}
-
-#serviceDays{
-	width: 30%;
-}
 /*End of section 1 styles*/
 
 /*Section 2 styles*/
@@ -127,165 +25,6 @@ section{
 	padding-top: 50px;
 	/*min-height: 1200px;*/
 }
-
-/*****Styles for Calendar******/
-.title{
-	text-align: center;
-	width: 40%;
-	font-size: 2em;
-	padding: 10px;
-	margin-bottom: 40px;
-	display: block;
-	border-bottom: 1px solid;
-	border-color: gray;
-	min-width: 750px;
-}
-
-
-#week {	
-	border-collapse: separate;
-	width: 90%;
-	max-width: 1250px;
-	min-height: 220px;
-	border-radius: 100px;
-	border-spacing: 5px 0;
-
-}
-
-#week th{
-	border-radius: 7px 7px 0px 0px;
-	border:solid 1px;
-	border-color: rgb(181,55,55);
-	background-color: rgb(181,55,55);
-	color: white;
-	border-collapse: collapse;
-	padding: 10px;
-	width: 14%;	
-	margin:15px;
-}
-
-#weekRow td{
-	position: relative;
-	vertical-align: top;
-	margin:15px;
-	padding: 10px;
-	border:1px solid;
-	border-top: 0;
-	border-radius: 0px 0px 7px 7px;
-}
-
-.calHead{
-	border:none;
-	text-align: center;
-	padding: 10px;
-}
-
-.calHead i{
-	padding:0px 5px;
-	
-}
-
-#weekRow{
-	height: 100px;
-}
-
-#weekName{
-	font-size: 2em;
-}
-
-.day{
-	position: absolute;
-	top:0;
-	right: 0;
-	margin-top: 5px;
-	margin-right: 5px;
-
-}
-
-.events{
-	padding-left: 5px;
-	padding-top: 10px;
-	font-size: .7em;
-	list-style-type: none;
-}	
-
-.events ul{
-	list-style-type: none;
-	
-}
-
-.event_links{
-	padding: 2px;
-	padding-left: 5px;
-	border-radius: 5px;
-	
-}
-
-.event_links:hover{
-	background-color: rgb(181,55,55);
-	color: white; 
-	cursor: pointer;
-}
-
-.calBtn:hover{
-	cursor: pointer;
-	text-shadow: 0px 5px 7px #000;
-    -webkit-text-shadow:0px 5px 7px #000;
-    -moz-text-shadow: 0px 5px 7px #000;
-}
-
-/*****End of calendar styles***/
-
-/*****Event Description Box styling****/
-#event_box{	
-	border-top: solid 1px;
-	border-bottom: solid 1px;
-	border-color: gray;	
-	min-height: 440px;
-	min-width: 750px;
-	max-width: 850px;	
-	width: 65%;
-	display: none;
-}
-
-
-#event_img{
-	display: inline-block;
-	float: left;
-	margin-top: 40px;
-	
-}
-
-#event_img img{	
-	height: 100%;
-	width: 100%;
-	max-width: 275px;
-}
-
-#event_box table{
-	padding-left: 30px;
-	padding-top: 20px;
-}
-
-#event_box td{
-	vertical-align: top;
-	padding: 5px;
-	max-width: 350px;
-}
-
-#event_title{
-	font-size: 2.7em;	
-}
-
-
-
-
-/***End of Event Description Box styling***/
-
-.flyer{
-	text-align: center;
-}
-
 
 /*Styles for text boxes with images*/
 .box{		
@@ -327,80 +66,11 @@ section{
 
 }
 
-
 .quote_box span{
 	float: right;
 }
 
 /*End of section 2 styles*/
-
-
-
-
-
-
-/*styling used with in content throughout sections*/
-
-
-.flyerWrap{
-	margin:0 auto;
-	/*Flexbox code for different browsers*/
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex; 
-	-webkit-box-orient: horizontal; 
-    -webkit-box-direction: normal; 
-    -webkit-flex-direction: row; 
-    -ms-flex-direction: row; 
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-	justify-content: center;
-	
-}
-
-/******End of Content styling******/
-
-
-/****Footer Styles applied*******/
-
-#footer {
-	margin:0 auto;
-	background-color: #B53737;
-	width:100%;
-	text-align: center;
-	position:absolute;
-	bottom:0;
-	left:-50%;
-	right: -50%;
-}
-
-#footer ul{
-	font-size: 1em;	
-	color: white;
-	margin:0 auto;
-	display: inline;
-	padding:0px 0px 15px 0px;
-}
-
-#footer li{
-	display: inline-block;
-	list-style-type: none;
-	padding-left:25px;
-	margin-left: 10px;
-	margin-right: 10px;
-	padding:0;
-}
-
-#footerContent{
-	padding: 1rem;
-	position: relative;
-	margin:0 auto;
-
-}
-/*End of footer styling*/
-
 
 /*************************************
 ***Mobile phone Styles****************
@@ -408,41 +78,6 @@ section{
 
 @media only screen and (max-width: 790px) {
     /* For mobile phones: */
-
-    /*Default hide show mobile classes*/
-    .mobile_show{
-    	display: inline-block;
-    }
-
-    .mobile_hidden{
-    	display: none;
-    } 
-    /*Navbar mobile styles*/
-    #navbar span{
-    	vertical-align: top;
-    	padding: 15px;
-    	float: right;
-    }
-
-    #navbar{
-    	min-width: 300px;
-    	height: 60px;    	
-    }
-
-    #logoImg{
-    	width: 170px;
-    	margin-left: 15px;
-    	float: left;
-    }
-
-    #menuBar{
-    	text-align: right;
-    }
-
-    /*Content mobile styles*/
-    .bgImage img{
-    	
-    }
 
     .displayBox img{
     	width: 95%;
@@ -457,24 +92,10 @@ section{
     	max-width: 450px;
     	
     }
-
-    /*.quote_box{
-    	font-size: 1.8em;
-    }*/
     
-    /*footer mobile styles*/
-    #footer li{
-		font-size: 2.5em;
-		padding: 10px;
-	}
-
-	
 }
 
 @media screen and (min-width: 790px) {
-    /*Hides mobile elements*/
-    .mobile_show{
-    	display: none;
-    }
+    /*For larger screens only*/
 
 }

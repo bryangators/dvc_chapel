@@ -9,6 +9,12 @@ var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 var active = false; //prevents multiple clicks during animation
 var events = new Array();
 var event_meta = new Array();
+
+$( document ).ready(function(){
+	startCalendar();	
+	
+})
+
 //function fills calendar
 // use this function along with
 //prev and next week in main js file
