@@ -124,3 +124,10 @@
 </div>
 
 
+<!-- Calendar files -->
+<!-- Javascript files -->
+<script src="resources/jquery-3.1.1.min.js"></script>
+<script src="resources/moment.js"></script>
+<script src="js/displayCalendar.js"></script>
+<!-- style sheet -->
+<link rel="stylesheet" type="text/css" href="css/calendarStyles.css?ver=1.0">

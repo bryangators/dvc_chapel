@@ -14,13 +14,7 @@
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<!-- Calendar files -->
-<!-- Javascript files -->
-<script src="resources/jquery-3.1.1.min.js"></script>
-<script src="resources/moment.js"></script>
-<script src="js/displayCalendar.js"></script>
-<!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/calendarStyles.css?ver=1.0">
+
 
 <!-- Favicon links for different devices -->
 <link rel="apple-touch-icon" sizes="180x180" href="http://bryankristofferson.com/dvc_chapel/apple-touch-icon.png">
