@@ -27,20 +27,33 @@ section{
 
 }
 
-.flyerWrap{
+.flex{
 	margin:0 auto;
 	/*Flexbox code for different browsers*/
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex; 
 	-webkit-box-orient: horizontal; 
-    -webkit-box-direction: normal; 
-    -webkit-flex-direction: row; 
+    -webkit-box-direction: normal;   
+	justify-content: center;	
+}
+
+.flex-row{
+	-webkit-flex-direction: row; 
     -ms-flex-direction: row; 
     flex-direction: row;
-    -webkit-flex-wrap: wrap;
+}
+
+.flex-wrap{
+	-webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-	justify-content: center;
-	
+}
+
+.flex-column{
+
+}
+
+.center{
+	margin:0 auto;
 }

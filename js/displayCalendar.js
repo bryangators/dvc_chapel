@@ -228,7 +228,6 @@ function findDailyEvents(date){
 	for (i = 0; i < event_meta.length; i++){
 		// date format used for comparison
 		var this_date = moment(event_meta[i].start_date).utc().format("YYYY-MM-DD");
-		console.log(this_date);
 		if (event_meta[i].repeating){ //finds repeating events
 			
 			if(event_meta[i].end_date == null){//for never ending events

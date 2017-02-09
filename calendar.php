@@ -1,9 +1,10 @@
 
 <!-- calendar -->
-<div class="flyerWrap">
-	<span class="title">Upcoming Events</span> 
+<div class="flex flex-row center flex-wrap mobile_hidden">
+	<div style="width: 100%;"  class="mobile_hidden ">
+	<span class="title center">Upcoming Events</span> 
 	
-	<table id="week" class="mobile_hidden">	
+	<table class="center" id="week" >	
 
 	<tr class="calHead">
 	<!-- Back button -->
@@ -74,14 +75,15 @@
 		</td>
 
 	</tr>				
-	</table>				
+	</table>
+	</div>				
 </div>
 <div id="event_top" style="height: 40px;"></div>
-<div class="flyerWrap">
+<div style="text-align: center" class="flex flex-row center mobile_column">
 	<div id="event_box">
-	<div style="margin:0 auto;">
+	<div class="center">
 	<div id="event_img">
-		<a id="imgLink" target="_blank" href="images/originalFlyer.png">
+		<a id="imgLink" target="_blank" >
 		<img id="dispImg" src="images/originalFlyer.png">
 		</a>
 	</div>
@@ -126,7 +128,6 @@
 
 <!-- Calendar files -->
 <!-- Javascript files -->
-<script src="resources/jquery-3.1.1.min.js"></script>
 <script src="resources/moment.js"></script>
 <script src="js/displayCalendar.js"></script>
 <!-- style sheet -->

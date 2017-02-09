@@ -11,15 +11,13 @@
 	min-width: 750px;
 }
 
-
 #week {	
 	border-collapse: separate;
 	width: 90%;
 	max-width: 1250px;
 	min-height: 220px;
 	border-radius: 100px;
-	border-spacing: 5px 0;
-
+	border-spacing: 5px 0px;
 }
 
 #week th{
@@ -42,6 +40,7 @@
 	border:1px solid;
 	border-top: 0;
 	border-radius: 0px 0px 7px 7px;
+
 }
 
 .calHead{
@@ -56,7 +55,7 @@
 }
 
 #weekRow{
-	height: 100px;
+	height: 140px;
 }
 
 #weekName{
@@ -69,7 +68,6 @@
 	right: 0;
 	margin-top: 5px;
 	margin-right: 5px;
-
 }
 
 .events{
@@ -118,12 +116,10 @@
 	display: none;
 }
 
-
 #event_img{
 	display: inline-block;
 	float: left;
-	margin-top: 40px;
-	
+	margin-top: 40px;	
 }
 
 #event_img img{	
@@ -139,6 +135,7 @@
 
 #event_box td{
 	vertical-align: top;
+	text-align: left;
 	padding: 5px;
 	max-width: 350px;
 }
@@ -148,3 +145,57 @@
 }
 
 /***End of Event Description Box styling***/
+
+@media only screen and (max-width: 790px) {
+    /* For mobile phones */
+	.title{
+		font-size: 2em;
+		min-width: 300px;
+	}
+
+	.mobile_show{
+    	display: inline-block;
+    }
+
+    .mobile_column{
+    	flex-direction: column;
+    }
+
+    #event_box{	
+    	margin:0 auto;
+		width: 85%;
+		min-width: 250px;	
+	}	
+
+	#event_title{
+		font-size: 1.7em;	
+	}
+
+	#event_img{
+		display: block;
+		float: none;
+		text-align: center;
+		margin:0 auto;
+		margin-top: 10px;
+	}
+
+	#event_img img{
+		float: none;
+		margin: 0 auto;
+		height: 100%;
+		width: 70%;
+		max-width: 275px;
+	}
+
+	#event_box table{
+		padding-left: 10px;
+		padding-top: 10px;		
+	}	
+}
+
+@media screen and (min-width: 790px) {
+    /*For larger screens only*/
+    .mobile_show{
+    	display: none;
+    }
+}

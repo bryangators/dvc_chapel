@@ -62,4 +62,10 @@
 			</div>
 			
 			</header>
-		</div><!-- #header
+		</div>
+
+<!-- Spacer for normal screens-->
+<div class="mobile_show" style="height: 65px;"></div>
+<!-- Spacer for mobile screens-->	
+<div class="mobile_hidden" style="height: 96px;"></div>
+		

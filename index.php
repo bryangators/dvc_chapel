@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/indexStyles.css?ver=1.0">
 <!-- java script files -->
 <script src="resources/modernizr-1.5.js"></script>
-
+<script src="resources/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
@@ -26,10 +26,8 @@
 
 		<!-- content -->
 		<div id="content">
-		<!-- First Section of Homepage -->
-		<div class="mobile_show" style="height: 65px;"></div>
-		<div class="mobile_hidden" style="height: 96px;"></div>
-		<!-- Spacer for mobile screens -->
+		
+		<!-- Section 1 with prayer image -->
 		<section id="sec1" class="max_width">	
 			<div class="bgImage max_width">	
 			<img class="mobile_hidden" src="images/prayer11.png">
@@ -38,10 +36,10 @@
 		</section>
 		<!-- End of First Sectiion -->
 
-		<!-- Second Section of homepage -->
+		<!-- Second Section of homepage with verse, calendar and text boxes -->
 		<section id="sec2">
 		<!-- prayer quote -->
-			<div class="flyerWrap">
+			<div class="flex flex-row flex-wrap center">
 			<div class="quote_box box">
 				<p>
 					He said to them, “Go into all the world and preach the gospel to all creation."
@@ -63,7 +61,7 @@
 
 			
 			<div style="height: 40px;"></div>
-			<div class="flyerWrap">
+			<div class="flex flex-row flex-wrap center">
 				<div class="text_box box">
 				<div class="img_container">
 				<img src="images/child.png">
