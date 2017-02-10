@@ -1,3 +1,5 @@
+<div class="mobile_hidden" style="height: 98px;"></div>
+<div class="mobile_show" style="height: 160px;"></div>
 <div id="footer">	
 	<div id="footerContent">
 	<ul>

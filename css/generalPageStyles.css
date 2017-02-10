@@ -3,7 +3,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	padding:0;
-	background-color: #e0dfe4;	
+	background-color: #E6E5E9;	
 	height: 100%;
 	width: 100%;
 }
@@ -23,7 +23,7 @@ body{
 
 section{	
 	margin:0 auto;
-	background-color: #f4f4f4;
+	background-color: #E6E5E9;
 
 }
 
@@ -56,4 +56,8 @@ section{
 
 .center{
 	margin:0 auto;
+}
+
+.shadow-box{
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }

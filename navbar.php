@@ -38,22 +38,34 @@
 			<!-- Links for Nav Bar -->
 			<span id="links" class="mobile_hidden">
 			<ul>		
-				<li>
-				<a <?php if($thisPage == 'home') echo "id = 'currentPage'";?>
-				href="index.php">Home</a>
+				<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
+				<a href="index.php">Home</a>
 				</li>	
-				<li><a  ,<?php if($thisPage == 'about') echo "id = 'currentPage'";?> 
-				href="about.php">About</a></li>
-				<li><a <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> 
-				href="ministries.php">Ministries</a></li>
-				<li><a <?php if($thisPage == 'events') echo "id = 'currentPage'";?>
-				href="events.php">Events</a></li>
-				<li><a <?php if($thisPage == 'resources') echo "id = 'currentPage'";?>
-				href="resources.php">Resources</a></li>
-				<li><a <?php if($thisPage == 'media') echo "id = 'currentPage'";?>
-				href="media.php">Media</a></li>
-				<li><a <?php if($thisPage == 'contact') echo "id = 'currentPage'";?>
-				href="contact.php">Contact</a></li>			
+				
+				<li <?php if($thisPage == 'about') echo "id = 'currentPage'";?> >
+				<a href="about.php" >About</a>
+				</li>
+				
+				<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
+				<a href="ministries.php">Ministries</a>
+				</li>
+				
+				<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
+				<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
+				else{echo "href= '#calBox'"; }?>>Events</a>
+				</li>
+				
+				<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
+				<a href="resources.php">Resources</a>
+				</li>
+
+				<li <?php if($thisPage == 'media') echo "id = 'currentPage'";?> >
+				<a href="media.php">Media</a>
+				</li>
+				
+				<li <?php if($thisPage == 'contact') echo "id = 'currentPage'";?> >
+				<a href="contact.php">Contact</a>
+				</li>			
 			</ul>			
 			</span>
 			<span id="menuBar" class="mobile_show">

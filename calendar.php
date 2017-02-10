@@ -1,8 +1,8 @@
 
 <!-- calendar -->
-<div class="flex flex-row center flex-wrap mobile_hidden">
+<div id="calBox" class="flex center flex-wrap calendarDiv shadow-box mobile_hidden">
 	<div style="width: 100%;"  class="mobile_hidden ">
-	<span class="title center">Upcoming Events</span> 
+	<span class="cal_title center">Weekly Events</span> 
 	
 	<table class="center" id="week" >	
 
@@ -76,54 +76,56 @@
 
 	</tr>				
 	</table>
-	</div>				
-</div>
-<div id="event_top" style="height: 40px;"></div>
-<div style="text-align: center" class="flex flex-row center mobile_column">
-	<div id="event_box">
-	<div class="center">
-	<div id="event_img">
-		<a id="imgLink" target="_blank" >
-		<img id="dispImg" src="images/originalFlyer.png">
-		</a>
-	</div>
-
-	<table id="event_desc">		
-
-	<td colspan="2" id="event_title">
-		Worship Service
-	</td>
-
-	</tr>
-	<tr>			
-	<td >
-		<b>When:</b>
-	</td>
-	<td id="eventTime">					
-	</td>
-	</tr>
-	<tr>
-		<td>
-			<b>About:</b>
-		</td>
-		<td colspan="1" id="about">						
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-			<b>Speaker(s):</b>
-		</td>
-		<td colspan="1" id="speaker">
-			
-		</td>
-	</tr>
-	</table>
-		
-	</div>		
 	</div>	
+	<!-- Event box with event details -->
+	<div style="text-align: center" class="flex flex-row center mobile_column">
+		<div id="event_top" style="height: 40px;"></div>
+		<div id="event_box">
+		<div class="center">
+		<div id="event_img">
+			<a id="imgLink" target="_blank" >
+			<img id="dispImg" src="images/originalFlyer.png">
+			</a>
+		</div>
 
+		<table id="event_desc">		
+
+		<td colspan="2" id="event_title">
+			Worship Service
+		</td>
+
+		</tr>
+		<tr>			
+		<td >
+			<b>When:</b>
+		</td>
+		<td id="eventTime">					
+		</td>
+		</tr>
+		<tr>
+			<td>
+				<b>About:</b>
+			</td>
+			<td colspan="1" id="about">						
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<b>Speaker(s):</b>
+			</td>
+			<td colspan="1" id="speaker">
+				
+			</td>
+		</tr>
+		</table>
+			
+		</div>		
+		</div>	
+
+	</div>			
 </div>
+
 
 
 <!-- Calendar files -->

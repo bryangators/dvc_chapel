@@ -30,7 +30,7 @@
 		<!-- Section 1 with prayer image -->
 		<section id="sec1" class="max_width">	
 			<div class="bgImage max_width">	
-			<img class="mobile_hidden" src="images/prayer11.png">
+			<img class="mobile_hidden" src="images/prayer111.png">
 			<img class="mobile_show" src="images/prayer1mob.png">
 			</div>	
 		</section>
@@ -39,7 +39,7 @@
 		<!-- Second Section of homepage with verse, calendar and text boxes -->
 		<section id="sec2">
 		<!-- prayer quote -->
-			<div class="flex flex-row flex-wrap center">
+			<div class="flex flex-row flex-wrap center quote_wrap">
 			<div class="quote_box box">
 				<p>
 					He said to them, “Go into all the world and preach the gospel to all creation."
@@ -51,11 +51,7 @@
 			<!-- spacer -->
 			<div style="height: 40px;"></div>
 
-			<!-- Weekly Events Calendar -->
-			<?php
-			include_once('calendar.php');
-			?>
-			<!-- End Calendar -->
+			
 
 
 
@@ -96,8 +92,14 @@
 				</div>
 				</div>
 			</div>
-			<div style="height: 180px;">
+			
 		</section>
+
+		<!-- Weekly Events Calendar -->
+			<?php
+			include_once('calendar.php');
+			?>
+			<!-- End Calendar -->
 				
 		</div><!-- end of page content -->
 		

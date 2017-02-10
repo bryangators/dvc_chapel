@@ -18,12 +18,7 @@ Date: 1/26/2017
 
 /*End of section 1 styles*/
 
-/*Section 2 styles*/
-#sec2{
-	background-color: #f4f4f4;
-	padding-top: 50px;
-	/*min-height: 1200px;*/
-}
+
 
 /*Styles for text boxes with images*/
 .box{		
@@ -62,7 +57,13 @@ Date: 1/26/2017
 	font-size: 1.6em;
 	color: rgb(60,60,60);
 	font-style: italic;
+}
 
+.quote_wrap{
+	
+	margin:0 auto;
+	width: 100%;
+	padding: 40px 0px;
 }
 
 .quote_box span{

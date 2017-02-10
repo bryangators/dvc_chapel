@@ -3,6 +3,7 @@ a{
 	color: inherit;
 }
 
+
 /*****Navigation Styling*****/
 #header{
 	width: 100%;
@@ -22,6 +23,7 @@ a{
 	text-align: center;
 	color: rgb(181,55,55);
 	background-color: rgba(255,255,255,1);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 #logoImg{
@@ -40,7 +42,7 @@ a{
 	
 }
 
- #navbar li{
+ #navbar li:not(#currentPage){
  	font-size: 1em;	
 	display: inline;	
 	padding: 10px;	
@@ -49,6 +51,7 @@ a{
 #currentPage{
 	display: none;
 }
+
 
 /****End of Navigation Style*****/
 
