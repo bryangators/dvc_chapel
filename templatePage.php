@@ -35,10 +35,9 @@
 		///Use sections and flex_parent class to align content//
 		/////////////////////////////////////////////////////// -->
 
-		<!-- content -->
-		<div id="content">
+		<!-- Use sections -->
 		
-		<!-- Page Content goes here -->
+	
 				
 		</div><!-- end of page content -->
 		

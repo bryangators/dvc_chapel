@@ -21,13 +21,12 @@
 		<!-- End of Navigation bar -->
 
 
-		<!-- ///////////////////////////////////////////////////
-		////All content will go inside the content div below////
-		///Use sections and flex_parent class to align content//
-		/////////////////////////////////////////////////////// -->
+		<!-- //////////////////////////////////////////////////////////
+		////All content will go below the content div in the header////
+		///Use sections and flex_parent class to align content/////////
+		/////////////////////////////////////////////////////////// -->
 
-		<!-- content -->
-		<div id="content">
+		
 		
 		<section id="about_sec">
 		<div id="stats" class="center shadow-box">

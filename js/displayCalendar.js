@@ -12,7 +12,7 @@ var event_meta = new Array();
 
 $( document ).ready(function(){
 	startCalendar();	
-	
+	// alert(mDate);
 })
 
 //function fills calendar
@@ -188,8 +188,7 @@ Event_meta.prototype.fillEventBox = function(){
 }
 
 Event_meta.prototype.formatEventHTML = function() {
-	event = findEvent(this.event_id);
-	title = event.title;
+	title = findEvent(this.event_id).title
 	time = this.time;
 	return '<a  id="'+ this.id +'" href="#event_top">'+
 		   '<li id="1" class="event_links" href="#event_top">'+

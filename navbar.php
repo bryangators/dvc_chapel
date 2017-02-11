@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+<!-- Javascript file -->
+<script src="js/navbar.js"></script>
 
 
 <!-- Favicon links for different devices -->
@@ -33,8 +35,9 @@
 			<!-- Navigation Bar -->
 			<!-- Logo Image -->
 			<div id="navbar">
-						
+			<a href="index.php">		
 			<img id="logoImg" src="images/logo1.png" >
+			</a>
 			<!-- Links for Nav Bar -->
 			<span id="links" class="mobile_hidden">
 			<ul>		
@@ -52,7 +55,7 @@
 				
 				<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
 				<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
-				else{echo "href= '#calBox'"; }?>>Events</a>
+				else{echo "href= '#calBox'"; }?>> Events </i></a>
 				</li>
 				
 				<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
@@ -68,16 +71,58 @@
 				</li>			
 			</ul>			
 			</span>
-			<span id="menuBar" class="mobile_show">
-				<i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+			<span id="mobile_btn" class="mobile_show">
+				<i id="menuBar" class="fa fa-bars fa-2x" aria-hidden="true"></i>
 			</span>
 			</div>
 			
 			</header>
 		</div>
-
-<!-- Spacer for normal screens-->
-<div class="mobile_show" style="height: 65px;"></div>
-<!-- Spacer for mobile screens-->	
-<div class="mobile_hidden" style="height: 96px;"></div>
+		<!-- Spacer for normal screens-->
+		<div class="mobile_show" style="height: 65px;"></div>
+		<!-- Spacer for mobile screens-->	
+		<div class="mobile_hidden" style="height: 96px;"></div>
 		
+
+
+	
+
+		<!-- This starts page content -->
+		<div id="content">
+
+		<section>
+		<div id="mobile_menu" class="mobile_show">					
+			<ul>		
+				<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
+				<a href="index.php">Home</a>
+				</li>	
+				
+				<li <?php if($thisPage == 'about') echo "id = 'currentPage'";?> >
+				<a href="about.php" >About</a>
+				</li>
+				
+				<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
+				<a href="ministries.php">Ministries</a>
+				</li>
+				
+				<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
+				<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
+				else{echo "href= '#calBox'"; }?>>Events   <!-- <i class="fa fa-caret-down" aria-hidden="true"></i>  --></a>
+				</li>
+				
+				<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
+				<a href="resources.php">Resources</a>
+				</li>
+
+				<li <?php if($thisPage == 'media') echo "id = 'currentPage'";?> >
+				<a href="media.php">Media</a>
+				</li>
+				
+				<li <?php if($thisPage == 'contact') echo "id = 'currentPage'";?> >
+				<a href="contact.php">Contact</a>
+				</li>			
+			</ul>				
+		</div>
+	</div> 
+	</section>
+

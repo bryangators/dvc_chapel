@@ -78,10 +78,13 @@
 	</table>
 	</div>	
 	<!-- Event box with event details -->
-	<div style="text-align: center" class="flex flex-row center mobile_column">
+	<div style="text-align: center; clear: both;" class="mobile_column">
+		<!-- spacer -->
 		<div id="event_top" style="height: 40px;"></div>
+
+
 		<div id="event_box">
-		<div class="center">
+	
 		<div id="event_img">
 			<a id="imgLink" target="_blank" >
 			<img id="dispImg" src="images/originalFlyer.png">
@@ -89,7 +92,7 @@
 		</div>
 
 		<table id="event_desc">		
-
+		<tr>
 		<td colspan="2" id="event_title">
 			Worship Service
 		</td>
@@ -120,7 +123,7 @@
 		</tr>
 		</table>
 			
-		</div>		
+			
 		</div>	
 
 	</div>			
