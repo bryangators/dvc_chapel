@@ -195,4 +195,13 @@ button{
    .modal-content {
    	width: 90%;
    } 
+
+   #add_event, 
+   .admin_title{
+   	width: 90%;
+   }
+
+   #table_wrap{
+   	width: 95%;
+   }
 }
