@@ -6,25 +6,19 @@ body{
 	background-color: #E6E5E9;	
 	height: 100%;
 	width: 100%;
+	background-repeat: round;
 }
 
-#content{
-	max-width: 1600px;	
-	margin:0 auto;
+section{	
+	width: 100%;
+	max-width: 1300px;
+	margin:0 auto;	
 }
 
 #wrapper {
 	min-height:100%;
 	position:relative;
 	
-}
-
-/*Content styling*/
-
-section{	
-	margin:0 auto;
-	background-color: #E6E5E9;
-
 }
 
 .flex{
@@ -60,4 +54,36 @@ section{
 
 .shadow-box{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.page{
+	width: 70%;
+	padding: 30px;
+	border: solid 1px;
+	border-color: white;	
+	background-color: #f4f4f4;
+}
+
+.title{
+	text-align: center;
+	width: 85%;
+	display: block;
+	font-size: 2.8em;
+	font-weight: bold;
+	color:rgb(51,51,51);
+	border-bottom: solid 1px;
+	border-color: gray;
+	margin:0 auto;
+	padding: 10px;
+}
+
+@media only screen and (max-width: 790px) {
+    /* For mobile phones: */
+
+	#content,
+	section{
+		max-width: 100%;	
+		
+	}
+    
 }

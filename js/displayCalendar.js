@@ -63,9 +63,11 @@ function startCalendar(){
 function makeEventsClickable(){
 	$('.event_links').on('click',  function(e){
 			var objectId = parseInt($(this).closest('a').attr('id'));
-			console.log(objectId);
+			var day = parseInt($(this).closest('ul').attr('id').slice(-1));
+			var thisDay = moment(mDate);
+			thisDay.isoWeekday(day);
 			var event = findEventMeta(objectId);
-			event.fillEventBox();		
+			event.fillEventBox(thisDay);		
 			showEvent();
 			e.stopImmediatePropagation();
 		});
@@ -153,37 +155,37 @@ function showEvent(){
 }
 
 //Event object constuctor
-function Event(id, title, img_url, desc, speaker){
+function Event(id, title, img_url, summary, speaker){
 	this.id = id;
 	this.title = title;
 	this.img_url = img_url;
-	this.desc = desc;
+	this.summary = summary;
 	this.speaker = speaker;
 }
 
 //Constructor for event meta objects
-function Event_meta(id, event_id, repeating, start_date, end_date, week_day_num, interval, time){
+function Event_meta(id, event_id, repeating, start_date, end_date, week_day_num, rpt_interval, time){
 	this.id = id;
 	this.event_id = event_id;
 	this.repeating = repeating;
 	this.start_date = start_date;
 	this.end_date = end_date;
 	this.week_day_num = week_day_num;
-	this.interval = interval;
-	this.time = time;
+	this.rpt_interval = rpt_interval;
+	this.time = moment(time, 'h:mm a').format('h:mm a');
 }
 
 //prototype to fill evnent box with coresponding event
-Event_meta.prototype.fillEventBox = function(){
-	var event = findEvent(this.event_id);
-	var dayNum = this.week_day_num;
-	var wDay = weekDays[dayNum];
+Event_meta.prototype.fillEventBox = function(date){
+	var day = moment(date);
+	var formatDay = day.format('dddd MM/DD/YYYY')
+	var event = findEvent(this.event_id);	
 	var time = this.time;
 	$('#imgLink').attr('href', event.img_url);
-	$('#dispImg').attr('href', event.img_url);
+	$('#dispImg').attr('src', event.img_url);
 	$('#event_title').text(event.title);
-	$('#eventTime').text(wDay + " " + time);
-	$('#about').text(event.desc);
+	$('#eventTime').text(formatDay + " at " + time);
+	$('#about').text(event.summary);
 	$('#speaker').text(event.speaker);
 }
 
@@ -214,8 +216,6 @@ function findEventMeta(id){
 	}
 }
 
-
-
 // This function will search through event meta data 
 // and return events that fall on the date in question
 // in an array
@@ -227,20 +227,21 @@ function findDailyEvents(date){
 	for (i = 0; i < event_meta.length; i++){
 		// date format used for comparison
 		var this_date = moment(event_meta[i].start_date).utc().format("YYYY-MM-DD");
+		
 		if (event_meta[i].repeating){ //finds repeating events
 			
 			if(event_meta[i].end_date == null){//for never ending events
 
 				if(day.isSameOrAfter(event_meta[i].start_date)){//valid date range
 						
-					if(event_meta[i].interval == 1){//daily event
+					if(event_meta[i].rpt_interval == 'Daily'){//daily event
 						resultEvents.push(event_meta[i]);
-					}else if(event_meta[i].interval == 7 &&	
+					}else if(event_meta[i].rpt_interval == 'Weekly' &&	
 						day.isoWeekday() == event_meta[i].week_day_num){						
 						//weekly event check
 						resultEvents.push(event_meta[i]);
 					}else{
-						if (event_meta[i].interval == 30) {//check for monthly dates
+						if (event_meta[i].rpt_interval == 'Monthly') {//check for monthly dates
 							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday())){
 								resultEvents.push(event_meta[i]);
 							}						
@@ -248,16 +249,16 @@ function findDailyEvents(date){
 					}// end of monthly repeat check
 				}
 			}else{//checks events within date range
-				console.log('in');
+				// console.log("in here");
 				if(day.isBetween(event_meta[i].start_date, event_meta[i].end_date,'[]')){//valid date range
-					if(event_meta[i].interval == 1){//daily event
+					if(event_meta[i].rpt_interval == 'Daily'){//daily event
 						resultEvents.push(event_meta[i]);
-					}else if(event_meta[i].interval == 7 &&	
+					}else if(event_meta[i].rpt_interval == 'Weekly' &&	
 						day.isoWeekday() == event_meta[i].week_day_num){
 						//weekly event check
 						resultEvents.push(event_meta[i]);
 					}else{
-						if (event_meta[i].interval == 30) {//check for monthly repeating dates
+						if (event_meta[i].rpt_interval == 'Monthly') {//check for monthly repeating dates
 							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday())){
 								resultEvents.push(event_meta[i]);
 							}						
@@ -266,7 +267,7 @@ function findDailyEvents(date){
 				}
 			}// end of date range check
 		}else if(day.isSame(this_date, 'day')){//single date events
-			console.log(event_meta[i].start_date);
+			
 			resultEvents.push(event_meta[i]);
 		}//end of single date check
 	}//end of loop check
@@ -275,7 +276,6 @@ function findDailyEvents(date){
 	var	sortedResult = sortResultsByTime(resultEvents);		
 	return sortedResult;
 }
-
 
 function sortResultsByTime(events){
 	events = events.sort(function(a,b){
@@ -300,10 +300,17 @@ function sortResultsByTime(events){
 // example objects for web page
 events[0] = new Event(1, 'Worship Service', 'images/originalFlyer.png', 'At Deltona Victory Chapel, our lively worship services are Pentecostal in nature, featuring music, praise, Bible-Based preaching, ministry and prayer for personal needs.',
  'Pastor Josh Shapiro');
+events[1] = new Event(2, 'The Choice', 'images/choiceFlyer.png', '5 Special Services to turn your life around.',
+ 'Pastor Paul Campo');
 
 
-event_meta[0] = new Event_meta(1, 1, true, "2017-02-01", null, 7, 7, '7:00 PM' );
-event_meta[1] = new Event_meta(2, 1, true, "2016-02-01", null, 7, 7, '11:00 AM' );
-event_meta[2] = new Event_meta(3, 1, true, "2016-02-01", null, 3, 7, '07:00 PM');
+event_meta[0] = new Event_meta(1, 1, true, "2016-02-01", "2017-03-01", 7, 'Weekly', '19:00:00' );
+event_meta[1] = new Event_meta(2, 1, true, "2016-02-01", "2017-03-01", 7, 'Weekly', '11:00:00' );
+event_meta[2] = new Event_meta(3, 1, true, "2016-02-01", null, 3, 'Weekly', '19:00:00');
+event_meta[3] = new Event_meta(4, 1, true, "2017-03-06", null, 7, 'Weekly', '19:00:00' );
+event_meta[4] = new Event_meta(5, 1, true, "2017-03-06", null, 7, 'Weekly', '11:00:00' );
+event_meta[5] = new Event_meta(6, 2, true, "2017-03-02", "2017-03-05", 0, 'Daily', '19:00:00' );
+event_meta[6] = new Event_meta(7, 2, false, "2017-03-05", null, 7, 'Weekly', '11:00:00' );
+event_meta[7] = new Event_meta(8, 2, false, "2017-03-05", null, 7, 'Weekly', '19:00:00' );
 
 

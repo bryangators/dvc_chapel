@@ -1,5 +1,6 @@
 
 <!-- calendar -->
+
 <div id="calBox" class="flex center flex-wrap calendarDiv shadow-box mobile_hidden">
 	<div style="width: 100%;"  class="mobile_hidden ">
 	<span class="cal_title center">Weekly Events</span> 
@@ -80,7 +81,7 @@
 	<!-- Event box with event details -->
 	<div style="text-align: center; clear: both;" class="mobile_column">
 		<!-- spacer -->
-		<div id="event_top" style="height: 40px;"></div>
+		<div id="event_top" style="height: 100px;"></div>
 
 
 		<div id="event_box">

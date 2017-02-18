@@ -1,8 +1,41 @@
 
 $( document ).ready(function(){
 	activateMenuBtn();
-	var width = $(window).width();
-	console.log(window);
+	// console.log($( window ).width());
+
+
+	$( window ).resize(function() {
+  		if(!$('#menuBar').is(":visible") &&
+  			$(window).scrollTop() < 50){
+      	
+    	$('#logoImg').css('width', '300px');      
+    	
+      }else{
+      	$('#logoImg').css('width', '200px');
+      }
+
+	});
+
+	//removes logo when scrolling
+	$(window).scroll(function () {
+      //if you hard code, then use console
+      //.log to determine when you want the 
+      //nav bar to stick.  
+      
+      if(!$('#menuBar').is(":visible")){
+      	if ($(window).scrollTop() > 50) {
+    	$('#logoImg').css('width', '200px');
+      
+    	}
+	    if ($(window).scrollTop() < 50) {      
+	    	$('#logoImg').css('width', '300px');      
+	    }
+      }else{
+      	$('#logoImg').css('width', '200px');
+      }
+    
+  });
+
 });
 
 

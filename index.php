@@ -27,19 +27,26 @@
 		
 		
 		<!-- Section 1 with prayer image -->
-		<section id="sec1" class="max_width">	
-			<div class="bgImage max_width">	
+		<section class="page_section">	
+			<div class="bgImage">	
 			<img class="mobile_hidden" src="images/prayer111.png">
-			<img class="mobile_show" src="images/prayer1mob.png">
+			<img class="mobile_show mob_img" src="images/prayer1mob.png">
 			</div>	
 		</section>
-		<!-- End of First Sectiion -->
+		
+		
 
 
 
-		<!-- Second Section of homepage with verse, calendar and text boxes -->
-		<section id="sec2">
+		
+		<section class="page_section">
 		<!-- prayer quote -->
+			<!-- <div style="height: 80px;"></div>
+			<div class="outer-container">
+			<div class="video-container">
+				<iframe style="margin:0 auto" width="853" height="480" src="https://www.youtube.com/embed/Pw5Bk6zeyYQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>				
+			</div>
+			</div> -->
 			<div class="flex flex-row flex-wrap center quote_wrap">
 			<div class="quote_box box">
 				<p>
@@ -48,15 +55,9 @@
 				<span style="padding-right: 3em;">- Mark 16:15</span>
 			</div>
 			</div>
+		</section>
 
-			<!-- spacer -->
-			<div style="height: 40px;"></div>
-
-			
-
-
-
-			
+		<section class="page_section">
 			<div style="height: 40px;"></div>
 			<div class="flex flex-row flex-wrap center">
 				
@@ -84,17 +85,23 @@
 					</p>		
 				</div>
 
-			</div>
-			
+			</div>			
 		</section>
 
+		
+		
+
+
+		<section class="page_section mobile_hidden">
 		<!-- Weekly Events Calendar -->
 		<div style="height: 40px;"></div>
+		
 		<?php
 		include_once('calendar.php');
 		?>
+		</section>
 		<!-- End Calendar -->
-		
+	
 				
 		</div><!-- end of page content -->
 		

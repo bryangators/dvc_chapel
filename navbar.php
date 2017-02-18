@@ -35,58 +35,68 @@
 			<!-- Navigation Bar -->
 			<!-- Logo Image -->
 			<div id="navbar">
-			<a href="index.php">		
-			<img id="logoImg" src="images/logo1.png" >
-			</a>
-			<!-- Links for Nav Bar -->
-			<span id="links" class="mobile_hidden">
-			<ul>		
-				<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
-				<a href="index.php">Home</a>
-				</li>	
-				
-				<li <?php if($thisPage == 'about') echo "id = 'currentPage'";?> >
-				<a href="about.php" >About</a>
-				</li>
-				
-				<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
-				<a href="ministries.php">Ministries</a>
-				</li>
-				
-				<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
-				<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
-				else{echo "href= '#calBox'"; }?>> Events </i></a>
-				</li>
-				
-				<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
-				<a href="resources.php">Resources</a>
-				</li>
-
-				<li <?php if($thisPage == 'media') echo "id = 'currentPage'";?> >
-				<a href="media.php">Media</a>
-				</li>
-				
-				<li <?php if($thisPage == 'contact') echo "id = 'currentPage'";?> >
-				<a href="contact.php">Contact</a>
-				</li>			
-			</ul>			
-			</span>
-			<span id="mobile_btn" class="mobile_show">
-				<i id="menuBar" class="fa fa-bars fa-2x" aria-hidden="true"></i>
-			</span>
-			</div>
 			
-			</header>
-		</div>
-		<!-- Spacer for normal screens-->
-		<div class="mobile_show" style="height: 65px;"></div>
-		<!-- Spacer for mobile screens-->	
-		<div class="mobile_hidden" style="height: 96px;"></div>
+			<!-- Links for Nav Bar -->
+			
+			
+			<?php if ($thisPage != 'eventadmin') { ?>
+				
+				<span id="logoWrap">
+				<a href="index.php">
+				<img id="logoImg" src="images/logo1.png" >
+				</a>
+				</span>
+				<span id="links" class="mobile_hidden">		
+				<ul>		
+					<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
+					<a href="index.php">Home</a>
+					</li>	
+					
+					<li <?php if($thisPage == 'about') echo "id = 'currentPage'";?> >
+					<a href="about.php" >About</a>
+					</li>
+					
+					<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
+					<a href="ministries.php">Ministries</a>
+					</li>
+					
+					<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
+					<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
+					else{echo "href= '#calBox'"; }?>> Events </i></a>
+					</li>
+					
+					<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
+					<a href="resources.php">Resources</a>
+					</li>
+
+					<li <?php if($thisPage == 'media') echo "id = 'currentPage'";?> >
+					<a href="media.php">Media</a>
+					</li>
+					
+					<li <?php if($thisPage == 'contact') echo "id = 'currentPage'";?> >
+					<a href="contact.php">Contact</a>
+					</li>			
+				</ul>			
+				</span>
+			<?php }
+				else{ ?>
+				<span style="font-size: 2em;" id="links" class="mobile_hidden">		
+				Event Creator
+					
+				</span>
+				<?php }	?>
+				<span id="mobile_btn" class="mobile_show">
+					<i id="menuBar" class="fa fa-bars fa-2x" aria-hidden="true"></i>
+				</span>
+				</div>
+
+				</header>
+			</div>
+			<!-- Spacer for normal screens-->
+			<div class="mobile_show" style="height: 65px;"></div>
+			<!-- Spacer for mobile screens-->	
+			<div class="mobile_hidden" style="height: 85px;"></div>
 		
-
-
-	
-
 		<!-- This starts page content -->
 		<div id="content">
 

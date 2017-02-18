@@ -6,19 +6,21 @@ a{
 
 /*****Navigation Styling*****/
 #header{
-	width: 100%;
+	/*width: 100%;*/
 	position: absolute;
 	top:0;
-	right:-50%;
-	left: -50%;
+	right:0;
+	left: 0;
 	margin:0 auto;
 }
 
 #navbar{
-	position: relative;
-	margin:0 auto;
+	position: fixed;
+	z-index:1;	
+	min-width: 790px;
+	right:-50%;
+	left: -50%;
 	width: inherit;	
-	min-width: 768px;
 	padding-bottom: 10px;	
 	text-align: center;
 	color: rgb(181,55,55);
@@ -29,9 +31,9 @@ a{
 #logoImg{
 	display: inline;
 	margin-top: 10px;
-	/*padding-right: 1rem;*/
-	/*height: 70px;*/
 	width: 300px;	
+	transition: all .30s ease-in-out;
+	-webkit-transition: all .30s ease-in-out;
 }
 
 #navbar ul{	
@@ -52,6 +54,10 @@ a{
 	display: none;
 }
 
+#links{
+	padding-top: 100px;
+}
+
 
 /****End of Navigation Style*****/
 
@@ -61,35 +67,42 @@ a{
 	margin:0 auto;
 	background-color: #B53737;
 	width:100%;
-	text-align: center;
-	/*bottom:0;
-	left:-50%;
-	right: -50%;*/
-}
-
-#footer ul{
-	font-size: 1em;	
 	color: white;
-	margin:0 auto;
-	display: inline;
-	padding:0px 0px 15px 0px;
-}
-
-#footer li{
-	display: inline-block;
-	list-style-type: none;
-	padding-left:25px;
-	margin-left: 10px;
-	margin-right: 10px;
-	padding:0;
+	font-size: .8em;
 }
 
 #footerContent{
 	padding: 1rem;
 	position: relative;
 	margin:0 auto;
-
+	max-width: 1250px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
+
+.footer_services{
+	list-style-type: none;
+	display: inline-block;
+	margin:0;
+	padding: 0px 30px;
+	/*border-right: 1px solid white*/
+}
+
+.footer_address{
+	padding: 0px 30px 0px 0px;	
+	display: inline-block;
+	border-right: 1px solid white
+}
+
+#copyright{
+	width: 50%;
+	margin:0 auto;
+	text-align: center;
+	font-size: .9em;
+	padding: 1rem;	
+}
+
 /*End of footer styling*/
 
 
@@ -105,32 +118,56 @@ a{
     	display: none;
     } 
     /*Navbar mobile styles*/
-    #navbar span{
-    	vertical-align: top;
-    	padding: 15px;
-    	float: right;
-    }
 
+    
     #navbar{
+    	position: relative;
     	min-width: 300px;
-    	height: 60px;    	
+    	height: 60px;
+    	width: 100%;
+    	right:0;
+		left: 0;
+		margin:0 auto;
+		width: inherit; 	   	
     }
 
     #logoImg{
-    	width: 170px;
-    	margin-left: 15px;
-    	float: left;
-    }
+		transition: none !important;
+		width: 200px;		
+	}
+
 
     #mobile_btn{
-    	text-align: right;
+    	display: inline;
+    	float: right;
+    	margin: 20px 15px 0px 0px;
+    	
     }
 
+    #logoWrap{
+    	display: inline;
+    	float: left;
+    }
+    
+
     /*footer mobile styles*/
-    #footer li{
-		font-size: 2.5em;
-		padding: 10px;
-	}
+    #footerContent{
+    	flex-direction: column;
+    	text-align: center;
+    }
+
+    .footer_address{
+    	width: 80%;
+    	padding-left: 30px;
+    	border:none;
+    	margin:0 auto;
+    }
+
+    .footer_services{
+    	padding-top: 30px;
+    	width: 80%;
+    	margin:0 auto;
+    }
 
 
 	
@@ -144,8 +181,11 @@ a{
 
     #mobile_menu ul{
     	display: none;
-    }
+    }   
 
+    #logoImg{
+		width: 300px;		
+	}
 }
 
 /*Mobile Dropdown menu*/
@@ -153,6 +193,7 @@ a{
 	display: none;
 	background-color: rgb(181,55,55);
 	width: 60%;
+	max-width: 200px;
 	position: absolute;
 	top: 96;
 	right: 0;

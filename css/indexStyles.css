@@ -4,20 +4,53 @@ Author: Bryan Kristofferson
 Date: 1/26/2017
 **************************************************/
 
+.page_section:nth-child(even){
+	background-color:#efefef;
+}
 
-#sec1{
-	text-align: center;
-	width: 100%;
+.page_section:nth-child(odd){
+	background-color: #f4f4f4;
+}
+
+.page_section:last-child{
+	padding-bottom: 30px;
 }
 
 /*section one styles*/
-.bgImage img{
+.bgImage {
 	text-align: center;
-	width: 100%;	
 }
 
+.bgImage img{
+	vertical-align: top;
+	width: 100%;
+	height: 100%;
+}
 /*End of section 1 styles*/
 
+/*Testimonial Section*/
+.outer-container{
+	margin:0 auto; 
+	width: 95%; 
+	text-align: center;
+}
+
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+width: 80%;
+height: 65%;
+}
 
 
 /*Styles for text boxes with images*/
@@ -28,15 +61,12 @@ Date: 1/26/2017
 
 .text_box{
 	width: 27%;	
-	
-
 }
 
 .text_box h2{
 	text-align: center;
 	color: #B53737;
 }
-
 
 .text_box img{
 	width: 100%;
@@ -79,16 +109,26 @@ Date: 1/26/2017
     .displayBox img{
     	width: 95%;
     }
-	.title{
-		font-size: 2em;
-		min-width: 300px;
-	}
 
     .text_box{
-    	width: 80%;
+    	width: 90%;
     	max-width: 450px;
-    	
     }
+
+    .mob_img{
+    	width: 100%;
+    }
+
+    .video-container iframe,
+	.video-container object,
+	.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 90%;
+	height: 85%;
+	}
     
 }
 
