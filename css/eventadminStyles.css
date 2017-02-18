@@ -1,5 +1,25 @@
+.admin_page{
+	width: 400px;
+}
+
+
+.admin_title{
+	text-align: center;
+	width: 65%;
+	display: block;
+	font-size: 1.8em;
+	font-weight: bold;
+	color:rgb(51,51,51);
+	border-bottom: solid 1px;
+	border-color: gray;
+	margin:0 auto;
+	padding: 10px;
+}
+
 #add_event {
 	border-spacing: 10px 5px;
+	margin: 0 auto;
+	width: 65%;
 }
 
 #add_event *{
@@ -16,12 +36,29 @@
 	text-align: center;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+#add_event tr:nth-child(even) td {
+    /*padding-top: .5em;*/
+    padding-bottom: 1em;
+   
+}
+
 input:not(.radio), textarea, select{
-	width: 95%;
+	width: 100%;
 	padding: 5px;
 	font-size: 1em;
 	vertical-align: top;
 }
+
+/*Styling for image chooser*/
+#file{
+	padding-left: 0;
+}
+
+/*End of image chooser style*/
 
 #ev_desc{
 	padding: 6px;
@@ -39,22 +76,11 @@ button{
 	cursor: pointer;
 }
 
-.admin_title{
-	text-align: center;
-	width: 100%;
-	display: block;
-	font-size: 1.8em;
-	font-weight: bold;
-	color:rgb(51,51,51);
-	border-bottom: solid 1px;
-	border-color: gray;
-	margin:0 auto;
-	padding: 10px;
-}
 
 .event_times{
 	margin-bottom: 30px;
-	text-align: left;
+	text-align: center;
+	min-height: 240px;
 }
 
 #empty_msg{
@@ -63,6 +89,16 @@ button{
 }
 
 #event_scheduler{
+	margin:0 auto;
+}
+
+#event_scheduler td{
+	padding-bottom: .3em;
+	padding-top: .3em;
+}
+
+#add_event_meta{
+	background-color: green;
 	margin:0 auto;
 }
 

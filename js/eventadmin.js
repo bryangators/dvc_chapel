@@ -38,10 +38,11 @@ function showHideRptInputs(){
 	if(rpt_val == 'Yes'){
 		$('.rpt_input').show();
 		$('.rpt_hide').hide();
+		handleFrequencySelect()
 	}else{
 		$('.rpt_input').hide();
-		$('.wday_input').hide();
 		$('.rpt_hide').show();
+		$('.wday_input').hide();
 	}
 }
 

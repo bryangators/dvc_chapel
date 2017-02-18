@@ -37,15 +37,18 @@
 		/////////////////////////////////////////////////////// -->
 
 		<!-- Use sections -->
-		<section class="admin_page">
-			<div class="page center shadow-box">
-			<span class="title">New Event</span>
+		<section >
+			<div class="page center shadow-box admin_page">			
 			<div id="table_wrap" class="center">
+			<span class="admin_title">New Event</span>
+			<br>
 			<table id="add_event" >
 			<tr>
 				<td>
 				<label>Event Title:</label>
-				</td>
+				</td>				
+			</tr>
+			<tr>
 				<td>
 				<input id="ev_title" type="text" name="event_title">
 				</td>
@@ -54,25 +57,32 @@
 				<td>
 				<label>Image:</label>
 				</td>				
+			</tr>
+			<tr>
 				<td>
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="file" id="file" class="inputfile" />
+					
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<label>Description:</label>
-				</td>
+				</td>				
+			</tr>
+			<tr>
 				<td>
-				<textarea id="ev_desc" name="desc1" rows="5"></textarea>
-				</td>
+				<textarea id="ev_desc" name="desc1" rows="6"></textarea>
+				</td>				
 			</tr>
 			<tr>
 				<td>
 				<label>Speaker(s):</label>
-				</td>
+				</td>								
+			</tr>
+			<tr>
 				<td>
 				<input id="ev_spk1" type="text" name="event_title">
-				</td>				
+				</td>
 			</tr>
 			<!-- Event schedule section  -->
 			</table>
@@ -85,8 +95,7 @@
 							
 			</div>
 			<span style="text-align: center;" class="form_btns">
-				<button>Save</button>
-				<button>Cancel</button>
+				<button>Save</button>			
 			</span>
 			</div>
 			
@@ -104,7 +113,7 @@
 			   <!-- Modal header -->
 			  	<div class="modal-header">
 			    <span class="close">&times;</span>
-			    <h3>Add Event Schedule</h3>
+			    <h3>Event Scheduler</h3>
 		  		</div>
 
 		  		<!-- Modal Body -->
@@ -132,8 +141,7 @@
 
 				<tr>
 					<td>
-					<span class="rpt_input">Starts On:&nbsp;</span>
-					<span class="rpt_hide">Date:</span>
+					Date
 					</td>
 					<td>
 					<input style="width: 130px;" type="Date" name="ev_time">
