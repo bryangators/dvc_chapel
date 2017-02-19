@@ -32,8 +32,8 @@ a{
 	display: inline;
 	margin-top: 10px;
 	width: 300px;	
-	transition: all .30s ease-in-out;
-	-webkit-transition: all .30s ease-in-out;
+	transition: all .40s ease-in-out;
+	-webkit-transition: all .40s ease-in-out;
 }
 
 #navbar ul{	

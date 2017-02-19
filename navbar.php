@@ -80,7 +80,7 @@
 				</span>
 			<?php }
 				else{ ?>
-				<span style="font-size: 2em;" id="links" class="mobile_hidden">		
+				<span style="font-size: 2em;" id="links" >		
 				Event Creator
 					
 				</span>

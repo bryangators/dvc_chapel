@@ -37,6 +37,7 @@
 		/////////////////////////////////////////////////////// -->
 
 		<!-- Use sections -->
+		<div class="mobile_show" style="height: 40px"></div>
 		<section >
 			<div class="page center shadow-box admin_page">			
 			<div id="table_wrap" class="center">
