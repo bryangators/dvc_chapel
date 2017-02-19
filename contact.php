@@ -59,7 +59,7 @@
 							<h3>Email</h3>
 						</th>
 						<tr>
-							<td>pastor@deltonavictorychapel.com</td>
+							<td id="email-td">pastor@deltonavictorychapel.com</td>
 						</tr>
 						<th><h3>Phone</h3></th>
 						<tr>
