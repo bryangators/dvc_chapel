@@ -42,13 +42,13 @@
 			<?php if ($thisPage != 'eventadmin') { ?>
 				
 				<span id="logoWrap">
-				<a href="index.php">
+				<a id="logoLink" href="index.php">
 				<img id="logoImg" src="images/logo1.png" >
 				</a>
 				</span>
 				<span id="links" class="mobile_hidden">		
 				<ul>		
-					<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
+					<li >
 					<a href="index.php">Home</a>
 					</li>	
 					
@@ -59,12 +59,18 @@
 					<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
 					<a href="ministries.php">Ministries</a>
 					</li>
-					
-					<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
-					<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
-					else{echo "href= '#calBox'"; }?>> Events </i></a>
+
+
+					<li class="dropdown" <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
+					<a href="events.php" class="dropbtn">Events&nbsp;
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</a>
+					<div class="dropdown-content">
+					      <a href="#">Worship Service</a>
+					      <a href="#">The Choice</a>					      
+					</div>
 					</li>
-					
+
 					<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
 					<a href="resources.php">Resources</a>
 					</li>
@@ -102,35 +108,35 @@
 
 		<section>
 		<div id="mobile_menu" class="mobile_show">					
-			<ul>		
-				<li <?php if($thisPage == 'home') echo "id = 'currentPage'";?> >
-				<a href="index.php">Home</a>
-				</li>	
+			<ul>
+				<a href="index.php">		
+				<li>Home</li>
+				</a>	
 				
-				<li <?php if($thisPage == 'about') echo "id = 'currentPage'";?> >
-				<a href="about.php" >About</a>
-				</li>
-				
-				<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
-				<a href="ministries.php">Ministries</a>
-				</li>
-				
-				<li <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
-				<a <?php if($thisPage != 'home') echo "href= 'index.php#calBox' "; 
-				else{echo "href= '#calBox'"; }?>>Events   <!-- <i class="fa fa-caret-down" aria-hidden="true"></i>  --></a>
-				</li>
-				
-				<li <?php if($thisPage == 'resources') echo "id = 'currentPage'";?> >
-				<a href="resources.php">Resources</a>
-				</li>
+				<a href="about.php">
+				<li>About</li>
+				</a>
 
-				<li <?php if($thisPage == 'media') echo "id = 'currentPage'";?> >
-				<a href="media.php">Media</a>
-				</li>
+				<a href="ministries.php">
+				<li >Ministries</li>
+				</a>
+
+				<a href="events.php">
+				<li>Events</li>
+				</a>
 				
-				<li <?php if($thisPage == 'contact') echo "id = 'currentPage'";?> >
-				<a href="contact.php">Contact</a>
-				</li>			
+				<a href="resources.php">
+				<li>Resources</li>
+				</a>
+
+				<a href="media.php">
+				<li>Media</li>
+				</a>
+				
+				<a href="contact.php">
+				<li>Contact</li>	
+				</a>
+
 			</ul>				
 		</div>
 	</div> 

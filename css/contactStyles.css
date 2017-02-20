@@ -6,7 +6,7 @@
 	padding-top: 20px;
 }
 
-#map{
+.maps{
 	width: 500px;
 	height: 300px;
 }
@@ -29,29 +29,27 @@
 }
 
 #contact-form td:first-child{
-	width: 40%;
+	width: 45%;
 }
 
-#contact-form textarea{
-	width: 100%;
-	padding: 5px;
-	font-size: 1em;
-	margin-bottom: 10px;
-}
-
-
+#contact-form textarea,
 #contact-form input {
-	padding: 5px;
-	font-size: 1em;
-	width: 70%;
+	padding: 8px;
+	font-size: 1.1em;
+	width: 100%;
 	margin-bottom: 10px;
+	border-style: none;
+	border: 1px solid;
+	border-radius: 5px;
+	border-color:rgb(169,169,169);
 }
 
 #submit-td input{
-	color: rgb(181,55,55);
-	border:2px solid rgb(181, 55,55);
-	border-radius: 2px;
+	color: rgba(181,55,55, .9);
+	border:2px solid rgba(181,55,55, .9);
+	border-radius: 5px;
 	background-color: transparent;	
+	font-weight: bold;
 	width: 30%;
 	min-width: 150px;
 	transition: all .40s ease-in-out;
@@ -60,8 +58,8 @@
 
 #submit-td input:hover{
 	cursor: pointer;
-	background-color: rgb(181,55,55);
-	color: white;
+	background-color: rgba(181,55,55, .9);
+	color: #f4f4f4;
 }
 
 @media only screen and (max-width: 790px) {
@@ -71,7 +69,7 @@
 		flex-direction: column;
 	}
     
-    #map{
+    .maps{
     	width: 95%;
     	height: 300px;
     	padding-top: 20px;

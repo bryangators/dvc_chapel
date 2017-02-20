@@ -1,0 +1,29 @@
+#links-list{
+	list-style-type: none;
+	color: rgb(181,55,55);
+}
+#cfmmap{
+	min-height: 800px;
+	text-align: center;
+}
+
+#cfmmap iframe{
+	border:none;
+	pointer-events: none;	
+}
+
+.map-hint{
+	padding-bottom: 10px;
+	font-variant: small-caps;
+}
+
+#cfmmap img{
+	width: 100%;
+}
+
+@media only screen and (max-width: 790px) {
+    /* For mobile phones: */
+    #cfmmap{
+    	min-height: 100px;
+    }
+}

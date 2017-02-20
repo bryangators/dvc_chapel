@@ -1,7 +1,6 @@
-<!-- ///////////////////////////////////////////////////////
-//This is a template page to get started when making new  //
-//pages thoughout the site. Copy this code then edit copy //
-////////////////////////////////////////////////////////////
+<!-- /////////////////////////////////////////////////////////
+//This is the contact page with email form and map of church//
+/////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////
 //*********DO NOT MAKE CHANGES TO THIS FILE**************//
@@ -16,6 +15,7 @@
 <!-- java script files -->
 <script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
+<script src="js/resources.js"></script>
 </head>
 
 <body>
@@ -47,27 +47,40 @@
 							<h3 style="margin-top: 0px;">Address</h3>
 						</th>
 						<tr>
-							<td>Deltona Victory Chapel</td>
+							<td><a href="https://maps.google.com?q=1200+Deltona+blvd+Deltona+FL+32725" target="_blank">
+							Deltona Victory Chapel
+							</a></td>
 						</tr>
 						<tr>
-							<td>1200 Deltona Blvd</td>
+							<td><a href="https://maps.google.com?q=1200+Deltona+blvd+Deltona+FL+32725" target="_blank">
+							1200 Deltona Blvd
+							</a></td>
 						</tr>
 						<tr>
-							<td>Deltona, Fl 32725</td>
+							<td><a href="https://maps.google.com?q=1200+Deltona+blvd+Deltona+FL+32725" target="_blank">
+							Deltona, Fl 32725
+							</a></td>
 						</tr>
+						</a>
 						<th>
 							<h3>Email</h3>
 						</th>
 						<tr>
-							<td id="email-td">pastor@deltonavictorychapel.com</td>
+							<td id="email-td">
+							<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
+							pastor@deltonavictorychapel.com
+							</a></td>
 						</tr>
 						<th><h3>Phone</h3></th>
 						<tr>
-							<td>407-803-1682</td>
+							<td>
+							<a href="tel:(407)-803-1682">
+							407-803-1682
+							</a></td>
 						</tr>
 					</table>
 				</div>
-				<div id="map">
+				<div class="maps">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.060228620361!2d-81.27422498576702!3d28.89655827883471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e71122277e0759%3A0x18386072c9cb3ee3!2s1200+Deltona+Blvd%2C+Deltona%2C+FL+32725!5e0!3m2!1sen!2sus!4v1487512716268" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 			</div>
@@ -79,8 +92,8 @@
 			<div class="page center shadow-box">
 			<div id="contact-us">
 				<span class="title">Contact Us</span>
-				<form>
-				<table id="contact-form">
+				<form class="center" id="contact-form-form">
+				<table class="center" id="contact-form">
 					<tr>
 						<td>Name</td>
 					</tr>
