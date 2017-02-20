@@ -5,7 +5,7 @@ $( document ).ready(function(){
 
 
 	$( window ).resize(function() {
-  		if(!$('#menuBar').is(":visible") &&
+  		if(!$('#mobile_btn').is(":visible") &&
   			$(window).scrollTop() < 50){
       	
     	$('#logoImg').css('width', '300px');      
@@ -22,14 +22,17 @@ $( document ).ready(function(){
       //.log to determine when you want the 
       //nav bar to stick.  
       
-      if(!$('#menuBar').is(":visible")){
+      if(!$('#mobile_btn').is(":visible")){
+      	
       	if ($(window).scrollTop() > 50) {
     	$('#logoImg').css('width', '200px');
       
     	}
+	    
 	    if ($(window).scrollTop() < 50) {      
 	    	$('#logoImg').css('width', '300px');      
 	    }
+
       }else{
       	$('#logoImg').css('width', '200px');
       }
