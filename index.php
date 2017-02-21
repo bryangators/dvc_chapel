@@ -50,7 +50,7 @@
 
 		</section>
 
-		<section class="page_section" id="vid-section">
+		<section class="page_section mobile_hidden" id="vid-section">
 			<div class="center video-wrap" style="width: 100%; height: 100%;">
 				<video id="homeVid" width="100%" height="100%" poster="images/vid-snap.png" preload loop>
 					<source src="videos/worldCFM.mp4" type="video/mp4">

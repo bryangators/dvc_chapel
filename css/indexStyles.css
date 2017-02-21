@@ -148,18 +148,21 @@ Date: 1/26/2017
 	}
 
 	#vid-section{
-		width: 85%;
-		height:100%;
+		width: 99%;
+		
 	}
 
 	#btn-container{
 		font-size: 1em;
 	}
 
+	.mobile_hidden{
+    	display: none;
+    }
     
 }
 
 @media screen and (min-width: 790px) {
     /*For larger screens only*/
-
+    
 }
