@@ -6,6 +6,7 @@
 <!-- java script files -->
 <script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
+<script src="js/videoScript.js"></script>
 </head>
 
 <body>
@@ -27,26 +28,17 @@
 		
 		
 		<!-- Section 1 with prayer image -->
-		<section class="page_section">	
+		<section class="page_section">
+
 			<div class="bgImage">	
 			<img class="mobile_hidden" src="images/prayer111.png">
 			<img class="mobile_show mob_img" src="images/prayer1mob.png">
+
 			</div>	
+
 		</section>
 		
-		
-
-
-
-		
 		<section class="page_section">
-		<!-- prayer quote -->
-			<!-- <div style="height: 80px;"></div>
-			<div class="outer-container">
-			<div class="video-container">
-				<iframe style="margin:0 auto" width="853" height="480" src="https://www.youtube.com/embed/Pw5Bk6zeyYQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>				
-			</div>
-			</div> -->
 			<div class="flex flex-row flex-wrap center quote_wrap">
 			<div class="quote_box box">
 				<p>
@@ -55,6 +47,21 @@
 				<span style="padding-right: 3em;">- Mark 16:15</span>
 			</div>
 			</div>
+
+		</section>
+
+		<section class="page_section" id="vid-section">
+			<div class="center video-wrap" style="width: 100%; height: 100%;">
+				<video id="homeVid" width="100%" height="100%" poster="images/vid-snap.png" preload loop>
+					<source src="videos/worldCFM.mp4" type="video/mp4">
+				</video>
+				<div id="play-pause-btn">
+					<span id="btn-container">
+						<i id="play-btn" class="fa fa-play fa-4x" aria-hidden="true"></i>
+						<i id="pause-btn" class="fa fa-pause fa-4x" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>				
 		</section>
 
 		<section class="page_section">
@@ -71,7 +78,7 @@
 
 				<div class="text_box box">				
 				<img src="images/cross.png">			
-					<h2>Disciples</h2>
+					<h2>Making Disciples</h2>
 					<p>
 					Discipleship is the shaping of an individual's destiny. Each church in the New Testament copied Jesus' method of calling those whom God had chosen and training them through example and release. The book of Acts demonstrates the powerful impact that is possible to those who take Jesus' command and pattern seriously. Our vision is the restoration of the Biblical pattern of church growth. We believe that honest, direct and anointed preaching has always been used by God to shake the nations.			
 					</p>				

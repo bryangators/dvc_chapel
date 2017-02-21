@@ -4,11 +4,11 @@ Author: Bryan Kristofferson
 Date: 1/26/2017
 **************************************************/
 
-.page_section:nth-child(even){
+.page_section:nth-child(odd){
 	background-color:#efefef;
 }
 
-.page_section:nth-child(odd){
+.page_section:nth-child(even){
 	background-color: #f4f4f4;
 }
 
@@ -28,39 +28,56 @@ Date: 1/26/2017
 }
 /*End of section 1 styles*/
 
-/*Testimonial Section*/
-.outer-container{
-	margin:0 auto; 
-	width: 95%; 
+/*Video Section*/
+#vid-section {
+	max-height: 390px;
+
+}
+
+.video-wrap{
+	position: relative;
+}
+
+#play-pause-btn{
+	cursor: pointer;
+	position: absolute;
+	margin: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	width: 100%;
+  	height: 100%;
+	left: 0; 
+ 	right: 0; 
+  	margin-left: auto; 
+  	margin-right: auto; 
+  	text-align: center;  	
+}
+
+#btn-container{
+	width: 100%;
 	text-align: center;
+	font-size: 2em;
+	position: relative;
+    top: 32%;
+    transform: translateY(-32%);
+    color: rgba(255,255,255, 1);
 }
 
-.video-container {
-position: relative;
-padding-bottom: 56.25%;
-padding-top: 30px; height: 0; overflow: hidden;
+#homeVid{
+	cursor: pointer;
 }
 
-.video-container iframe,
-.video-container object,
-.video-container embed {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-width: 80%;
-height: 65%;
+#pause-btn{
+	display: none;
 }
-
 
 /*Styles for text boxes with images*/
 .box{		
-	margin:15px;
+	margin:10px;
 	padding: 10px;
 }
 
 .text_box{
-	width: 27%;	
+	width: 28%;	
 }
 
 .text_box h2{
@@ -129,6 +146,16 @@ height: 65%;
 	width: 90%;
 	height: 85%;
 	}
+
+	#vid-section{
+		width: 85%;
+		height:100%;
+	}
+
+	#btn-container{
+		font-size: 1em;
+	}
+
     
 }
 
