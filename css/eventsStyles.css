@@ -1,0 +1,46 @@
+.text{
+	width: 70%
+}
+
+/*****Event Description Box styling****/
+.event-container{
+	overflow:auto;
+	width: 80%;
+}
+
+#event_page_box{	
+	margin:0 auto;
+	width: 80%;
+	overflow: auto;
+}
+
+#event_page_img{
+	display: block;
+	float: left;
+	margin-top: 40px;
+	width: 40%;
+}
+
+#event_page_img img{	
+	max-width: 100%;
+	max-width: 100%;
+}
+
+#event_page_box table{
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+#event_page_box td{
+	vertical-align: top;
+	text-align: left;
+	padding: 4px;
+	min-width: 90px;
+	max-width: 350px;
+}
+
+#event_page_title{
+	font-size: 2.7em;	
+}
+
+/***End of Event Description Box styling***/

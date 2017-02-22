@@ -32,7 +32,7 @@
 		<div style="height: 40px;"></div>
 
 		<section>
-			<div class="center page shadow-box" style="min-height: 400px;">
+			<div class="resource-wrap center page shadow-box" style="min-height: 400px;">
 				<span class="title">Resources</span>
 			</div>
 		</section>
@@ -40,7 +40,7 @@
 		<div style="height: 40px;"></div>
 
 		<section>
-			<div style="text-align: center;" class="page center shadow-box">
+			<div style="text-align: center;" class="resource-wrap page center shadow-box">
 				<span class="title">Christian Fellowship Ministries Map</span>
 				<span class="mobile_hidden map-hint">(click to use map)</span>
 				<span class="mobile_show map-hint">(click to open map)</span>

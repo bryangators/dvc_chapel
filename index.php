@@ -104,6 +104,8 @@
 		<div style="height: 40px;"></div>
 		
 		<?php
+		//calwidth needs to be specified
+		$calWidth = '90%';
 		include_once('calendar.php');
 		?>
 		</section>

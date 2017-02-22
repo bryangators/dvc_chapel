@@ -1,7 +1,7 @@
 
 <!-- calendar -->
 
-<div id="calBox" class="flex center flex-wrap calendarDiv shadow-box mobile_hidden">
+<div style="width:<?php echo $calWidth ?>;" id="calBox" class="flex center flex-wrap calendarDiv shadow-box mobile_hidden">
 	<div style="width: 100%;"  class="mobile_hidden ">
 	<span class="cal_title center">Weekly Events</span> 
 	

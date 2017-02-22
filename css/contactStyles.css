@@ -1,14 +1,22 @@
-#contact-wrap{
+.contact-wrap{
+	width: 80%;
+}
+
+#contact-info-wrap{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	text-align: left;
 	padding-top: 20px;
+	width: 80%;
 }
 
 .maps{
 	width: 500px;
 	height: 300px;
+	background-image: url('../images/loading.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 #contact-info h3{
@@ -21,10 +29,12 @@
 
 #contact-us{
 	text-align: center;
+	width: 80%;
 }
 
 #contact-form{
 	text-align: left;
+	width: 90%;
 	
 }
 
@@ -65,7 +75,7 @@
 @media only screen and (max-width: 790px) {
     /* For mobile phones: */
 
-	#contact-wrap{
+	#contact-info-wrap{
 		flex-direction: column;
 	}
     
@@ -77,5 +87,9 @@
 
     #contact-info{
     	font-size: .9em;
+    }
+
+    #contact-form{
+    	width: 100%;
     }
 }

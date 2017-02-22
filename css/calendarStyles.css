@@ -1,13 +1,11 @@
 /*****Styles for Calendar******/
 .calendarDiv{
-	width: 90%;
-	max-width: 1600px;
+	max-width: 1280px;
 	border: 1px solid;
 	border-color: white;
 	color: rgb(51,51,51);
 	padding: 30px;
 	margin-bottom: 40px;
-	/*border-radius: 10px;*/
 	background-color: #f4f4f4;	
 }
 

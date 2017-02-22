@@ -29,7 +29,7 @@
 		
 		
 		<section id="about_sec">
-			<div id="stats" class="center shadow-box page">
+			<div id="stats" class="about_wrap center shadow-box page">
 				<span class="title">Christian Fellowship Ministries</span>
 				<ul >
 					<li class="first">
