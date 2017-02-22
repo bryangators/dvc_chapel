@@ -16,9 +16,8 @@ function playPause() {
 	
     if (myVideo.paused){
         myVideo.play();
-        $('#btn-container').hide();
         $('#play-btn').hide();      
-        // $('#pause-btn').show();
+        $('#pause-btn').show();
 		        
     }else{
         myVideo.pause();
@@ -33,7 +32,7 @@ function playPause() {
 //user plays video
 function activateOverlayToggle(){
 	var myVideo = document.getElementById("homeVid"); 
-	$('#play-pause-btn').mousemove(function(){
+	$('#play-pause-btn').mouseenter(function(){
 		if (!myVideo.paused){	
 			$('#pause-btn').show();	
 			$('#btn-container').fadeIn(600);
@@ -42,7 +41,7 @@ function activateOverlayToggle(){
 	
 	$('#play-pause-btn').mouseleave(function(){
 		if (!myVideo.paused){
-			$('#btn-container').fadeOut(600);
+			$('#btn-container').hide();
 		}
 	});
 	

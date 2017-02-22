@@ -65,9 +65,9 @@
 					<a href="events.php" class="dropbtn">Events&nbsp;
 					<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</a>
-					<div class="dropdown-content">
-					      <a href="#">Worship Service</a>
-					      <a href="#">The Choice</a>					      
+					<div id="event_links" class="dropdown-content">
+					     <!--  <a href="">Worship Service</a>
+					      <a href="">The Choice</a>	 -->				      
 					</div>
 					</li>
 

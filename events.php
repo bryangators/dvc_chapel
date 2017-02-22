@@ -16,6 +16,7 @@
 <!-- java script files -->
 <script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
+<script src="js/eventScript.js"></script>
 </head>
 
 <body>
@@ -49,111 +50,23 @@
 		
 
 		<!-- Spacer -->
-		<div style="height: 40px;"></div>
+		
 
 
 		<!-- Use sections -->
-		<section>
+		<section id="event_section">
 			<!-- Event box with event details -->
-			<div class="event-container center page shadow-box">		
-
-				<div id="event_page_box">			
-					<div id="event_page_img">
-						<a id="imgLink_page" target="_blank" >
-						<img id="dispImg_page" src="images/originalFlyer.png">
-						</a>
-					</div>
-
-					<table id="event_page_desc">		
-					<tr>
-					<td colspan="2" id="event_page_title">
-						Worship Service
-					</td>
-					</tr>
-					<tr>			
-					<td >
-						<b>When: </b>
-					</td>
-					<td id="eventTime_page">	
-					Wednesdays at 7pm<br>Sundays at 11am and 7pm				
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<b>About:</b>
-					</td>
-					<td colspan="1" id="about_page">
-					At Deltona Victory Chapel, our lively worship services are Pentecostal in nature, featuring music, praise, Bible-Based preaching, ministry and prayer for personal needs.						
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<b>Speaker(s):</b>
-					</td>
-					<td colspan="1" id="speaker_page">	
-					Pastor Joshua Shapiro				
-					</td>
-					</tr>
-					</table>					
-				</div>
-			</div>						
+				
 			
 		</section>
 		
+		
+		
+
+		
 		<div style="height: 40px;"></div>
-		
-
-		<section>
-			<!-- Event box with event details -->
-			<div class="event-container center page shadow-box">		
-
-				<div id="event_page_box">			
-					<div id="event_page_img">
-						<a id="imgLink_page" target="_blank" >
-						<img id="dispImg_page" src="images/choiceFlyer.png">
-						</a>
-					</div>
-
-					<table id="event_page_desc">		
-					<tr>
-					<td colspan="2" id="event_page_title">
-						The Choice
-					</td>
-					</tr>
-					<tr>			
-					<td >
-						<b>When: </b>
-					</td>
-					<td id="eventTime_page">
-					See Calendar for Scheduled Events				
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<b>About:</b>
-					</td>
-					<td colspan="1" id="about_page">						
-					</td>
-					</tr>
-					<tr>
-					<td>
-						<b>Speaker(s):</b>
-					</td>
-					<td colspan="1" id="speaker_page">					
-					</td>
-					</tr>
-					</table>					
-				</div>
-			</div>				
-		
-		</section>
-
-
-
 		<section class="page_section mobile_hidden">
 		<!-- Weekly Events Calendar -->
-		<div style="height: 40px;"></div>
-		
 		<?php
 		//cal width needs to be specified for width of calendar
 		$calWidth = '80%';
@@ -174,6 +87,5 @@
 	
 </body>
 
-</body>
 
 </html>

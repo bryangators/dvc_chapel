@@ -1,5 +1,5 @@
 .text{
-	width: 70%
+	width: 80%
 }
 
 /*****Event Description Box styling****/
@@ -44,3 +44,18 @@
 }
 
 /***End of Event Description Box styling***/
+
+@media only screen and (max-width: 790px) {
+    /* For mobile phones: */
+    #event_page_img{
+    	float: none;
+    	width: 90%;
+    	margin:0 auto;
+    	
+    }
+
+    #event_page_box{
+    	text-align: center;
+    }
+    
+}

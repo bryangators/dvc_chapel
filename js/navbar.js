@@ -1,8 +1,13 @@
+var nav_events = new Array();
+
+nav_events[0] = ['The Worship', 1];
+nav_events[1] = ['The Choice', 2];
 
 $( document ).ready(function(){
 	activateMenuBtn();
 	// console.log($( window ).width());
-
+	//makes dropdown menu for events
+	fillEventLinks();
 
 	$( window ).resize(function() {
   		if(!$('#mobile_btn').is(":visible") &&
@@ -41,8 +46,6 @@ $( document ).ready(function(){
 
 });
 
-
-
 function activateMenuBtn(){
 	$("#menuBar").on('click', function(e){
 	    $("#mobile_menu").slideDown("swing");
@@ -59,4 +62,21 @@ function activateCancelBtn(){
 	    activateMenuBtn();
 	    e.stopImmediatePropagation();
 	});
+}
+
+//function will make event links for dropdown box
+function fillEventLinks(){
+	var links_html = '';
+
+	for (var i = 0; i < nav_events.length; i++ ){
+		links_html += formatEventLinkHTML(nav_events[i]);
+	}
+
+	$('#event_links').html(links_html);
+
+}
+
+//formats event links with html
+function formatEventLinkHTML(event){
+	return '<a href="events.php#' + event[1] + '">' + event[0] + '</a>'
 }
