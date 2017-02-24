@@ -82,7 +82,7 @@
 	</table>
 
 	</div>
-	<div style="text-align: center;" class="center">(Scroll Right)</div>
+	<div style="text-align: center;" class="mobile_show center">(Scroll Right)</div>
 	</div>	
 	<!-- Event box with event details -->
 	<div style="text-align: center; clear: both;" class="mobile_column">
