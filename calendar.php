@@ -89,7 +89,7 @@
 	<!-- Event box with event details -->
 	<div style="text-align: center; clear: both;" class="mobile_column">
 		<!-- spacer -->
-		<div id="event_top" style="height: 50px;"></div>
+		<div class="mobile_hidden" id="event_top" style="height: 50px;"></div>
 
 
 		<div id="event_box">

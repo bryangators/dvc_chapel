@@ -22,6 +22,7 @@ window.onload = function(){
 	setTimeout(checkLoadStatus, 200);
 	
 	
+	
 };
 
 //recursive function waits until data is loaded from server to start calendar
@@ -74,9 +75,7 @@ function startCalendar(){
 		});
 	});
 
-
-	
-	
+		
 }
 
 function makeEventsClickable(){
@@ -89,6 +88,10 @@ function makeEventsClickable(){
 			event.fillEventBox(thisDay);		
 			showEvent();
 			e.stopImmediatePropagation();
+			$('html, body').animate({
+        scrollTop: $("#event_top").offset().top
+    }, 1000);
+          	
 		});
 }
 
@@ -212,8 +215,8 @@ Event_meta.prototype.fillEventBox = function(date){
 Event_meta.prototype.formatEventHTML = function() {
 	title = findEvent(this.event_id).title
 	time = moment(this.time, 'h:mm a').format('h:mm a');
-	return '<a  id="'+ this.id +'" href="#event_top">'+
-		   '<li id="1" class="event_links" href="#event_top">'+
+	return '<a class="ev_link"  id="'+ this.id +'">'+
+		   '<li id="1" class="event_links" >'+
 		   '<span id="eName">'+ title + '</span>'+
 		   '<br><span id="eTime"><i>' + time + '</i></span></li></a>';
 };

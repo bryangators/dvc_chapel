@@ -60,7 +60,7 @@
     /* For mobile phones: */
     #event_page_img{
     	float: none;
-    	width: 70%;
+    	width: 80%;
     	margin:0 auto;
     	
     }
@@ -76,8 +76,8 @@
 	    padding:20px 10px;
     }
 
-    #event_page_title{
-		font-size: 1.7em;	
+   	#event_page_title{
+		font-size: 1.8em;
 	}
 
 	.event-container{
@@ -87,8 +87,9 @@
 
 	#event_page_box table{
 		margin:0 auto;
-	padding-left: 0px;
-	padding-top: 10px;
+		width: 80%;
+		padding-left: 0px;
+		padding-top: 10px;
 	}
 
 }

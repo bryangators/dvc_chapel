@@ -64,7 +64,7 @@
 		
 
 		
-		<div style="height: 40px;"></div>
+		<div style="height: 20px;"></div>
 		<section class="page_section">
 		<!-- Weekly Events Calendar -->
 		<?php
@@ -78,7 +78,7 @@
 
 
 		
-		<div style="height: 40px;"></div>
+		<div style="height: 20px;"></div>
 		<?php
 		include_once('footer.php');
 		?>
