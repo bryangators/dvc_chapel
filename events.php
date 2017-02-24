@@ -39,7 +39,7 @@
 		<div style="height: 40px;"></div>
 
 		<section>
-			<div class="page center shadow-box event-container">
+			<div class="page_style center shadow-box event-container">
 				<span class="title">Events</span>
 				<p class="text center">
 					At Deltona Victory Chapel we offer a variety of ministries and events. Please have a look below to discover any events you might be interested in. Also have a look at our weekly calendar to keep up with scheduled events.
@@ -69,7 +69,7 @@
 		<!-- Weekly Events Calendar -->
 		<?php
 		//cal width needs to be specified for width of calendar
-		$calWidth = '80%';
+		$calWidth ;
 		include_once('calendar.php');
 		?>
 		</section>

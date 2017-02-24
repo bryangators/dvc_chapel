@@ -14,7 +14,7 @@ function makeEventBoxHTML(event){
 		}
 		
 		return 		'<div id="event-' + event.id + '" style="height: 40px;"></div>' +
-		            '<div class="event-container center page shadow-box">'+
+		            '<div class="event-container center page_style shadow-box">'+
 					'<div id="event_page_box">' + 
 					'<div id="event_page_img">' +
 					'<a id="imgLink_page" href="' + event.img_url + '" target="_blank" >' + 

@@ -2,6 +2,17 @@
 	width: 80%
 }
 
+#calBox{
+	width: 80%;
+}
+
+.page_style{
+	border: solid 1px;
+	border-color: white;	
+	background-color: #f4f4f4;
+	padding: 30px;
+}
+
 /*****Event Description Box styling****/
 .event-container{
 	overflow:auto;
@@ -49,13 +60,35 @@
     /* For mobile phones: */
     #event_page_img{
     	float: none;
-    	width: 90%;
+    	width: 70%;
     	margin:0 auto;
     	
     }
 
     #event_page_box{
     	text-align: center;
+    	width: 100%;
     }
-    
+
+    .page_style,
+    #calBox{
+	    width: 90%;
+	    padding:20px 10px;
+    }
+
+    #event_page_title{
+		font-size: 1.7em;	
+	}
+
+	.event-container{
+		overflow:auto;
+		font-size: .9em;
+	}
+
+	#event_page_box table{
+		margin:0 auto;
+	padding-left: 0px;
+	padding-top: 10px;
+	}
+
 }
