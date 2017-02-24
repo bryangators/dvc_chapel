@@ -187,12 +187,17 @@
     }
 
     #week{
-		padding-bottom: 10px;
+		padding-bottom: 30px;
 	}
 
     #week td{
     	min-width: 100px;
+    	box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 5px 5px rgba(0,0,0,0.23);
     }
+
+    #week td:hover{
+	box-shadow: 0 12px 12px rgba(0,0,0,0.19), 0 15px 15px rgba(0,0,0,0.23);
+}
 
 	.mobile_show{
     	display: inline-block;
