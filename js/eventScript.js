@@ -13,7 +13,7 @@ function makeEventBoxHTML(event){
 			when = 'See Calendar Below for Scheduled Events';
 		}
 		
-		return 		'<div id="' + event.id + '" style="height: 40px;"></div>' +
+		return 		'<div id="event-' + event.id + '" style="height: 40px;"></div>' +
 		            '<div class="event-container center page shadow-box">'+
 					'<div id="event_page_box">' + 
 					'<div id="event_page_img">' +
@@ -56,6 +56,10 @@ function fillEvents(events){
 	}
 
 	$('#event_section').html(events_html);
+	$('html, body').animate({
+    // window.location.hash is the div you want to scroll to as set by the link on the other page, and it even comes pre hashed ("#whatever").
+    scrollTop: $(window.location.hash).offset().top
+  	}, 2000);
 }
 
 //algorithm to sort array of events

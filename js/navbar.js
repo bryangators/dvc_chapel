@@ -79,7 +79,7 @@ function fillEventLinks(events){
 
 //formats event links with html
 function formatEventLinkHTML(event){
-	return '<a href="events.php#' + event.id + '">' + event.title + '</a>';
+	return '<a href="events.php#event-' + event.id + '">' + event.title + '</a>';
 }
 
 
