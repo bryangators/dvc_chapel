@@ -7,19 +7,38 @@ var today = new Date();
 var mDate = moment(today, moment.ISO_8601);
 var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 var active = false; //prevents multiple clicks during animation
-var events = new Array();
+var cal_events = new Array();
 var event_meta = new Array();
+var flag = new Array();
 
-$( document ).ready(function(){
-	startCalendar();	
-	// alert(mDate);
-})
+
+window.onload = function(){
+	flag[0] = false;
+	flag[1] = false;
+
+	ajaxDataFromDB('php/grabEvents.php', 'events');
+	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta');
+
+	setTimeout(checkLoadStatus, 200);
+	
+	
+};
+
+//recursive function waits until data is loaded from server to start calendar
+function checkLoadStatus(){
+
+	if (flag[0] && flag[1]) {
+		startCalendar();
+	}else{
+		setTimeout(checkLoadStatus, 200);
+	}
+}
 
 //function fills calendar
 // use this function along with
 //prev and next week in main js file
 function startCalendar(){
-
+	
 	fillCalendar();
 	
 	//forward click function
@@ -172,7 +191,8 @@ function Event_meta(id, event_id, repeating, start_date, end_date, week_day_num,
 	this.end_date = end_date;
 	this.week_day_num = week_day_num;
 	this.rpt_interval = rpt_interval;
-	this.time = moment(time, 'h:mm a').format('h:mm a');
+	this.time = time;	
+	
 }
 
 //prototype to fill evnent box with coresponding event
@@ -180,7 +200,7 @@ Event_meta.prototype.fillEventBox = function(date){
 	var day = moment(date);
 	var formatDay = day.format('dddd MM/DD/YYYY')
 	var event = findEvent(this.event_id);	
-	var time = this.time;
+	time = moment(this.time, 'h:mm a').format('h:mm a');
 	$('#imgLink').attr('href', event.img_url);
 	$('#dispImg').attr('src', event.img_url);
 	$('#event_title').text(event.title);
@@ -191,7 +211,7 @@ Event_meta.prototype.fillEventBox = function(date){
 
 Event_meta.prototype.formatEventHTML = function() {
 	title = findEvent(this.event_id).title
-	time = this.time;
+	time = moment(this.time, 'h:mm a').format('h:mm a');
 	return '<a  id="'+ this.id +'" href="#event_top">'+
 		   '<li id="1" class="event_links" href="#event_top">'+
 		   '<span id="eName">'+ title + '</span>'+
@@ -200,9 +220,9 @@ Event_meta.prototype.formatEventHTML = function() {
 
 //function to find events in array
 function findEvent(id){
-	for (var i = 0; i < events.length; i++) {
-		if(events[i].id == id){
-			return events[i];
+	for (var i = 0; i < cal_events.length; i++) {
+		if(cal_events[i].id == id){
+			return cal_events[i];
 		}
 	}
 }
@@ -228,7 +248,7 @@ function findDailyEvents(date){
 		// date format used for comparison
 		var this_date = moment(event_meta[i].start_date).utc().format("YYYY-MM-DD");
 		
-		if (event_meta[i].repeating){ //finds repeating events
+		if (event_meta[i].repeating == 1){ //finds repeating events
 			
 			if(event_meta[i].end_date == null){//for never ending events
 
@@ -279,8 +299,8 @@ function findDailyEvents(date){
 
 function sortResultsByTime(events){
 	events = events.sort(function(a,b){
-			var first = moment(a.time, "HH:mm a");
-			var second = moment(b.time, "HH:mm a");
+			var first = moment(a.time, "h:mm a");
+			var second = moment(b.time, "h:mm a");
 			
 			if(first.isAfter(second)){
 				return 1;
@@ -294,23 +314,47 @@ function sortResultsByTime(events){
 }
 	
 
-//need to clear html in each event section
+///////////////////////////////////////////////////////
+////Ajax function to connect to the database///////////
+//////////////////////////////////////////////////////
+
+function ajaxDataFromDB(url, dataType){
+        
+  $.ajax({
+      type: "POST",
+      url: url,
+      dataType: 'json',
+      success: function(data)
+      {
+      	
+        if (dataType == 'events'){
+        	
+        	var newEvents = new Array();
+          	for(var i = 0; i < data.length; i++){
+      			cal_events[i] = jQuery.extend(new Event(), data[i]);       			
+      		}
+      	
+      		flag[0] = true;
+      	} 
+     
+        if (dataType == 'event_meta'){
+        	var newMeta = new Array();
+          	for(var i = 0; i < data.length; i++){
+      			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
+      		} 
+      		
+      		flag[1] = true;
+      		
+        }
+        
+       
+      } //end of success
+     
+
+  });       
+            
+};
 
 
-// example objects for web page
-events[0] = new Event(1, 'Worship Service', 'images/originalFlyer.png', 'At Deltona Victory Chapel, our lively worship services are Pentecostal in nature, featuring music, praise, Bible-Based preaching, ministry and prayer for personal needs.',
- 'Pastor Josh Shapiro');
-events[1] = new Event(2, 'The Choice', 'images/choiceFlyer.png', '5 Special Services to turn your life around.',
- 'Pastor Paul Campo');
-
-
-event_meta[0] = new Event_meta(1, 1, true, "2016-02-01", "2017-03-01", 7, 'Weekly', '19:00:00' );
-event_meta[1] = new Event_meta(2, 1, true, "2016-02-01", "2017-03-01", 7, 'Weekly', '11:00:00' );
-event_meta[2] = new Event_meta(3, 1, true, "2016-02-01", null, 3, 'Weekly', '19:00:00');
-event_meta[3] = new Event_meta(4, 1, true, "2017-03-06", null, 7, 'Weekly', '19:00:00' );
-event_meta[4] = new Event_meta(5, 1, true, "2017-03-06", null, 7, 'Weekly', '11:00:00' );
-event_meta[5] = new Event_meta(6, 2, true, "2017-03-02", "2017-03-05", 0, 'Daily', '19:00:00' );
-event_meta[6] = new Event_meta(7, 2, false, "2017-03-05", null, 7, 'Weekly', '11:00:00' );
-event_meta[7] = new Event_meta(8, 2, false, "2017-03-05", null, 7, 'Weekly', '19:00:00' );
 
 

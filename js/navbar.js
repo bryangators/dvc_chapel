@@ -1,13 +1,10 @@
-var nav_events = new Array();
 
-nav_events[0] = ['The Worship', 1];
-nav_events[1] = ['The Choice', 2];
 
 $( document ).ready(function(){
 	activateMenuBtn();
 	// console.log($( window ).width());
 	//makes dropdown menu for events
-	fillEventLinks();
+	ajaxNavEvents();
 
 	$( window ).resize(function() {
   		if(!$('#mobile_btn').is(":visible") &&
@@ -65,11 +62,15 @@ function activateCancelBtn(){
 }
 
 //function will make event links for dropdown box
-function fillEventLinks(){
+function fillEventLinks(events){
 	var links_html = '';
 
-	for (var i = 0; i < nav_events.length; i++ ){
-		links_html += formatEventLinkHTML(nav_events[i]);
+	if(events.length > 1){
+		events.sort(compare);
+	}
+
+	for (var i = 0; i < events.length; i++ ){
+		links_html += formatEventLinkHTML(events[i]);
 	}
 
 	$('#event_links').html(links_html);
@@ -78,5 +79,47 @@ function fillEventLinks(){
 
 //formats event links with html
 function formatEventLinkHTML(event){
-	return '<a href="events.php#' + event[1] + '">' + event[0] + '</a>'
+	return '<a href="events.php#' + event.id + '">' + event.title + '</a>';
+}
+
+
+function ajaxNavEvents(){
+        
+  $.ajax({
+      type: "POST",
+      url: 'php/grabEvents.php',
+      dataType: 'json',
+      success: function(data)
+      {
+      	var events = new Array();
+
+      	for(var i = 0; i < data.length; i++){
+      		events[i] = jQuery.extend(new Event(), data[i]); 	
+      	}
+      	
+        fillEventLinks(events);
+        
+        
+      }, //end of success
+
+  });
+            
+};
+
+//Event object constuctor
+function Event(id, title, img_url, summary, speaker){
+	this.id = id;
+	this.title = title;
+	this.img_url = img_url;
+	this.summary = summary;
+	this.speaker = speaker;
+}
+
+//algorithm to sort array of events
+function compare(a,b) {
+  if (a.title < b.title)
+    return -1;
+  if (a.title > b.title)
+    return 1;
+  return 0;
 }

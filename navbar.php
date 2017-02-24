@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!-- Javascript file -->
+
 <script src="js/navbar.js"></script>
 
 
