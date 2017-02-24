@@ -157,6 +157,10 @@
 	font-size: 2.7em;	
 }
 
+#event_top{
+	height: 50px;
+}
+
 /***End of Event Description Box styling***/
 
 @media only screen and (max-width: 790px) {
@@ -199,7 +203,7 @@
     }
 
     #event_box{	
-    	font-size: .9em;
+    	font-size: .8em;
     	margin:0 auto;
 		width: 95%;
 		min-width: 250px;	
@@ -208,7 +212,7 @@
 
 	#event_box table{
 		padding:0;
-		width: 80%;
+		width: 70%;
 		margin:0 auto;
 	}
 
@@ -222,7 +226,7 @@
 		text-align: center;
 		margin:0 auto;
 		margin-top: 10px;
-		width: 80%;
+		width: 70%;
 	}
 
 	#event_img img{
@@ -230,9 +234,11 @@
 		margin: 0 auto;
 		height: 100%;
 		max-width: 100%;
-
 	}
 
+	#event_top{
+		height: 10px;
+	}
 
 
 }
