@@ -22,12 +22,19 @@
 	min-width: 750px;
 }
 
+#cal-head{
+	width: 90%;
+	border:none;
+	text-align: center;
+	padding: 10px 0px;
+}
+
 #week {	
 	border-collapse: separate;
 	width: 95%;
 	max-width: 1250px;
 	border-spacing: 7px 0px;
-	overflow: auto;
+	
 }
 
 #week th{
@@ -58,16 +65,6 @@
 
 #weekRow td:hover{
 	box-shadow: 0 20px 20px rgba(0,0,0,0.19), 0 15px 15px rgba(0,0,0,0.23);
-}
-
-.calHead{
-	border:none;
-	text-align: center;
-	padding: 10px;
-}
-
-.calHead i{
-	padding:0px 5px;	
 }
 
 #weekRow{
@@ -165,6 +162,32 @@
 @media only screen and (max-width: 790px) {
     /* For mobile phones */
 	
+	.calendarDiv{
+		padding-left: 5px;
+		padding-right: 5px;
+		width: 95%;
+	}
+
+    .week_scroll{
+    	overflow-x: scroll;
+    }
+
+    .cal_title{
+    	min-width: 150px;
+    	font-size: 1.4em;
+    }
+
+    #weekName{
+    	font-size: 1.2em;
+    }
+
+    #week{
+    	padding-bottom: 10px;
+    }
+
+    #week td{
+    	min-width: 100px;
+    }
 
 	.mobile_show{
     	display: inline-block;
@@ -205,9 +228,6 @@
 		padding-top: 10px;		
 	}	
 
-	.calendarDiv{
-		display: none;
-	}
 }
 
 @media screen and (min-width: 790px) {

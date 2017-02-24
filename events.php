@@ -65,7 +65,7 @@
 
 		
 		<div style="height: 40px;"></div>
-		<section class="page_section mobile_hidden">
+		<section class="page_section">
 		<!-- Weekly Events Calendar -->
 		<?php
 		//cal width needs to be specified for width of calendar

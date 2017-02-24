@@ -99,7 +99,7 @@
 		
 
 
-		<section class="page_section mobile_hidden">
+		<section class="page_section">
 		<!-- Weekly Events Calendar -->
 		<div style="height: 40px;"></div>
 		

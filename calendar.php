@@ -1,26 +1,29 @@
 
 <!-- calendar -->
 
-<div style="width:<?php echo $calWidth ?>;" id="calBox" class="flex center flex-wrap calendarDiv shadow-box mobile_hidden">
-	<div style="width: 100%;"  class="mobile_hidden ">
+<div style="width:<?php echo $calWidth ?>;" id="calBox" class="flex center flex-wrap calendarDiv shadow-box">
+	<div style="width: 100%;"  >
 	<span class="cal_title center">Weekly Events</span> 
 	
-	<table class="center" id="week" >	
-
-	<tr class="calHead">
+	<!-- Buttons and week name in calendar -->
+	<div id="cal-head" class="center calHead">	
 	<!-- Back button -->
-	<td style="text-align: left;">
+	<span style="float: left;">
 	<i id="back" class="fa fa-step-backward fa-2x calBtn" aria-hidden="true"></i>
-	</td>
+	</span>
 	<!-- Week Name -->
-	<td colspan="5" style="border:none; text-align: center;">
+	<span class="center">
 	<span id="weekName"></span>
-	</td>
+	</span>
 	<!-- forward button -->
-	<td style="text-align: right;">
+	<span style="float: right;">
 	<i id="fwd" class="fa fa-step-forward fa-2x calBtn" aria-hidden="true"></i>
-	</td>
-	</tr>
+	</span>
+	</div>
+	<!-- Days in calendar -->
+	<div class="week_scroll">
+	<table class="center" id="week" >	
+	
 	<tr style="height: 15px;"></tr>
 	<tr id="daysHead">
 		<th>Monday</th>
@@ -77,6 +80,7 @@
 
 	</tr>				
 	</table>
+	</div>
 	</div>	
 	<!-- Event box with event details -->
 	<div style="text-align: center; clear: both;" class="mobile_column">
