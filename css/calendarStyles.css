@@ -201,6 +201,7 @@
     	margin:0 auto;
 		width: 85%;
 		min-width: 250px;	
+		min-height: 300px;
 	}	
 
 	#event_title{
