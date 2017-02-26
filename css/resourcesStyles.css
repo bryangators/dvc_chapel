@@ -24,7 +24,7 @@
 	font-variant: small-caps;
 }
 
-#cfmmap img{
+.maps img{
 	width: 100%;
 }
 
@@ -33,4 +33,8 @@
     #cfmmap{
     	min-height: 100px;
     }
+
+    #cfmmap img{
+		background-image: none;
+	}
 }

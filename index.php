@@ -52,7 +52,7 @@ success:function(json){
 
 		</section>
 		
-		<section class="page_section">
+		<section style="background-color: #f4f4f4;">
 			<div class="flex flex-row flex-wrap center quote_wrap">
 			
 			<!-- bible verse api -->	
@@ -82,8 +82,8 @@ success:function(json){
 		</section>
 		<!-- End Calendar -->
 
-		<section class="page_section mobile_hidden" id="vid-section">
-			<div class="center video-wrap" style="width: 100%; height: 555px;">
+		<section style="background-color: #f4f4f4;" class="page_section mobile_hidden" id="vid-section">
+			<div class="video-wrap" style="width: 100%; height: 555px; text-align: center;">
 				<iframe src="https://player.vimeo.com/video/114940044?loop=1&color=b53737&title=0&byline=0&portrait=0" width="100%" height="70%" frameborder="0" ></iframe>
 				
 			</div>				
