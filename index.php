@@ -4,9 +4,23 @@
 <!-- style sheet -->
 <link rel="stylesheet" type="text/css" href="css/indexStyles.css?ver=1.0">
 <!-- java script files -->
-<script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
-<script src="js/videoScript.js"></script>
+
+<!-- script for daily bible verse -->
+<script>
+$(document).ready(function(){
+$.ajax({
+url:'https://dailyverses.net/getdailyverse.ashx?language=kjv&isdirect=1&url=' + window.location.hostname,
+dataType: 'JSONP',
+success:function(json){	
+	$(".loading-div").hide();
+	$(".dailyVersesWrapper").prepend(json.html);
+}
+});
+});
+</script>
+<!-- daily bible verse script -->
+
 </head>
 
 <body>
@@ -28,10 +42,10 @@
 		
 		
 		<!-- Section 1 with prayer image -->
-		<section class="page_section">
+		<section style="background-color: #f4f4f4;">
 
 			<div class="bgImage">	
-			<img class="mobile_hidden" src="images/prayer111.png">
+			<img class="mobile_hidden" src="images/prayer1111.png">
 			<img class="mobile_show mob_img" src="images/prayer1mob.png">
 
 			</div>	
@@ -40,27 +54,38 @@
 		
 		<section class="page_section">
 			<div class="flex flex-row flex-wrap center quote_wrap">
-			<div class="quote_box box">
-				<p>
-					He said to them, “Go into all the world and preach the gospel to all creation."
-				</p>
-				<span style="padding-right: 3em;">- Mark 16:15</span>
+			
+			<!-- bible verse api -->	
+			<span class="title">Verse of the Day</span>
+			<div class="quote_box box">		
+			<div class="loading-div" style="text-align: center;">
+				<img src="images/loading.gif" alt="Loading">
+			</div>
+			<div class="dailyVersesWrapper center">
+			<div class="dailyVerses linkToWebsite"></div>
 			</div>
 			</div>
-
+			
+			</div>
 		</section>
 
+		<section class="page_section">
+		<!-- Weekly Events Calendar -->
+		<div style="height: 40px;"></div>
+		
+		<?php
+		//calwidth needs to be specified
+		$calWidth = '90%';
+		include_once('calendar.php');
+		?>
+		<div style="height: 20px;"></div>
+		</section>
+		<!-- End Calendar -->
+
 		<section class="page_section mobile_hidden" id="vid-section">
-			<div class="center video-wrap" style="width: 100%; height: 100%;">
-				<video id="homeVid" width="100%" height="100%" poster="images/vid-snap.png" preload loop>
-					<source src="videos/worldCFM.mp4" type="video/mp4">
-				</video>
-				<div id="play-pause-btn">
-					<span id="btn-container">
-						<i id="play-btn" class="fa fa-play fa-4x" aria-hidden="true"></i>
-						<i id="pause-btn" class="fa fa-pause fa-4x" aria-hidden="true"></i>
-					</span>
-				</div>
+			<div class="center video-wrap" style="width: 100%; height: 555px;">
+				<iframe src="https://player.vimeo.com/video/114940044?loop=1&color=b53737&title=0&byline=0&portrait=0" width="100%" height="70%" frameborder="0" ></iframe>
+				
 			</div>				
 		</section>
 
@@ -93,23 +118,7 @@
 				</div>
 
 			</div>			
-		</section>
-
-		
-		
-
-
-		<section class="page_section">
-		<!-- Weekly Events Calendar -->
-		<div style="height: 40px;"></div>
-		
-		<?php
-		//calwidth needs to be specified
-		$calWidth = '90%';
-		include_once('calendar.php');
-		?>
-		</section>
-		<!-- End Calendar -->
+		</section>		
 	
 				
 		</div><!-- end of page content -->

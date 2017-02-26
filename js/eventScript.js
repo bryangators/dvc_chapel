@@ -55,19 +55,34 @@ function fillEvents(events){
 		events_html += makeEventBoxHTML(events[i]);
 	}
 	$('#event_section').html(events_html);
-	setTimeout(scrollToDiv, 100);
 	
-
-
+	setTimeout(function() {
+	if(window.location.hash.substring(0,1) == '#'){		
+	    scrollToDiv(window.location.hash); // scrolls to div if specified
+	}    
+    bindEventLinks();// binds function to nav event links
+	}, 400);
+	
 }
 
-function scrollToDiv(){
+function bindEventLinks(){
+
+	$('.event_link').on('click', function(){
+		scrollToDiv($(this).attr('href').substring(10));
+	});
+
+	
+}
+
+function scrollToDiv(location){
 	
 	$('html, body').animate({
     // window.location.hash is the div you want to scroll to as set by the link on the other page, and it even comes pre hashed ("#whatever").
     
-    scrollTop: $(window.location.hash).offset().top-70
+    scrollTop: $(location).offset().top-70
   	}, 1000);
+  	
+  	
 }
 
 //algorithm to sort array of events

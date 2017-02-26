@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="css/eventadminStyles.css">
 
 <!-- java script files -->
-<script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
 <script src="js/eventadmin.js"></script>
 </head>

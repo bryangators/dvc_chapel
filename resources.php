@@ -14,9 +14,12 @@
 <link rel="stylesheet" type="text/css" href="css/resourcesStyles.css">
 
 <!-- java script files -->
-<script src="resources/modernizr-1.5.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
 <script src="js/resources.js"></script>
+
+
+
+
 </head>
 
 <body>
@@ -34,6 +37,8 @@
 		<section>
 			<div class="resource-wrap center page shadow-box" style="min-height: 400px;">
 				<span class="title">Resources</span>
+			
+			
 			</div>
 		</section>
 

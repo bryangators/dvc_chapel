@@ -73,15 +73,14 @@ function fillEventLinks(events){
 		links_html += formatEventLinkHTML(events[i]);
 	}
 
-	$('#event_links').html(links_html);
+ 	$('#event_links_wrap').html(links_html); 
 
 }
 
 //formats event links with html
-function formatEventLinkHTML(event){
-	return '<a href="events.php#event-' + event.id + '">' + event.title + '</a>';
+function formatEventLinkHTML(event){  
+	return '<a class="event_link" href="events.php#event-' + event.id + '">' + event.title + '</a>';
 }
-
 
 function ajaxNavEvents(){
         

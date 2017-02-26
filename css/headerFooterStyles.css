@@ -114,10 +114,15 @@ a{
 	position: relative;
 	margin:0 auto;
 	max-width: 1250px;
+	
+}
+
+.flex-container{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
+
 
 .footer_services{
 	list-style-type: none;
@@ -190,7 +195,7 @@ a{
     
 
     /*footer mobile styles*/
-    #footerContent{
+    .flex-container{
     	flex-direction: column;
     	text-align: center;
     }
