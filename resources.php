@@ -42,7 +42,7 @@
 			</div>
 		</section>
 
-		<div style="height: 40px;"></div>
+		<div style="height: 20px;"></div>
 
 		<section>
 			<div style="text-align: center;" class="resource-wrap page center shadow-box">
@@ -59,7 +59,7 @@
 			
 		</section>
 
-		<div style="height: 40px;"></div>		
+		<div style="height: 20px;"></div>		
 		</div><!-- end of page content -->
 		
 		<?php

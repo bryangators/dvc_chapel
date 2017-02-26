@@ -74,6 +74,9 @@
 
 @media only screen and (max-width: 790px) {
     /* For mobile phones: */
+    .contact-wrap{
+	width: 70%;
+	}
 
 	#contact-info-wrap{
 		flex-direction: column;

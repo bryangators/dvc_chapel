@@ -37,4 +37,8 @@
     #cfmmap img{
 		background-image: none;
 	}
+
+	.resource-wrap{
+	width: 70%;
+	}
 }
