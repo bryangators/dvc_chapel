@@ -65,7 +65,7 @@
 }
 
 .about_wrap{
-	width: 70%;
+	width: 75%;
 }
 
 .about_title{
@@ -81,7 +81,7 @@
 }
 
 #stats{
-	padding:30px;
+	padding:20px;
 }
 
 #stats li:not(.first){

@@ -46,7 +46,7 @@
 	vertical-align: top;
 	text-align: left;
 	padding: 4px;
-	min-width: 90px;
+	min-width: 70px;
 	max-width: 350px;
 }
 
@@ -60,6 +60,7 @@
     /* For mobile phones: */
     #event_page_img{
     	float: none;
+
     	width: 80%;
     	margin:0 auto;
     	
@@ -72,7 +73,7 @@
 
     .page_style,
     #calBox{
-	    width: 90%;
+	    width: 85%;
 	    padding:20px 10px;
     }
 
@@ -86,10 +87,11 @@
 	}
 
 	#event_page_box table{
-		margin:0 auto;
+		margin:0 auto;		
 		width: 80%;
 		padding-left: 0px;
 		padding-top: 10px;
 	}
 
+	
 }
