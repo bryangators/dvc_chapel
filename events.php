@@ -77,7 +77,7 @@
 
 
 		
-		<div style="height: 20px;"></div>
+		
 		<?php
 		include_once('footer.php');
 		?>

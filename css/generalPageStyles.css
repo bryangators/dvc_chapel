@@ -44,10 +44,6 @@ section{
     flex-wrap: wrap;
 }
 
-.flex-column{
-
-}
-
 .center{
 	margin:0 auto;
 }
@@ -87,5 +83,12 @@ section{
 		font-size: 1.8em;
 		width: 95%;
 	}
+
+	.page{
+	padding: 20px;
+	border: solid 1px;
+	border-color: white;	
+	background-color: #f4f4f4;
+}
     
 }

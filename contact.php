@@ -35,7 +35,7 @@
 		/////////////////////////////////////////////////////// -->
 
 		<!-- Use sections -->
-		<div style="height: 50px"></div>
+		<div style="height: 40px"></div>
 		<section>
 			<div class="contact-wrap page center shadow-box">
 				<span class="title">Contact Information</span>
@@ -65,7 +65,7 @@
 							<h3>Email</h3>
 						</th>
 						<tr>
-							<td id="email-td">
+							<td colspan="3" id="email-td">
 							<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
 							pastor@deltonavictorychapel.com
 							</a></td>
@@ -77,6 +77,17 @@
 							407-803-1682
 							</a></td>
 						</tr>
+						<th><h3>Service Times</h3></th>
+						<tr>
+							<td>
+							Wednesdays:&nbsp;&nbsp;7:00 PM
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1">
+							Sundays:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11:00 AM and 7:00 PM
+							</td>
+						</tr>
 					</table>
 				</div>
 				<div class="maps">
@@ -87,7 +98,7 @@
 			</div>
 		</section>
 		
-		<div style="height: 40px"></div>
+		<div style="height: 20px"></div>
 		<section>
 			<div class="contact-wrap page center shadow-box">
 			<div id="contact-us" class="center">
@@ -134,7 +145,7 @@
 			</div>
 			</div>
 		</section>	
-		<div style="height: 40px"></div>
+		<div style="height: 20px"></div>
 
 
 

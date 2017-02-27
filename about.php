@@ -45,7 +45,7 @@
 					</li>
 				</ul>
 			</div>
-				
+			<div style="height: 20px;"></div>	
 			<div class="about_wrap center shadow-box page">
 
 				<span class="title">Our History</span>
@@ -62,7 +62,7 @@
 			</div>
 
 
-		<div style="height: 40px;"></div>
+		<div style="height: 20px;"></div>
 		</section>
 
 		<!-- Page Content goes here -->
