@@ -1,4 +1,8 @@
 <!-- Contact page for Deltona Victory Chapel -->
+<?php
+$msg = "";
+include('php/mail.php');
+?>
 
 <!DOCTYPE html>
 <html>
@@ -97,14 +101,14 @@
 			<div class="contact-wrap page center shadow-box">
 			<div id="contact-us" class="center">
 				<span class="title">Contact Us</span>
-				<form class="center" id="contact-form-form">
+				<form action="" method="post" class="center" id="contact-form-form">
 				<table class="center" id="contact-form">
 					<tr>
 						<td>Name</td>
 					</tr>
 					<tr>
 					<td>
-						<input type="name" name="name">
+						<input type="text" name="name">
 					</td>
 					</tr>
 					<tr>
@@ -112,7 +116,7 @@
 					</tr>
 					<tr>
 					<td>
-						<input type="phoned" name="phone">
+						<input type="phone" name="phone">
 					</td>
 					</tr>
 					<tr>
@@ -127,12 +131,15 @@
 						<td>Message</td>
 					</tr>
 					<tr>
-						<td><textarea rows="10"></textarea></td>
+						<td><textarea name="message" rows="10"></textarea></td>
 					</tr>
 					<tr>
 					<td id="submit-td">
-						<input id="send-btn" type="submit" value="Send Message">
+						<input id="send-btn" type="submit" name="submit" value="Send Message">
 					</td>
+					</tr>
+					<tr>
+						<td><?php echo $msg ?></td>
 					</tr>
 				</table>
 				</form>
