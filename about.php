@@ -1,3 +1,4 @@
+<!-- About page for Deltona Victory Chapel -->
 <!DOCTYPE html>
 <html>
 <head>

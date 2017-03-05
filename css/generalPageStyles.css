@@ -1,27 +1,36 @@
+/*****************************************************************
+**This page contains general styles that can be quickly **********
+**applied and changed throughout the website from one place*******
+******************************************************************/
 html,
-body{
+body
+{
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	padding:0;
 	background-color: #DBDBDB;	
 	height: 100%;
 	width: 100%;
-	background-repeat: round;
 }
 
-section{	
+/*sections used throughout site*/
+section
+{	
 	width: 100%;
 	max-width: 1280px;
 	margin:0 auto;	
 }
 
-#wrapper {
+/*wrapper for each pages content*/
+#wrapper 
+{
 	min-height:100%;
-	position:relative;
-	
+	position:relative;	
 }
 
-.flex{
+/*flexbox code*/
+.flex
+{
 	margin:0 auto;
 	/*Flexbox code for different browsers*/
 	display: -webkit-flex;
@@ -32,34 +41,45 @@ section{
 	justify-content: center;	
 }
 
-.flex-row{
+.flex-row
+{
 	-webkit-flex-direction: row; 
     -ms-flex-direction: row; 
     flex-direction: row;
 }
 
-.flex-wrap{
+.flex-wrap
+{
 	-webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+/*end of flexbox code*/
 
-.center{
+/*class to center content*/
+.center
+{
 	margin:0 auto;
 }
 
-.shadow-box{
+/*shadow*/
+.shadow-box
+{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-.page{
+/*creates page effect*/
+.page
+{
 	padding: 30px;
 	border: solid 1px;
-	border-color: white;	
+	border-color: #f4f4f4;	
 	background-color: #f4f4f4;
 }
 
-.title{
+/*style for page headings*/
+.title
+{
 	text-align: center;
 	width: 85%;
 	display: block;
@@ -71,7 +91,9 @@ section{
 	padding: 10px;
 }
 
-@media only screen and (max-width: 790px) {
+/*General style adjustments for mobile displays*/
+@media only screen and (max-width: 790px) 
+{
     /* For mobile phones: */
 
 	#content,
@@ -84,11 +106,12 @@ section{
 		width: 95%;
 	}
 
-	.page{
-	padding: 20px;
-	border: solid 1px;
-	border-color: white;	
-	background-color: #f4f4f4;
-}
+	.page
+	{
+		padding: 20px;
+		border: solid 1px;
+		border-color: white;	
+		background-color: #f4f4f4;
+	}
     
 }

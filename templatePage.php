@@ -11,7 +11,7 @@
 <html>
 <head>
 <!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/linkYourCSSHere">
+<link href="css/loginStyles.css" rel="stylesheet" type="text/css">
 
 <!-- java script files -->
 <script src="resources/jquery-3.1.1.min.js"></script>

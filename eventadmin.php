@@ -1,11 +1,9 @@
-<!-- ///////////////////////////////////////////////////////
-//This is a template page to get started when making new  //
-//pages thoughout the site. Copy this code then edit copy //
-////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////
-//*********DO NOT MAKE CHANGES TO THIS FILE**************//
-////////////////////////////////////////////////////////// -->
+<?php
+//login protection will redirect to login screen if user is not logged in
+include('../../dvc_private/loginProtect.php');
+?>
+
 
 <!DOCTYPE html>
 <html>

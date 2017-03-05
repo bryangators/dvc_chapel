@@ -1,3 +1,5 @@
+<!-- Index page for Deltona Victory Chapel -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,8 +47,8 @@ success:function(json){
 		<section style="background-color: #f4f4f4;">
 
 			<div class="bgImage">	
-			<img class="mobile_hidden" src="images/prayer1111.png">
-			<img class="mobile_show mob_img" src="images/prayer1mob.png">
+			<img class="mobile_hidden" src="images/prayer.png">
+			<img class="mobile_show mob_img" src="images/prayermob.png">
 
 			</div>	
 
