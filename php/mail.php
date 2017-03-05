@@ -2,7 +2,7 @@
 
 if (isset($_POST['submit'])) {
 	//email to recipient of message
-	$to = "bryangators510@gmail.com";
+	$to = "bryan@bryankristofferson.com";
 
 	$from = $_POST['email'];
 	$name = $_POST['name'];
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
  //    $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
  //    $headers .= "X-Priority: 3\r\n";
  //    $headers .= "X-Mailer: PHP". phpversion() ."\r\n"  
-	$headers = "From: bryan@bryankristofferson.com";
+	$headers = "From: ". $from . "\r\n";
 
 	mail($to, $subject, $message, $headers);
 	// mail($from, $subject2, $message2, $headers2);
