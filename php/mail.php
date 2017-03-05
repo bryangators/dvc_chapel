@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 
 	$msg = "Thank You! We will be in contact shortly.";
 
-	echo "<script>alert('test');</script>";
+	echo "<script>alert" . $message . " " . $to . ";</script>";
 
 }
 
