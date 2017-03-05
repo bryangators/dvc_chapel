@@ -1,6 +1,6 @@
 <?php 
-require_once 'php/authorize.php';
 session_start();
+require_once 'php/authorize.php';
 $userid = null;
 $userPassword = null;
 $msg = '';

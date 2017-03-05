@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 
 // db object from outside public dir tree
 include('../../dvc_private/dbObject.php');

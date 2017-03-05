@@ -1,4 +1,3 @@
-
 <?php
 //login protection will redirect to login screen if user is not logged in
 include('../../dvc_private/loginProtect.php');
