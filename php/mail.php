@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 	// headers for confirmation email
-	$headers2 = "From: " . $to . "\r\n";
+	$headers2 =  "From: " . $to . "\r\n";
 	$headers2 .= "Reply-To: " . $to . "\r\n";
 	$headers2 .= 'MIME-Version: 1.0' . "\r\n";
 	$headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";		
@@ -39,15 +39,19 @@ if (isset($_POST['submit'])) {
 	//confirmation message context
 	$message2 = '<html><body>';
 	$message2 .= "<b>" .$name . ",</b><br>We have received your email. We will get back to you as soon as possible.<br> Thank you and God Bless." .	"<br><hr><br>" . "<b>Original Message:</b><br><p>" . $_POST['message'] . "</p>";
-	$message .= '</body></html>';
-	//message sent to receiver
-	mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com'); 
+	$message2 .= '</body></html>';
 
+	//message sent to receiver
+	if(mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com')){
+		$msg = "Thank You! We will be in contact shortly.";	
+	}else{
+		$msg = "Something went wrong we were unable to send your message. Please make sure you entered a valid email address.";
+	}
 	//confirmation message sent to sender
 	mail($from, $subject2, $message2, $headers2, "-fcontact@bryankristofferson.com");
 	
 	//website confirmation message
-	$msg = "Thank You! We will be in contact shortly.";
+	
 
 
 }
