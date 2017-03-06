@@ -11,9 +11,10 @@ if (isset($_POST['submit'])) {
 	$subject = "Message Received - Deltona Victory Chapel"
 
 	$message = "Message from: " . $name . "\n" . "Phone: " . 
-				$phone . "\nEmail: " . $from . "\n\n" . 
+				$phone . "\n" . "Email: " . $from . "\n\n" . 
 				$_POST['message'];
-	$message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .	"\n\n". "Original Message: " . "\n\nOriginal Message: " .   $_POST['message'];
+				
+	$message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .	"\n\n". "Original Message: " . $_POST['message'];
 
 	$headers = "From: " . $from . "\r\n";
 	$headers .= "Reply-To: " . $from . "\r\n";
