@@ -108,7 +108,7 @@ include('php/mail.php');
 					</tr>
 					<tr>
 					<td>
-						<input type="text" name="name">
+						<input type="text" name="name" value=<?php echo "'".$_POST['name']."'"; ?>>
 					</td>
 					</tr>
 					<tr>
@@ -116,7 +116,7 @@ include('php/mail.php');
 					</tr>
 					<tr>
 					<td>
-						<input type="phone" name="phone">
+						<input type="phone" name="phone" value=<?php echo "'".$_POST['phone']."'"; ?>>
 					</td>
 					</tr>
 					<tr>
@@ -124,14 +124,14 @@ include('php/mail.php');
 					</tr>
 					<tr>
 					<td>
-						<input type="email" name="email">
+						<input type="email" name="email" value=<?php echo "'".$_POST['email']."'"; ?> >
 					</td>
 					</tr>
 					<tr>
 						<td>Message</td>
 					</tr>
 					<tr>
-						<td><textarea name="message" rows="10"></textarea></td>
+						<td><textarea name="message" rows="10"><?php echo $_POST['message']; ?></textarea></td>
 					</tr>
 					<tr>
 					<td id="submit-td">
