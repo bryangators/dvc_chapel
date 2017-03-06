@@ -6,7 +6,7 @@
 if (isset($_POST['submit'])) {
 	
 	//message destination
-	$to = "bryan@bryankristofferson.com";
+	$to = "bryan@bryankristofferson.com"; // this will change to pastors email address after setup is complete
 
 	//fields from contact form
 	$from = $_POST['email'];
@@ -42,12 +42,14 @@ if (isset($_POST['submit'])) {
 	$message2 .= '</body></html>';
 
 	//message sent to receiver
+	//change fifth parameter to pastors email domain
 	if(mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com')){
 		$msg = "Thank You! We will be in contact shortly.";	
 	}else{
 		$msg = "Something went wrong we were unable to send your message. Please make sure you entered a valid email address.";
 	}
 	//confirmation message sent to sender
+	//change fifth parameter to pastors email domain
 	mail($from, $subject2, $message2, $headers2, "-fcontact@bryankristofferson.com");
 	
 	//website confirmation message
