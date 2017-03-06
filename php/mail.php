@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	// $headers .= "Return-Path: " . $from . "\r\n";
 	// $headers .= "CC: " . $to . "\r\n";
 	// $headers .= "BCC: " . $to . "\r\n";
-	$headers = 'From: -f'. $from . " " .
+	$headers = 'From: '. $from . " " .
 	'Reply-To: '. $from . " " .
 	'X-Mailer: PHP/' . phpversion();
 
