@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 
 	$headers = "From: " . $from . "\r\n";
 	$headers .= "Reply-To: " . $from . "\r\n";
-	$headers .= "Return-Path: " . $to . "\r\n";
+	$headers .= "Return-Path: " . $from . "\r\n";
 	$headers .= "CC: " . $to . "\r\n";
 	$headers .= "BCC: " . $to . "\r\n";
 
