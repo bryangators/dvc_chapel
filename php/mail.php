@@ -8,12 +8,12 @@ if (isset($_POST['submit'])) {
 	$phone = $_POST['phone'];
 
 	$subject = "Contact Form - Deltona Victory Chapel";
-	$subject = "Message Received - Deltona Victory Chapel"
+	$subject = "Message Received - Deltona Victory Chapel";
 
 	$message = "Message from: " . $name . "\n" . "Phone: " . 
 				$phone . "\n" . "Email: " . $from . "\n\n" . 
 				$_POST['message'];
-				
+
 	$message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .	"\n\n". "Original Message: " . $_POST['message'];
 
 	$headers = "From: " . $from . "\r\n";
