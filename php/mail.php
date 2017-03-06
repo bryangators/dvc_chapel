@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
 	//message sent from page to receiver
 	$message = '<html><body>';
-	$message .= "<h1><b>Message from:</b> " . $name . "</h1>" . "<b>Phone: " . 
+	$message .= "<h1>Message Received - Deltona Victory Chapel</h1><b>Message from:</b> " . $name . "<b>Phone: " . 
 				$phone . "</b><br>" . "<b>Email: " . $from . "</b><br><hr><p>" . 
 				$_POST['message'];
 	$message .= '</body></html>' . "</p>";
