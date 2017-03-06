@@ -7,21 +7,24 @@ if (isset($_POST['submit'])) {
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
 
-	$subject = "Contact Form Message - Deltona Victory Chapel";
-	
-	$message = "Message from: " . $name . "\n" . "Phone: " . $phone . "\n\n" .
-			   $_POST['message'];
-	// $message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .
-	// 			"\n\n". "Original Message: " . "\n" .   $_POST['message'];
+	$subject = "Contact Form - Deltona Victory Chapel";
+	$subject = "Message Received - Deltona Victory Chapel"
+
+	$message = "Message from: " . $name . "\n" . "Phone: " . 
+				$phone . "\nEmail: " . $from . "\n\n" . 
+				$_POST['message'];
+	$message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .	"\n\n". "Original Message: " . "\n\nOriginal Message: " .   $_POST['message'];
 
 	$headers = "From: " . $from . "\r\n";
 	$headers .= "Reply-To: " . $from . "\r\n";
-	// $headers .= "Return-Path: " . $to . "\r\n";
-		
+
+	$headers2 = "From: " . $to . "\r\n";
+	$headers2 .= "Reply-To: " . $to . "\r\n";
+			
 	mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com'); 
 
-	// mail($to, $subject, $message, $headers, "-fbryan@bryankristofferson.com");
-	// mail($from, $subject, $message, $headers);
+	mail($from, $subject2, $message2, $headers2, "-fcontact@bryankristofferson.com");
+	
 
 	$msg = "Thank You! We will be in contact shortly.";
 
