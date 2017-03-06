@@ -2,8 +2,7 @@
 
 if (isset($_POST['submit'])) {
 	//email to recipient of message
-	$to = "bryangators510@gmail.com";
-	$host = "bryan@bryankristofferson.com";
+	$to = "bryan@bryankristofferson.com";
 	$from = $_POST['email'];
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
@@ -15,11 +14,11 @@ if (isset($_POST['submit'])) {
 	// $message2 = $name . " your email was sent. We will get back to you as soon as possible. Thank you and God Bless." .
 	// 			"\n\n". "Original Message: " . "\n" .   $_POST['message'];
 
-	$headers = "From: " . $host . "\r\n";
-	$headers .= "Reply-To: " . $host . "\r\n";
-	$headers .= "Return-Path: " . $host . "\r\n";
+	$headers = "From: " . $from . "\r\n";
+	$headers .= "Reply-To: " . $from . "\r\n";
+	// $headers .= "Return-Path: " . $to . "\r\n";
 		
-	mail($host, $subject, $message, $headers, '-fbryan@bryankristofferson.com'); 
+	mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com'); 
 
 	// mail($to, $subject, $message, $headers, "-fbryan@bryankristofferson.com");
 	// mail($from, $subject, $message, $headers);
