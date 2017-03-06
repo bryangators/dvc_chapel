@@ -43,14 +43,14 @@ if (isset($_POST['submit'])) {
 
 	//message sent to receiver
 	//change fifth parameter to pastors email domain
-	if(mail($to, $subject, $message, $headers, '-fcontact@bryankristofferson.com')){
+	if(mail($to, $subject, $message, $headers, '-f$from')){
 		$msg = "Thank You! We will be in contact shortly.";	
 	}else{
 		$msg = "Something went wrong we were unable to send your message. Please make sure you entered a valid email address.";
 	}
 	//confirmation message sent to sender
 	//change fifth parameter to pastors email domain
-	mail($from, $subject2, $message2, $headers2, "-fcontact@bryankristofferson.com");
+	mail($from, $subject2, $message2, $headers2, "-f$to");
 	
 	//website confirmation message
 	
