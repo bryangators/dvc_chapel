@@ -41,8 +41,11 @@ if (isset($_POST['submit'])) {
 	$message2 .= "<b>" .$name . ",</b><br>We have received your email. We will get back to you as soon as possible.<br> Thank you and God Bless." .	"<br><hr><br>" . "<b>Original Message:</b><br><p>" . $_POST['message'] . "</p>";
 	$message2 .= '</body></html>';
 
+
+
 	//message sent to receiver checks if sent and displays message
 	if(mail($to, $subject, $message, $headers, '-fbryan@bryankristofferson.com')){
+		mail($from, $subject2, $message2, $headers2, '-fbryan@bryankristofferson.com');
 		$msg = "Thank You! We will be in contact shortly.";	
 		$_POST = array();
 		$from = "";
@@ -52,7 +55,7 @@ if (isset($_POST['submit'])) {
 		$msg = "Something went wrong we were unable to send your message. Please try again.";
 	}
 	//confirmation message sent to sender
-	mail($from, $subject2, $message2, $headers2, '-fbryan@bryankristofferson.com');
+	
 	
 	
 	
