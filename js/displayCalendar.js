@@ -9,31 +9,21 @@ var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 var active = false; //prevents multiple clicks during animation
 var cal_events = new Array();
 var event_meta = new Array();
-var flag = new Array();
+
 
 
 window.onload = function(){
-	flag[0] = false;
-	flag[1] = false;
-
+	
 	ajaxDataFromDB('php/grabEvents.php', 'events');
 	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta');
 
-	setTimeout(checkLoadStatus, 200);
-	
-	
-	
+	// when ajax request complete calendar is loaded
+	$(document).ajaxStop(function () {
+      startCalendar();      
+	});	
 };
 
-//recursive function waits until data is loaded from server to start calendar
-function checkLoadStatus(){
 
-	if (flag[0] && flag[1]) {
-		startCalendar();
-	}else{
-		setTimeout(checkLoadStatus, 200);
-	}
-}
 
 //function fills calendar
 // use this function along with
@@ -337,7 +327,7 @@ function ajaxDataFromDB(url, dataType){
       			cal_events[i] = jQuery.extend(new Event(), data[i]);       			
       		}
       	
-      		flag[0] = true;
+      		
       	} 
      
         if (dataType == 'event_meta'){
@@ -346,7 +336,7 @@ function ajaxDataFromDB(url, dataType){
       			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
       		} 
       		
-      		flag[1] = true;
+      		
       		
         }
         

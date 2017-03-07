@@ -96,7 +96,7 @@
 	
 		<div id="event_img">
 			<a id="imgLink" target="_blank" >
-			<img id="dispImg" src="images/originalFlyer.png">
+			<img id="dispImg" src="">
 			</a>
 		</div>
 

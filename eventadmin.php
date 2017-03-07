@@ -103,116 +103,12 @@ include('php/uploadImage.php');
 			</div>
 		</section>
 		<div style="height: 40px"></div>
+		
+		<?php
+		include_once('modal.php');
+		?>	
+
 			
-
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-
-			
-			  <!-- Modal content -->
-			  <div class="modal-content">
-			   <!-- Modal header -->
-			  	<div class="modal-header">
-			    <span class="close">&times;</span>
-			    <h3>Event Scheduler</h3>
-		  		</div>
-
-		  		<!-- Modal Body -->
-		  		<div class="modal-body">
-		  		<form id="event_form">
-			    <table id="event_scheduler">
-			    <tr>
-					<td>
-					Recurring Event?
-					</td>
-					<td>
-					<input id="r1" class="radio" type="radio" name="choice" value="Yes">Yes
-					<input id="r2" class="radio" type="radio" name="choice" value="No" checked="checked">No
-					</td>
-				</tr>
-				
-				<tr>
-					<td>
-					Event Time:
-					</td>
-					<td>
-					<input style="width: 130px;" type="Time" name="ev_time">
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-					Date
-					</td>
-					<td>
-					<input style="width: 130px;" type="Date" name="ev_time">
-					</td>
-				</tr>
-				
-				<tr class="rpt_input">
-					<td>
-					Frequency:
-					</td>
-					<td>
-					<select id="freq_sel" style="width: 144px;">
-						<option value="daily">Daily</option>
-						<option value="weekly">Weekly</option>
-						<option value="monthly">Monthly</option>
-					</select>
-					</td>
-				</tr>
-
-				<tr class="wday_input">
-					<td>
-					Which Day?
-					</td>
-					<td>
-					<select id="wDays" style="width: 144px;">
-						<option value="1">Mondays</option>
-						<option value="2">Tuesdays</option>
-						<option value="3">Wednesdays</option>
-						<option value="4">Thursdays</option>
-						<option value="5">Fridays</option>
-						<option value="6">Saturdays</option>
-						<option value="7">Sundays</option>
-					</select>
-					</td>
-				</tr>
-
-				<tr class="rpt_input">
-					<td>
-						Til When:
-					</td>
-					<td>
-						<input id="end_date" style="width: 130px;" type="Date" name="end_date">
-					</td>					
-				</tr>
-				<tr class="rpt_input">
-					<td></td>			
-					<td>	
-						<div>
-						<input style="display: inline; width: 15%;" type="checkbox" id="chk_box" value="first_checkbox">			
-						<label style="display: inline; font-size: 0.8em; vertical-align: top;" for="chk_box">Does not end...</label>
-						</div>	
-					</td>
-				</tr>
-				</table>
-				</form>
-				</div>
-				<!-- end of modal body -->
-
-				<!-- modal footer -->
-				<div class="modal-footer">
-			    	<span class="modal_buttons">
-			    		<button id="add_meta_data">Add</button>
-			    		<button onclick="closeAndClearModal();" id="cancel_meta_data">Cancel</button>
-			    	</span>
-			  	</div> 
-			  	<!-- end of modal footer -->
-			  </div>
-
-			</div>
-			<!-- End of Modal -->
 
 
 

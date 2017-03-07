@@ -55,11 +55,6 @@ if (isset($_POST['submit'])) {
 		$msg = "Something went wrong we were unable to send your message. Please try again.";
 	}
 	//confirmation message sent to sender
-	
-	
-	
-	
-
 
 }
 
