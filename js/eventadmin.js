@@ -105,6 +105,7 @@ function validate_file(upload_file){
 
 	if(errors.length != 0){
 		openModal("Error", errors, "ok", closeModal, null);
+		clearImage();
 	}
 	
 }
