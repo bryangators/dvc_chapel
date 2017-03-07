@@ -99,6 +99,24 @@ button{
 	margin:0 auto;
 }
 
+#save_event{
+    color: rgba(181,55,55, .9);
+    border:2px solid rgba(181,55,55, .9);
+    border-radius: 5px;
+    background-color: transparent;  
+    font-weight: bold;
+    width: 30%;
+    min-width: 150px;
+    transition: all .40s ease-in-out;
+    -webkit-transition: all .40s ease-in-out;
+}
+
+#save_event:hover{
+    cursor: pointer;
+    background-color: rgba(181,55,55, .9);
+    color: #f4f4f4;
+}
+
 /*Modal styling*/
 
 /* The Modal (background) */

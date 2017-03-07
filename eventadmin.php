@@ -1,6 +1,7 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
 include('../../dvc_private/loginProtect.php');
+include('php/uploadImage.php');
 ?>
 
 
@@ -39,6 +40,7 @@ include('../../dvc_private/loginProtect.php');
 			<div id="table_wrap" class="center">
 			<span class="admin_title">New Event</span>
 			<br>
+			<form action="" method="post" class="center" id="event" enctype="multipart/form-data">
 			<table id="add_event" >
 			<tr>
 				<td>
@@ -57,7 +59,7 @@ include('../../dvc_private/loginProtect.php');
 			</tr>
 			<tr>
 				<td>
-					<input type="file" name="file" id="file" class="inputfile" />
+					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">
 					
 				</td>
 			</tr>
@@ -88,12 +90,14 @@ include('../../dvc_private/loginProtect.php');
 				<br>
 				<button id="add_event_meta">Schedule Event</button>
 				<br>
-				<div id="empty_msg">*Currently no scheduled times exist.</div>
-							
+				<div id="empty_msg">*Currently no scheduled times exist.</div>							
 			</div>
 			<span style="text-align: center;" class="form_btns">
-				<button>Save</button>			
+				<input id="save_event" type="submit" name="submit" value="Save">
+				<br>
+				<b><?php echo $msg; ?></b>	
 			</span>
+			</form>
 			</div>
 			
 			</div>
