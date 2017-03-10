@@ -9,20 +9,19 @@ if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
 }
 
-$event = json_decode($_POST['myString'], true);
-$title = $event['title']; 
-$img_url = $event['img_url'];
-$summary = $event['summary'];
-$speaker = $event['speaker'];
+$event_meta = json_decode($_POST['myString'], true);
+//need to access event meta from ajax post
 
 
+
+
+//need sql command to add event_meta to db for each in array
 $sql = "INSERT INTO event (title, img_url, summary, speaker) 
-				VALUES ('$title','$img_url' ,'$summary' ,'$speaker' )";
+				VALUES ('$title','$img_url' ,'$summary' ,'$speaker')";
 
 
 if($db->query($sql)===TRUE){
-	$new_id = $db->insert_id;
-	echo $new_id;
+	//success
 }else{
 	echo "Error something went wrong please try again.";
 }

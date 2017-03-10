@@ -69,6 +69,6 @@ function createUser($first, $last, $username, $password){
 // 	session_destroy();
 // }
 
-mysqli_close( $db );
+
 //createUser("Joshua", "Shapiro", "deltonaVadmin", "JesusL@ve$");
 ?>
