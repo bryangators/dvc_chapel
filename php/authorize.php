@@ -3,6 +3,8 @@
 
 // db object from outside public dir tree
 include('../../dvc_private/dbObject.php');
+$db = new mysqli($servername,$username,$password,$dbname);
+
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
 }
@@ -55,20 +57,18 @@ function createUser($first, $last, $username, $password){
 			(null, '$first', '$last', '$username', '$token')";
 	
 	global $db;
-	$db->query($query);
-
-		
+	$db->query($query);		
 }
 
 
 //function to destroy user session
-function destroy_session()
-{
-	session_start();
-	$_SESSION = array();
-	session_destroy();
-}
+// function destroy_session()
+// {
+// 	session_start();
+// 	$_SESSION = array();
+// 	session_destroy();
+// }
 
-
+mysqli_close( $db );
 //createUser("Joshua", "Shapiro", "deltonaVadmin", "JesusL@ve$");
 ?>

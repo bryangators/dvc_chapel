@@ -3,6 +3,7 @@
 
 // db object from outside public dir tree
 include('../../../dvc_private/dbObject.php');
+$db = new mysqli($servername,$username,$password,$dbname);
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
