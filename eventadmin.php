@@ -1,7 +1,7 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
 include('../../dvc_private/loginProtect.php');
-include('php/uploadImage.php');
+
 ?>
 
 
@@ -40,7 +40,7 @@ include('php/uploadImage.php');
 			<div id="table_wrap" class="center">
 			<span class="admin_title">New Event</span>
 			<br>
-			<form action="" method="post" class="center" id="event" enctype="multipart/form-data">
+			
 			<table id="add_event" >
 			<tr>
 				<td>
@@ -57,12 +57,13 @@ include('php/uploadImage.php');
 				<label>Image:</label>
 				</td>				
 			</tr>
+			<form action="" method="post" class="center" id="ev-image" enctype="multipart/form-data">
 			<tr>
-				<td>
+				<td>				
 					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">
-					
-				</td>
+				</td>				
 			</tr>
+			</form>
 			<tr>
 				<td>
 				<label>Description:</label>
@@ -80,7 +81,7 @@ include('php/uploadImage.php');
 			</tr>
 			<tr>
 				<td>
-				<input id="ev_spk1" type="text" name="event_title">
+				<input id="ev_spk" type="text" name="event_title">
 				</td>
 			</tr>
 			<!-- Event schedule section  -->
@@ -90,14 +91,13 @@ include('php/uploadImage.php');
 				<br>
 				<button id="add_event_meta">Schedule Event</button>
 				<br>
-				<div id="empty_msg">*Currently no scheduled times exist.</div>							
+				<div id="empty_msg"></div>							
 			</div>
 			<span style="text-align: center;" class="form_btns">
-				<input id="save_event" type="submit" name="submit" value="Save">
-				<br>
-				<b><?php echo $msg; ?></b>	
+				<button id="save_ev">Save</button>
+				<br>					
 			</span>
-			</form>
+			
 			</div>
 			
 			</div>

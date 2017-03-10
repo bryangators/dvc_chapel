@@ -1,5 +1,5 @@
 <?php 
-error_reporting(E_ALL);
+
 
 //database object
 include('../../../dvc_private/dbObject.php');

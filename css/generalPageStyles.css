@@ -91,6 +91,15 @@ section
 	padding: 10px;
 }
 
+button:focus{
+	outline: 0;
+}
+
+button:disabled{
+	background-color: gray;
+	cursor: default;
+}
+
 /*General style adjustments for mobile displays*/
 @media only screen and (max-width: 790px) 
 {

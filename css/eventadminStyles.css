@@ -116,3 +116,12 @@ button{
     background-color: rgba(181,55,55, .9);
     color: #f4f4f4;
 }
+
+/*event picture preview*/
+#preview{
+	width: 70%;
+}
+
+#preview img{
+	width: 100%;
+}

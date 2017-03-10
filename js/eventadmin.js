@@ -1,15 +1,18 @@
-
+var event;
+var event_meta = new Array();
 
 // Click functions for modal on doc load
 $(document).ready(function(){
-
+	
 	$('#add_event_meta').on('click' , function(){
 		openModal("Event Scheduler", event_modal_body_html, event_modal_footer_html);
 	    activateEventModalHandlers();
 	 	
 	});	
 
+	//checks if image name already exists
 	$('#fileToUpload').bind('change', function() {
+		
 		var file = this.files[0];
 
 		var request = $.ajax({
@@ -18,19 +21,31 @@ $(document).ready(function(){
 		});
 
 		request.done(function(){
-			//if image already exists removes file chosen	
+			//if image already exists removes file chosen
 			openModal("Error", "The image name: <b>" + file.name + "</b> is already taken.<br>Please rename your photo or choose another.", "ok", closeModal, null);	
 			clearImage();
+			
 		});
 
 		request.fail(function(){
-			//if image does not exist finishes validation			
-			validate_file(file);
+			//if image does not exist finishes validation						
+			validate_file(file);			
 		});
 
-	});
+	 });
 
-});
+	
+	
+   $('#save_ev').click(function(e){
+   		e.stopImmediatePropagation();
+   		//this will only be done if image is being uploaded
+   		$('#ev-image').submit();
+   })	
+
+
+   uploadEventWithImageToServer();
+
+});//end of document ready function
 
 function activateEventModalHandlers(){
     $("input[name='choice']:radio").click(function(){
@@ -40,7 +55,7 @@ function activateEventModalHandlers(){
 	endDateCheckBoxFunction();
 	}); 
 	$("#freq_sel").change(function(){
-		handleFrequencySelect();
+	handleFrequencySelect();
 	});
 }
 
@@ -88,7 +103,7 @@ function validate_file(upload_file){
 	var fileSizeString = Math.round(upload_file.size/1024/1024) + "MB";
 	var fileType = upload_file.type;
 	
-	var allowedFileTypes = ["jpg", "jpeg", "png"];
+	var allowedFileTypes = ["jpg", "JPG", "jpeg", "JPEG", "png", "PNG"];
 
 	
     //checks for valid file type
@@ -112,11 +127,136 @@ function validate_file(upload_file){
 
 function clearImage(){
 	$('#fileToUpload').val("");	
+	
 }
 
+function disableSave(){
+	$('#save_ev').attr('disabled', true);
+}
+
+function enableSave(){
+	$('#save_ev').attr('disabled', false);
+}
+
+//function will create event object with data in event form
+function createNewEventObject(){
+	var title = $('#ev_title').val();	
+	var default_img_url = "images/event_images/logo.png";
+	var upload_img_url = "images/event_images/" + $('#fileToUpload').val().replace(/C:\\fakepath\\/i, '');
+	var summary = $('#ev_desc').val();
+	var speaker = $('#ev_spk').val();
+	var tmp_event = new Event(null, title, upload_img_url, summary, speaker);
+	return tmp_event;
+}
+
+///////////////////////////////////////////////////////////////////////
+//Event and event_meta objects. These will be used when manipulating///
+//data as well as sending json objects to server to update mysql data//
+///////////////////////////////////////////////////////////////////////
+
+//Event object constuctor
+function Event(id, title, img_url, summary, speaker){
+	this.id = id;
+	this.title = title;
+	this.img_url = img_url;
+	this.summary = summary;
+	this.speaker = speaker;
+}
+
+//Constructor for event meta objects
+function Event_meta(id, event_id, repeating, start_date, end_date, week_day_num, rpt_interval, time){
+	this.id = id;
+	this.event_id = event_id;
+	this.repeating = repeating;
+	this.start_date = start_date;
+	this.end_date = end_date;
+	this.week_day_num = week_day_num;
+	this.rpt_interval = rpt_interval;
+	this.time = time;	
+}
+
+
+///////////////////////////////////////////////////////////////////
+//Ajax functions to call when sending event data to the server////
+//////////////////////////////////////////////////////////////////
+
+//this function sends event data to mysql database
+//Note: this function does not send the phote just the img_url
+//after the photo has been uploaded. This function will be called 
+//by the upload image ajax request on success
+//Note 2: this function can be called if only editing event details
+//if no image upload is needed
+function ajaxPostData(objectData, url, successFunc){
+		
+	$.ajax({
+		 type: "POST",
+		 url: url,
+		 data: {myString:JSON.stringify(objectData)},
+			 
+		 success: function(data) 
+		 {
+		 	if (successFunc != null) {
+		 		successFunc; // calls function in params
+		 	}
+		 	closeModal();
+		 	openModal("Success", data, "ok",closeModal, null );
+
+		 },
+		 error: function(data)
+		 {
+		 	
+		 	closeModal();
+		 	openModal("Error", data + "error", "ok",closeModal, null );
+		 }
+	});
+}
+
+//This function is activated with document ready and will 
+//upload image to server and call ajax requests to store
+//other event data on success
+function uploadEventWithImageToServer(){
+	$('#ev-image').on('submit', function(e){			
+			e.preventDefault();
+			var formData = new FormData(this);			
+			showModalLoader("Saving Image");
+			$.ajax({
+				url: "php/uploadImage.php", 
+				type: "POST",             
+				data: formData, 
+				contentType: false,       
+				cache: false,             
+				processData:false,        
+				success: function(data)
+				{
+					closeModal();
+					if(data === "success"){
+						//run next function after successful image upload
+						$('#title_head').text("Saving Event Data");
+						var eventData = createNewEventObject();
+						ajaxPostData(eventData,"php/addEvent.php", null );
+					}else{
+						//display error message after unseccessful image upload
+						openModal("Message", data, "ok",closeModal, null );
+					}				
+				},
+				error: function(data)
+				{
+				openModal("Error", data, "ok",closeModal, null );
+				}
+				
+			});// end of ajax function
+	});//end of submit function
+}
+
+
+/////////////////////////////////////////////////////////////////////
+//HTML code for modal box and buttons to add event schedule this////
+//code will be displayed then can be manipulated when loading an////
+//event that is already created.                                ////
+////////////////////////////////////////////////////////////////////
+
 //content for modal events
-var event_modal_body_html = '<form id="event_form">' +
-			    	    '<table id="event_scheduler">' +
+var event_modal_body_html = '<table id="event_scheduler">' +
 			    		'<tr><td>Recurring Event?</td>' +
 						'<td><input id="r1" class="radio" type="radio" name="choice" value="Yes">Yes'+
 						'<input id="r2" class="radio" type="radio" name="choice" value="No" checked="checked">No'+
@@ -150,7 +290,10 @@ var event_modal_body_html = '<form id="event_form">' +
 						'<input style="display: inline; width: 15%;" type="checkbox" id="chk_box" value="first_checkbox">' +		
 						'<label style="display: inline; font-size: 0.8em; vertical-align: top;" for="chk_box">Does not end...</label>' +
 						'</div></td></tr>' +
-						'</table></form>';
+						'</table> ';
 
 var event_modal_footer_html = '<button id="add_meta_data" onclick="closeModal();">Add</button>' +
 			    			  '&nbsp;&nbsp;<button onclick="closeModal();" id="cancel_meta_data">Cancel</button>';
+
+
+

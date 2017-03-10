@@ -6,7 +6,7 @@
 <script src="js/modalScript.js"></script>
 
 
-<!-- The Modal -->
+<!-- The Modal Frame is filled in when called in js files -->
 			<div id="myModal" class="modal">			
 			  <!-- Modal content -->
 			  <div class="modal-content">
@@ -16,15 +16,13 @@
 		  		</div>
 
 		  		<!-- Modal Body -->
-		  		<div class="modal-body">
-		  		
+		  		<div class="modal-body">		  		
 				</div>
 				<!-- end of modal body -->
 
 				<!-- modal footer -->
 				<div class="modal-footer">
-			    	<span class="modal_buttons">
-			    		
+			    	<span class="modal_buttons">			    		
 			    	</span>
 			  	</div> 
 			  	<!-- end of modal footer -->
