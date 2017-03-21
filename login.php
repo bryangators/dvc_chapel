@@ -15,7 +15,7 @@ if(isset($_POST['userid']) && isset($_POST['userPassword'])){
 	
 		
 	if ($authorizedUser == true){
-		header("Location: eventAdmin.php");		
+		header("Location: eventadmin.php");		
 	}else{
 		$msg = "The email/password combination entered were incorrect.";
 	}
