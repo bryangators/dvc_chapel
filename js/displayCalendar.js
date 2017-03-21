@@ -78,7 +78,7 @@ function makeEventsClickable(){
 			showEvent();
 			e.stopImmediatePropagation();
 			$('html, body').animate({
-        scrollTop: $("#event_top").offset().top
+        scrollTop: $("#event_top").offset().top - 40
     }, 1000);
           	
 		});
@@ -244,7 +244,7 @@ function findDailyEvents(date){
 			
 			if(event_meta[i].end_date == null){//for never ending events
 
-				if(day.isSameOrAfter(event_meta[i].start_date)){//valid date range
+				if(day.isSameOrAfter(event_meta[i].start_date, 'day')){//valid date range
 						
 					if(event_meta[i].rpt_interval == 'Daily'){//daily event
 						resultEvents.push(event_meta[i]);
@@ -254,7 +254,7 @@ function findDailyEvents(date){
 						resultEvents.push(event_meta[i]);
 					}else{
 						if (event_meta[i].rpt_interval == 'Monthly') {//check for monthly dates
-							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday())){
+							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday()), 'day'){
 								resultEvents.push(event_meta[i]);
 							}						
 						}
@@ -262,7 +262,7 @@ function findDailyEvents(date){
 				}
 			}else{//checks events within date range
 				// console.log("in here");
-				if(day.isBetween(event_meta[i].start_date, event_meta[i].end_date,'[]')){//valid date range
+				if(day.startOf('day').isBetween(event_meta[i].start_date, event_meta[i].end_date,'day', '[]')){//valid date range
 					if(event_meta[i].rpt_interval == 'Daily'){//daily event
 						resultEvents.push(event_meta[i]);
 					}else if(event_meta[i].rpt_interval == 'Weekly' &&	
@@ -271,7 +271,7 @@ function findDailyEvents(date){
 						resultEvents.push(event_meta[i]);
 					}else{
 						if (event_meta[i].rpt_interval == 'Monthly') {//check for monthly repeating dates
-							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday())){
+							if(moment(day.isoWeekday()).isSame(moment(event_meta[i].start_date).isoWeekday(), 'day')){
 								resultEvents.push(event_meta[i]);
 							}						
 						}

@@ -1,7 +1,6 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
-include('../../dvc_private/loginProtect.php');
-
+include('../../dvc_private/loginProtect.php')
 ?>
 
 
@@ -28,13 +27,6 @@ include('../../dvc_private/loginProtect.php');
 		?>
 		<!-- End of Navigation bar -->
 
-
-		<!-- ///////////////////////////////////////////////////
-		////All content will go inside the content div below////
-		///Use sections and flex_parent class to align content//
-		/////////////////////////////////////////////////////// -->
-
-		<!-- Use sections -->
 		<div class="mobile_show" style="height: 40px"></div>
 
 
@@ -180,7 +172,7 @@ include('../../dvc_private/loginProtect.php');
 			<b>When:</b> 
 		</td>
 		<td id="eventTime">	
-		Preview mode.		
+		Preview Mode
 		</td>
 		</tr>
 		<tr>
@@ -213,18 +205,12 @@ include('../../dvc_private/loginProtect.php');
 		include_once('modal.php');
 		?>	
 
-			
-
-
-
 		</div><!-- end of page content -->
 		
 		<?php
 		include_once('footer.php');
-		?>
-		
+		?>		
 
-	
 	</div><!-- #wrapper -->
 	
 </body>

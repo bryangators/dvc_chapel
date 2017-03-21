@@ -95,14 +95,8 @@
 	text-align: center;
 }
 
-/*table {
-    border-collapse: collapse;
-}*/
-
 #add_event tr:nth-child(even) td {
-    /*padding-top: .5em;*/
-    padding-bottom: 1em;
-   
+     padding-bottom: 1em;   
 }
 
 input:not(.radio), textarea, select{
@@ -214,14 +208,6 @@ button{
     color: #f4f4f4;
 }
 
-/*event picture preview*/
-#preview{
-	width: 70%;
-}
-
-#preview img{
-	width: 100%;
-}
 
 /*****Event Preview Box styling****/
 #preview_box{
@@ -236,9 +222,7 @@ button{
 	margin:0 auto;	
 	width: 90%;
 	text-align: center;
-	min-height: 400px;	
-
-	
+	overflow: auto;	
 }
 
 #event_img{

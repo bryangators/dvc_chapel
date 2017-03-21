@@ -526,6 +526,7 @@ function addMeta(){
 		if(temp_event.id == null){
 		//for new events
 		temp_meta.push(new_meta);
+		console.log(new_meta);
 		var currentCount = $('.meta_desc').length + 1;
 		insertMetaInEditor(new_meta, currentCount);	
 		closeModal(false);	

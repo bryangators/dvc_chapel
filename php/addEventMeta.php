@@ -14,17 +14,22 @@ $event_id = $event_meta['event_id'];
 $repeating = $event_meta['repeating'];
 $start_date = $event_meta['start_date'];
 $end_date = $event_meta['end_date'];
-if ($end_date == '') {
-	$end_date = "NULL";
-}
 $week_day_num = $event_meta['week_day_num'];
 $rpt_interval = $event_meta['rpt_interval'];
 $time = $event_meta['time'];
 
-$sql = "INSERT INTO `event_meta` 
+if (strlen($end_date) == 0) {
+	$end_date = 'NULL';
+	$sql = "INSERT INTO `event_meta` 
 		(`event_id`, `repeating`, `start_date`, `end_date`, week_day_num, `rpt_interval`, `time`)
 	 	VALUES 
 	 	('$event_id', '$repeating', '$start_date', $end_date, '$week_day_num', '$rpt_interval', '$time')";
+}else{
+	$sql = "INSERT INTO `event_meta` 
+		(`event_id`, `repeating`, `start_date`, `end_date`, week_day_num, `rpt_interval`, `time`)
+	 	VALUES 
+	 	('$event_id', '$repeating', '$start_date', '$end_date', '$week_day_num', '$rpt_interval', '$time')";
+}
 
 
 
