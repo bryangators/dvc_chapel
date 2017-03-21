@@ -177,8 +177,8 @@ function ajaxDeleteEvent(id, ev_img_url){
 //upload image to server and call ajax requests to store
 //other event data on success
 function uploadEventWithImageToServer(){
-	if ($('#fileToUpload').val() == '') {
-		$('#ev-image').on('submit', function(e){
+	$('#ev-image').on('submit', function(e){
+		if ($('#fileToUpload').val() == '') {
 			e.preventDefault();
 			showModalLoader("Saving Event");
 			var eventData = createNewEventObject();
@@ -186,44 +186,42 @@ function uploadEventWithImageToServer(){
 			$.post( "php/addEvent.php",{myString:JSON.stringify(eventData)}, function( data ) {
 				closeModal(false);
 				uploadMetaToDB(data);
-			});
-		});
-	}else{
-		$('#ev-image').on('submit', function(e){			
-				e.preventDefault();
-				var formData = new FormData(this);	
-				showModalLoader("Saving Image");
-				$.ajax({
-					url: "php/uploadImage.php", 
-					type: "POST",             
-					data: formData, 
-					contentType: false,       
-					cache: false,             
-					processData:false,        
-					success: function(data)
-					{
-						closeModal(false);
-						if(data === "success"){
-							
-							var eventData = createNewEventObject();
-							$.post( "php/addEvent.php",{myString:JSON.stringify(eventData)}, function( data ) {
-								uploadMetaToDB(data);
-							});
-						}else{
-							//display error message after unseccessful image upload
-							openModal("Message", data, "ok",function(){
-								closeModal(false);
-							}, null );					}				
-					},
-					error: function(data)
-					{
-					openModal("Error", data, "ok",function(){
-						closeModal(false);
-					}, null );
-					}				
-				});// end of ajax function
-		});//end of submit function
-	}
+			});	
+	}else{			
+			e.preventDefault();
+			var formData = new FormData(this);	
+			showModalLoader("Saving Image");
+			$.ajax({
+				url: "php/uploadImage.php", 
+				type: "POST",             
+				data: formData, 
+				contentType: false,       
+				cache: false,             
+				processData:false,        
+				success: function(data)
+				{
+					closeModal(false);
+					if(data === "success"){
+						
+						var eventData = createNewEventObject();
+						$.post( "php/addEvent.php",{myString:JSON.stringify(eventData)}, function( data ) {
+							uploadMetaToDB(data);
+						});
+					}else{
+						//display error message after unseccessful image upload
+						openModal("Message", data, "ok",function(){
+							closeModal(false);
+						}, null );					}				
+				},
+				error: function(data)
+				{
+				openModal("Error", data, "ok",function(){
+					closeModal(false);
+				}, null );
+				}				
+			});// end of ajax function
+		}//end of else	
+	});//end of submit function
 }
 
 //uploads new image, deletes old image and changes img_url and event
