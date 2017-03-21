@@ -118,8 +118,10 @@
 			<td>
 				<b>About:</b>
 			</td>
-			<td colspan="1" id="about">						
+			
+			<td colspan="1" id="about">								
 			</td>
+			
 		</tr>
 
 		<tr>

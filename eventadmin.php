@@ -12,6 +12,7 @@ include('../../dvc_private/loginProtect.php');
 <link rel="stylesheet" type="text/css" href="css/eventadminStyles.css">
 
 <!-- java script files -->
+<script src="resources/moment.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
 <script src="js/eventadmin.js"></script>
 </head>
@@ -35,38 +36,75 @@ include('../../dvc_private/loginProtect.php');
 
 		<!-- Use sections -->
 		<div class="mobile_show" style="height: 40px"></div>
-		<section >
-			<div class="page center shadow-box admin_page">			
+
+
+		<section id="ev-main-page">
+			<div class="ev-container flex flex-wrap flex-row">
+			<div id="new-event-box" onclick="openEvEditor();" class="page ev-box shadow-box">
+					<span>
+					New	Event
+					<br>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+					</span>
+			</div>
+					
+			</div>
+
+		</section>
+
+
+		<section id="ev-editor">
+			<div class="page center shadow-box event_page">
+			<span class="x-ev-box" onclick="closeEvEditor();" style="float: right;">
+			<i class="fa fa-times fa-2x" aria-hidden="true"></i>
+			</span>	
 			<div id="table_wrap" class="center">
-			<span class="admin_title">New Event</span>
+			<span id="ev_main_title" class="admin_title">New Event</span>
 			<br>
 			
 			<table id="add_event" >
 			<tr>
 				<td>
 				<label>Event Title:</label>
+				<span class="edit" title="title" ><i class="fa fa-pencil" title="Edit" aria-hidden="true"></i></span>	
 				</td>				
 			</tr>
 			<tr>
 				<td>
 				<input id="ev_title" type="text" name="event_title">
+							
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<label>Image:</label>
+				<span class="edit" title="image">
+				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
+				</span>
 				</td>				
 			</tr>
 			<form action="" method="post" class="center" id="ev-image" enctype="multipart/form-data">
 			<tr>
 				<td>				
-					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">
+					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">					
 				</td>				
 			</tr>
 			</form>
 			<tr>
 				<td>
-				<label>Description:</label>
+				<div style="font-weight: bold; display: inline;" id="current_img">
+					<!-- current image will be displayed here -->
+				</div>
+				
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+				<label>Summary:</label>
+				<span class="edit" title="summary">
+				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
+				</span>
 				</td>				
 			</tr>
 			<tr>
@@ -77,6 +115,9 @@ include('../../dvc_private/loginProtect.php');
 			<tr>
 				<td>
 				<label>Speaker(s):</label>
+				<span class="edit" title="speaker">
+				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
+				</span>
 				</td>								
 			</tr>
 			<tr>
@@ -84,23 +125,87 @@ include('../../dvc_private/loginProtect.php');
 				<input id="ev_spk" type="text" name="event_title">
 				</td>
 			</tr>
-			<!-- Event schedule section  -->
+			
 			</table>
+			<!-- Event schedule section  -->
 			<div class="event_times">
-				<span class="admin_title">Scheduled Occurrences</span>
+				<span id="sched_title" class="admin_title">Schedule</span>
 				<br>
-				<button id="add_event_meta">Schedule Event</button>
-				<br>
-				<div id="empty_msg"></div>							
+				<div id="meta_schedule">
+					
+				</div>
+				
+				<div id="add_event_meta"><span>
+				<i class="fa fa-plus fa-lg" aria-hidden="true"></i> New Schedule</span>
+				</div>
+
+											
 			</div>
+			<br>
 			<span style="text-align: center;" class="form_btns">
 				<button id="save_ev">Save</button>
+				<button onclick="closeEvEditor();" id="cancel_ev">Cancel</button>
 				<br>					
 			</span>
 			
 			</div>
 			
 			</div>
+		</section>
+
+	<section id="ev_preview">
+			<!-- Event box with event details -->
+	<div id="preview_box" style="text-align: center; clear: both;" class="mobile_column page center shadow-box">
+		<!-- spacer -->
+		<div id="event_box">
+		<span class="x-ev-box" onclick="closeEvPreview();" style="float: right;">
+		<i class="fa fa-times fa-2x" aria-hidden="true"></i>
+		</span>
+		<br>
+		<div id="event_img">
+			<a id="imgLink" target="_blank" >
+			<img id="dispImg" src="">
+			</a>
+		</div>
+
+		<table id="event_desc">		
+		<tr>
+		<td colspan="2" id="event_title">
+			Worship Service
+		</td>
+
+		</tr>
+		<tr>			
+		<td >
+			<b>When:</b> 
+		</td>
+		<td id="eventTime">	
+		Preview mode.		
+		</td>
+		</tr>
+		<tr>
+			<td>
+				<b>About:</b>
+			</td>
+			<td colspan="1" id="about">						
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<b>Speaker(s):</b>
+			</td>
+			<td colspan="1" id="speaker">
+				
+			</td>
+		</tr>
+		</table>
+			
+			
+		</div>	
+
+	</div>			
+</div>
 		</section>
 		<div style="height: 40px"></div>
 		

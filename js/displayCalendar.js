@@ -4,7 +4,7 @@
 //global variables for calendar
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var today = new Date();
-var mDate = moment(today, moment.ISO_8601);
+var mDate = moment(today, moment.ISO_8601).startOf('day');
 var weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 var active = false; //prevents multiple clicks during animation
 var cal_events = new Array();
@@ -22,7 +22,6 @@ window.onload = function(){
       startCalendar();      
 	});	
 };
-
 
 
 //function fills calendar
@@ -198,7 +197,7 @@ Event_meta.prototype.fillEventBox = function(date){
 	$('#dispImg').attr('src', event.img_url);
 	$('#event_title').text(event.title);
 	$('#eventTime').text(formatDay + " at " + time);
-	$('#about').text(event.summary);
+	$('#about').html(event.summary);
 	$('#speaker').text(event.speaker);
 }
 

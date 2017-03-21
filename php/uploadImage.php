@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+
 $target_dir = "../images/event_images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -38,7 +38,8 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     } else {
         //upload file
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "success";
+            echo "success";
+            // echo $imageFileType;
         } else {
         echo "Sorry, there was an error uploading your file.";
         }

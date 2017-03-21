@@ -9,7 +9,7 @@ if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
 }
 //grabs all events in the database and returns json array
-if ($result = $db->query("SELECT * FROM event_meta")) {
+if ($result = $db->query("SELECT * FROM event_meta ORDER BY start_date")) {
 			$array = array();
 
 			while($row = mysqli_fetch_assoc($result)) {

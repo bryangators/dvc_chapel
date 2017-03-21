@@ -65,10 +65,6 @@ function activateCancelBtn(){
 function fillEventLinks(events){
 	var links_html = '';
 
-	if(events.length > 1){
-		events.sort(compare);
-	}
-
 	for (var i = 0; i < events.length; i++ ){
 		links_html += formatEventLinkHTML(events[i]);
 	}
@@ -114,11 +110,3 @@ function Event(id, title, img_url, summary, speaker){
 	this.speaker = speaker;
 }
 
-//algorithm to sort array of events
-function compare(a,b) {
-  if (a.title < b.title)
-    return -1;
-  if (a.title > b.title)
-    return 1;
-  return 0;
-}

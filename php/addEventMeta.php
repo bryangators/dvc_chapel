@@ -10,20 +10,28 @@ if ($db->connect_error) {
 }
 
 $event_meta = json_decode($_POST['myString'], true);
-//need to access event meta from ajax post
+$event_id = $event_meta['event_id'];
+$repeating = $event_meta['repeating'];
+$start_date = $event_meta['start_date'];
+$end_date = $event_meta['end_date'];
+if ($end_date == '') {
+	$end_date = "NULL";
+}
+$week_day_num = $event_meta['week_day_num'];
+$rpt_interval = $event_meta['rpt_interval'];
+$time = $event_meta['time'];
 
+$sql = "INSERT INTO `event_meta` 
+		(`event_id`, `repeating`, `start_date`, `end_date`, week_day_num, `rpt_interval`, `time`)
+	 	VALUES 
+	 	('$event_id', '$repeating', '$start_date', $end_date, '$week_day_num', '$rpt_interval', '$time')";
 
-
-
-//need sql command to add event_meta to db for each in array
-$sql = "INSERT INTO event (title, img_url, summary, speaker) 
-				VALUES ('$title','$img_url' ,'$summary' ,'$speaker')";
 
 
 if($db->query($sql)===TRUE){
-	//success
+	echo "Successfully added new schedule.";
 }else{
-	echo "Error something went wrong please try again.";
+	echo mysqli_error($db);
 }
 
 mysqli_close( $db );

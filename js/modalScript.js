@@ -46,10 +46,13 @@ function showModalLoader(title){
 	$('#myModal').show();
 }
 
-//closes modal and enables screen
-function closeModal(){
+//closes modal and enables if disable is set to false
+function closeModal(disable){
 	$('#myModal').hide();
-    enableScreen();
+	if(!disable){
+		enableScreen();
+	}
+    
 }
 
 /////////////////////////////////////////////////////
@@ -59,10 +62,10 @@ function closeModal(){
 
 //enables screen elements
 function enableScreen(){
-	$(':input').not('#myModal :input, #save_ev').attr('disabled', false);
+	$(':input').attr('disabled', false);
 }
 
 //enables screen elements
 function disableScreen(){
-	$(':input').not('#myModal :input, #save_ev').attr('disabled', true);
+	$(':input').not('#myModal :input, #save_ev, #cancel_ev, #fileToUpload').attr('disabled', true);
 }
