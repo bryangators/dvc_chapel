@@ -49,6 +49,7 @@ function showModalLoader(title){
 //closes modal and enables if disable is set to false
 function closeModal(disable){
 	$('#myModal').fadeOut(200);
+	$('.modal_buttons').empty();
 	if(!disable){
 		enableScreen();
 	}
