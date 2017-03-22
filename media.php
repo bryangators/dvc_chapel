@@ -56,8 +56,10 @@
 				</div>
 							
 			</div>
+
 			<div style="height: 40px;"></div>
-			<div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">
+
+			<!-- <div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">
 			<span class="title">Photo Gallery Title</span>
 				<div class="picture shadow-box">
 					<img class="myImg" src="images/media_images2/church10.jpg">
@@ -86,8 +88,8 @@
 				<div class="picture shadow-box">
 					<img class="myImg" src="images/media_images2/church18.jpg">
 				</div>
-
-
+			</div>
+ -->
 							
 		</section>		
 		
