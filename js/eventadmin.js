@@ -6,6 +6,9 @@ var event_meta = new Array();
 
 // Click functions for modal on doc load
 $(document).ready(function(){
+	//loading modal
+	showModalLoader("Loading Events");
+	$('#ev-main-page').hide();
 
 	//loads data and fills page
 	loadData(fillEventAdminPage);
@@ -53,7 +56,10 @@ function fillEventAdminPage(){
 
 	for(var i=0; i<db_events.length;i++){
        	makeEventBox(db_events[i]);  
-    }   
+    }
+
+    closeModal(false);
+	$('#ev-main-page').fadeIn();   
 }
 
 //function to make event boxes on admin page
@@ -82,10 +88,12 @@ function deleteEvent(id){
 	var ev_img_url = "../" + getEventByID(id).img_url;
 
 	openModal("Delete Event", 
-			  "Are you sure you want to delete " + getEventByID(id).title + " event?",
+			  "Are you sure you want to delete <b>" + getEventByID(id).title + "</b>?",
 			  "ok_cancel",function(){			  	
 			  ajaxDeleteEvent(id, ev_img_url);
-			  } ,closeModal);	
+			  } ,function(){
+			  	closeModal(false);
+			  });	
 }
 
 //fills event preview window
@@ -184,7 +192,6 @@ function uploadEventWithImageToServer(){
 			var eventData = createNewEventObject();
 			eventData.img_url = "images/event_images/logo1000.png";
 			$.post( "php/addEvent.php",{myString:JSON.stringify(eventData)}, function( data ) {
-				closeModal(false);
 				uploadMetaToDB(data);
 			});	
 	}else{			
@@ -200,7 +207,7 @@ function uploadEventWithImageToServer(){
 				processData:false,        
 				success: function(data)
 				{
-					closeModal(false);
+					
 					if(data === "success"){
 						
 						var eventData = createNewEventObject();

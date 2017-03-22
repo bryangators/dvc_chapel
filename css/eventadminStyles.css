@@ -1,4 +1,5 @@
 /*styles for event admin page*/
+
 #new-event-box{
 	font-size: 2em;
 	font-weight: bold;
@@ -12,8 +13,7 @@
 .ev-box{
 	margin:10px;
 	width: 20%;
-	text-align: center;
-		
+	text-align: center;		
 }
 
 .event-box-title{

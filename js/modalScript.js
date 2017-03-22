@@ -34,7 +34,7 @@ function openModal(title, body_content, footer_content, okFunction, cancelFuncti
 	}
 
 	//shows modal
-	$('#myModal').show();
+	$('#myModal').fadeIn(200);
 }
 
 //Loading message modal with title input
@@ -43,12 +43,12 @@ function showModalLoader(title){
 	$('#title_head').text(title);
 	var bodyMsg = "<div style='text-align:center;'><br><br><img style='width:120px;' src='images/loading.gif'></div>";
 	$('.modal-body').html(bodyMsg);
-	$('#myModal').show();
+	$('#myModal').fadeIn(200);
 }
 
 //closes modal and enables if disable is set to false
 function closeModal(disable){
-	$('#myModal').hide();
+	$('#myModal').fadeOut(200);
 	if(!disable){
 		enableScreen();
 	}

@@ -39,7 +39,7 @@
 			<!-- Links for Nav Bar -->
 			
 			
-			<?php if ($thisPage != 'eventadmin') { ?>
+			<?php if ($thisPage != 'admin' and $thisPage != 'eventadmin') { ?>
 				
 				<span id="logoWrap">
 				<a id="logoLink" href="index.php">
@@ -83,16 +83,25 @@
 					</li>			
 				</ul>			
 				</span>
-			<?php }
-				else{ ?>
-				<span style="font-size: 2em;" id="links" >		
-				Event Creator
-					
-				</span>
-				<?php }	?>
 				<span id="mobile_btn" class="mobile_show">
 					<i id="menuBar" class="fa fa-bars fa-2x" aria-hidden="true"></i>
 				</span>
+			<?php }
+				else{ ?>
+				<br>
+				<span style="font-size: 2em;" id="links" >
+					
+				<?php if ($thisPage == 'admin') {
+					echo "Administrator Page";
+					}else{
+						echo "Event Creator";
+					}
+				?>	
+						
+				</span>
+				<br><br>
+				<?php }	?>
+				
 				</div>
 
 				</header>

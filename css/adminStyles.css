@@ -1,0 +1,27 @@
+.link-container{
+	flex-direction: column;
+
+}
+
+.link-box{
+	margin: 0 auto;
+	width: 20%;
+	text-align: center;
+	color: rgb(181,55,55);
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.linkent-box-title{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.link-box:hover{
+	box-shadow: 0 20px 40px rgba(0,0,0,0.19), 0 12px 12px rgba(0,0,0,0.23);
+	cursor: pointer;
+}
+
+.link-box-btns span{
+	margin: 10px;
+}

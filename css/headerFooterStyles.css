@@ -3,7 +3,6 @@ a{
 	color: inherit;
 }
 
-
 /*****Navigation Styling*****/
 #header{
 	/*width: 100%;*/
@@ -95,6 +94,21 @@ a{
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/*buttons for admin pages*/
+/*nav links style*/
+#under-bar{
+	padding: 5px;
+	background-color: rgb(181,55,55);
+	color:  #f4f4f4;
+	font-weight: bold;
+	text-align: center;
+}
+
+#under-bar a{
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /****End of Navigation Style*****/
@@ -212,8 +226,6 @@ a{
     	width: 80%;
     	margin:0 auto;
     }
-
-
 	
 }
 

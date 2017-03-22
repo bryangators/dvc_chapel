@@ -3,7 +3,6 @@
 include('../../dvc_private/loginProtect.php')
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,12 +26,21 @@ include('../../dvc_private/loginProtect.php')
 		?>
 		<!-- End of Navigation bar -->
 
-		<div class="mobile_show" style="height: 40px"></div>
-
+		<!-- Navigation bar for admin pages -->
+		<div id="under-bar" >
+					<a href="admin.php">
+					Home
+					</a>
+					<a href="logout.php">
+					Logout
+					</a>
+		</div>
+		<!-- End of admin nav -->
+		<div style="height: 10px"></div>
 
 		<section id="ev-main-page">
 			<div class="ev-container flex flex-wrap flex-row">
-			<div id="new-event-box" onclick="openEvEditor();" class="page ev-box shadow-box">
+			<div id="new-event-box" onclick="openEvEditor();" class=" ev-box shadow-box">
 					<span>
 					New	Event
 					<br>
