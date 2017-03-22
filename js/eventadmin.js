@@ -97,14 +97,15 @@ function deleteEvent(id){
 }
 
 //fills event preview window
-function viewEvent(id){
-	var event = getEventByID(id);
-	$('#event_title').text(event.title);
-	$('#imgLink').attr('href', event.img_url);
-	$('#dispImg').attr('src', event.img_url);
-	$('#about').text(event.summary);
-	$('#speaker').text(event.speaker);
-	openEvPreview();
+function viewEvent(id){	
+		var event= getEventByID(id);       			
+     	
+		$('#event_title').text(event.title);
+		$('#imgLink').attr('href', event.img_url);
+		$('#dispImg').attr('src', event.img_url);
+		$('#about').html(event.summary);
+		$('#speaker').text(event.speaker);
+		openEvPreview();
 }
 
 //opens event preview window
@@ -299,6 +300,7 @@ function uploadMetaToDB(id){
 function loadData(callback){
 	flag[0] = false;
 	flag[1] = false;
+
 	db_events = [];
 	event_meta = [];
 	ajaxDataFromDB('php/grabEvents.php', 'events');
@@ -370,28 +372,31 @@ function closeEvEditor(){
 
 //opens event editor for event by id
 function editEvent(id){
-	temp_event = getEventByID(id);
-	getAttachedMeta(temp_event.id);
-	$('#meta_schedule').empty();
-	$('.edit').show();
-	$('#save_ev').hide();
-	$('#add_event').find('input, textarea').attr('disabled', 'disabled');
+	$.post( "php/getEvent.php",{event_id: id}, function( data ) {
+		temp_event = jQuery.extend(new Event(), JSON.parse(data));      			
+     	
+		getAttachedMeta(temp_event.id);
+		$('#meta_schedule').empty();
+		$('.edit').show();
+		$('#save_ev').hide();
+		$('#add_event').find('input, textarea').attr('disabled', 'disabled');
 
-	for (var i = 0; i < temp_meta.length; i++){
-		insertMetaInEditor(temp_meta[i], i+1);
-	}	
+		for (var i = 0; i < temp_meta.length; i++){
+			insertMetaInEditor(temp_meta[i], i+1);
+		}	
 
-	$('#ev_main_title').text(temp_event.title);
-	$("#ev_title").val(temp_event.title);
-	$("#fileToUpload").hide();
-	$("#current_img").text(temp_event.img_url.substring(20));
-	$("#ev_desc").val(temp_event.summary);
-	$("#ev_spk").val(temp_event.speaker);
-	$('#sched_title').text(temp_event.title + ' Schedule');
-	$('.edit').on('click', function(){
-		editEventBox(this.title);
-	})
-	openEvEditor();
+		$('#ev_main_title').text(temp_event.title);
+		$("#ev_title").val(temp_event.title);
+		$("#fileToUpload").hide();
+		$("#current_img").text(temp_event.img_url.substring(20));
+		$("#ev_desc").val(temp_event.summary);
+		$("#ev_spk").val(temp_event.speaker);
+		$('#sched_title').text(temp_event.title + ' Schedule');
+		$('.edit').on('click', function(){
+			editEventBox(this.title);
+		})
+		openEvEditor();
+	});	
 }
 
 //opens dialog to edit field in event and post it to db
@@ -554,7 +559,7 @@ function Event(id, title, img_url, summary, speaker){
 	this.id = id;
 	this.title = title;
 	this.img_url = img_url;
-	this.summary = summary;
+	this.summary = summary.replace(/(<br ?\/?>)*/g,"");
 	this.speaker = speaker;
 }
 
