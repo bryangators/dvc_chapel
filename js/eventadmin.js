@@ -283,7 +283,6 @@ function uploadMetaToDB(id){
 			}			
 		}		
 	}else{
-		// alert('here');
 		openModal("Success", "Event was successfully created.<br><br><b>Note:</b> You did not schedule this event. The event will not display on the calendar until you schedule it.", "ok", function(){
 			refreshPage();
 		}, null);
@@ -469,13 +468,11 @@ function editMeta(id){
 	var meta;
 	if (temp_event.id != null) {meta = getMetaByID(id);}
 	else{meta = temp_meta[id]}; 	
-	console.log(meta);
 	showMetaEditor(id);	
 	fillMetaEditor(meta);	
 }
 
 function saveMetaEdits(id){
-	alert(id);
 	var eventID = null;	
 	if(temp_event.id != null){eventID = temp_event.id;}
 
@@ -526,7 +523,6 @@ function addMeta(){
 		if(temp_event.id == null){
 		//for new events
 		temp_meta.push(new_meta);
-		console.log(new_meta);
 		var currentCount = $('.meta_desc').length + 1;
 		insertMetaInEditor(new_meta, currentCount);	
 		closeModal(false);	
