@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/headerFooterStyles.css?ver=1.0">
 <link rel="stylesheet" type="text/css" href="css/generalPageStyles.css?ver=1.0">
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!-- Javascript file -->
 <script src="js/navbar.js"></script>

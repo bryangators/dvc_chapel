@@ -1,6 +1,5 @@
 var temp_event = new Array();
 var temp_meta = new Array();
-var flag = new Array();
 var db_events = new Array();
 var event_meta = new Array();
 
@@ -11,7 +10,7 @@ $(document).ready(function(){
 	$('#ev-main-page').hide();
 
 	//loads data and fills page
-	loadData(fillEventAdminPage);
+	loadData(fillEventAdminPage, null);
 
 	//activates add event click handlers
 	$('#add_event_meta').on('click' , function(){
@@ -127,7 +126,7 @@ function closeEvPreview(){
 //////////////////////////////////////////////////////////////////
 
 //gets event and meta data from database and sets flags when retrieved
-function ajaxDataFromDB(url, dataType){        
+function ajaxDataFromDB(url, dataType, eventCallback, metaCallback){        
   $.ajax({
       type: "POST",
       url: url,
@@ -139,14 +138,15 @@ function ajaxDataFromDB(url, dataType){
           	for(var i = 0; i < data.length; i++){
       			db_events[i] = jQuery.extend(new Event(), data[i]);       			
       		}
-      		flag[1] = true;
-      	}      
+      		if (eventCallback != null){eventCallback();}
+      	}  
+
         if (dataType == 'event_meta'){
         	var newMeta = new Array();
           	for(var i = 0; i < data.length; i++){
       			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
       		} 
-      		flag[0] = true;   
+      		if (metaCallback != null) {metaCallback();}      		 
       	}      
     } //end of success
   }); 
@@ -297,55 +297,38 @@ function uploadMetaToDB(id){
 	}
 }
 
-function loadData(callback){
-	flag[0] = false;
-	flag[1] = false;
-
+//loads event and meta data.
+function loadData(eventCallback, metaCallback){	
 	db_events = [];
 	event_meta = [];
-	ajaxDataFromDB('php/grabEvents.php', 'events');
-	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta');
-	setTimeout(function(){
-		checkLoadStatus(function(){
-			callback();
-		});
-	}, 200);
+	ajaxDataFromDB('php/grabEvents.php', 'events', eventCallback, null);
+	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta',null, metaCallback);
+	
 }
 
 //refreshes page by reloading data from db
 function refreshPage(){
 	closeEvEditor();
 	closeModal(false);
-	loadData(fillEventAdminPage);
+	loadData(fillEventAdminPage, null);
 	$('html, body').animate({scrollTop: 0}, 1000);
 }
 
-
-//waits to load page until all data is loaded
-function checkLoadStatus(callback){
-	if(flag[0] && flag[1]){
-		callback();
-	}else{
-		checkLoadStatus(callback);		
-	}
-}
 
 /////////////////////////////////////////////////////////
 //              Event Editor script                    //
 /////////////////////////////////////////////////////////
 
 function openEvEditor(){
-
 	$('#ev-main-page').fadeOut(200, function(){
 		$('#ev-editor').fadeIn();
-		checkIfImgExists();
-
+		checkIfImgExistsHandler();
 	});
 }
 
 function refreshEvEditor(id){
 	closeModal(true);
-	loadData(function(){
+	loadData(null, function(){
 		editEvent(id);		
 	});	
 }
@@ -415,7 +398,7 @@ function editEventBox(field){
 			   		$('#edit-image').submit();
 		});
 		replaceImage();
-		checkIfImgExists();
+		checkIfImgExistsHandler();
 		 //binds image validation to image editor
 	}else{
 		if (field == "summary") {
@@ -755,7 +738,7 @@ function activateEventModalHandlers(){
 ////////////////////////////////////////////////
 
 //checks server to ensure image is not duplicate
-function checkIfImgExists(){
+function checkIfImgExistsHandler(){
 	//checks if image name already exists
 	$('#fileToUpload, #newFileToUpload').bind('change', function() {		
 		var file = this.files[0];			
