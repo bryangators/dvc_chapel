@@ -5,39 +5,13 @@ var event_meta = new Array();
 
 // Click functions for modal on doc load
 $(document).ready(function(){
+	
 	//loading modal
 	showModalLoader("Loading Events");
 	$('#ev-main-page').hide();
 
 	//loads data and fills page
-	loadData(fillEventAdminPage, null);
-
-	//activates add event click handlers
-	$('#add_event_meta').on('click' , function(){
-		showMetaEditor(null);	    	
-	});	
-
-	//save event submit button
-    $('#save_ev').click(function(e){
-   		e.stopImmediatePropagation();
-
-   		var errorMsg = validate_event()
-
-   		if (errorMsg != ''){   			
-   			openModal("Warning", errorMsg, "ok_cancel", function(){
-   				$('#ev-image').submit();   				
-   				$('#ok_btn').text('OK');
-   			}, function(){
-   				closeModal(false);
-   			});
-   			$('#ok_btn').text('Save Anyways');   			
-   		}else{
-   			$('#ev-image').submit();
-   		}   		
-   });	
-
-
-   uploadEventWithImageToServer();
+	loadData(fillEventAdminPage);		    
 
 });//end of document ready function
 
@@ -48,7 +22,7 @@ $(document).ready(function(){
 function fillEventAdminPage(){
 	$('.ev-container').remove();
 	var makeContainer = '<div class="ev-container flex flex-wrap flex-row">' +
-						'<div id="new-event-box" onclick="openEvEditor();" class="page ev-box shadow-box">' +
+						'<div id="new-event-box" class="page ev-box shadow-box">' +
 						'<span>New	Event<br><i class="fa fa-plus" aria-hidden="true"></i></span>' +
 						'</div></div>';
 	$('#ev-main-page').html(makeContainer);
@@ -56,6 +30,10 @@ function fillEventAdminPage(){
 	for(var i=0; i<db_events.length;i++){
        	makeEventBox(db_events[i]);  
     }
+
+    $('#new-event-box').on('click', function(){
+    	openEvEditor(false);
+    });
 
     closeModal(false);
 	$('#ev-main-page').fadeIn();   
@@ -70,7 +48,7 @@ function makeEventBox(event){
 					'<span onclick="editEvent(' + event.id +');">' +
 					'<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>' +
 					'<br>Edit</span>' +
-					'<span onclick="viewEvent(' + event.id +');">' +
+					'<span onclick="openEvPreview(' + event.id +');">' +
 					'<i class="fa fa-eye" title="Preview" aria-hidden="true"></i>' +
 					'<br>Preview</span>' +
 					'<span onclick="deleteEvent(' + event.id +');">' +
@@ -96,7 +74,7 @@ function deleteEvent(id){
 }
 
 //fills event preview window
-function viewEvent(id){	
+function openEvPreview(id){	
 		var event= getEventByID(id);       			
      	
 		$('#event_title').text(event.title);
@@ -104,14 +82,9 @@ function viewEvent(id){
 		$('#dispImg').attr('src', event.img_url);
 		$('#about').html(event.summary);
 		$('#speaker').text(event.speaker);
-		openEvPreview();
-}
-
-//opens event preview window
-function openEvPreview(){
-	$('#ev-main-page').fadeOut(200, function(){
-		$('#preview_box').fadeIn();
-	});
+		$('#ev-main-page').fadeOut(200, function(){
+			$('#preview_box').fadeIn();
+		});
 }
 
 //closes event preview window
@@ -125,56 +98,6 @@ function closeEvPreview(){
 //Ajax functions to call when sending event data to the server////
 //////////////////////////////////////////////////////////////////
 
-//gets event and meta data from database and sets flags when retrieved
-function ajaxDataFromDB(url, dataType, eventCallback, metaCallback){        
-  $.ajax({
-      type: "POST",
-      url: url,
-      dataType: 'json',
-      success: function(data)
-      {      	
-        if (dataType == 'events'){        	
-        	var newEvents = new Array();
-          	for(var i = 0; i < data.length; i++){
-      			db_events[i] = jQuery.extend(new Event(), data[i]);       			
-      		}
-      		if (eventCallback != null){eventCallback();}
-      	}  
-
-        if (dataType == 'event_meta'){
-        	var newMeta = new Array();
-          	for(var i = 0; i < data.length; i++){
-      			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
-      		} 
-      		if (metaCallback != null) {metaCallback();}      		 
-      	}      
-    } //end of success
-  }); 
-};
-
-function ajaxPostData(objectData, url, successFunc){	
-	$.ajax({
-		 type: "POST",
-		 url: url,
-		 data: {myString:JSON.stringify(objectData)},
-			 
-		 success: function(data) 
-		 {		 	
-		 	closeModal(false);
-		 	
-		 	if (successFunc != null) {
-		 		successFunc(data); // calls function in params
-		 	}
-		 },
-		 error: function(data)
-		 {		 	
-		 	closeModal(false);
-		 	openModal("Error", data + "error", "ok",function(){
-		 		closeModal(false)}, null );
-		 }
-	});
-}
-
 function ajaxDeleteEvent(id, ev_img_url){
 	url = 'php/deleteEvent.php';
 	$.post( url,{event_id: id, img_url: ev_img_url}, function( data ) {
@@ -185,7 +108,7 @@ function ajaxDeleteEvent(id, ev_img_url){
 //This function is activated with document ready and will 
 //upload image to server and call ajax requests to store
 //other event data on success
-function uploadEventWithImageToServer(){
+function uploadNewEventHandler(){
 	$('#ev-image').on('submit', function(e){
 		if ($('#fileToUpload').val() == '') {
 			e.preventDefault();
@@ -297,21 +220,39 @@ function uploadMetaToDB(id){
 	}
 }
 
-//loads event and meta data.
-function loadData(eventCallback, metaCallback){	
+//loads event and meta data. Call back function runs when completed loading
+function loadData(callbackFunc){	
 	db_events = [];
 	event_meta = [];
-	ajaxDataFromDB('php/grabEvents.php', 'events', eventCallback, null);
-	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta',null, metaCallback);
 	
+	//ajax post for events
+	$.post( 'php/grabEvents.php', function( data ) {			 		
+		var newEvents = new Array();
+      	for(var i = 0; i < data.length; i++){
+  			db_events[i] = jQuery.extend(new Event(), data[i]);       			
+      	} 
+	},"json");
+
+	//ajax post for meta data
+	$.post( 'php/grabEventMeta.php', function( data ) {			 		
+		var newMeta = new Array();
+      	for(var i = 0; i < data.length; i++){
+  			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
+  		} 
+	}, "json");
+
+	$(document).one('ajaxStop', function (e) {
+		e.stopImmediatePropagation;
+	    callbackFunc();	    
+	});
 }
 
 //refreshes page by reloading data from db
 function refreshPage(){
 	closeEvEditor();
 	closeModal(false);
-	loadData(fillEventAdminPage, null);
-	$('html, body').animate({scrollTop: 0}, 1000);
+	loadData(fillEventAdminPage);
+	$('html, body').animate({scrollTop: 0}, 500);	
 }
 
 
@@ -319,16 +260,49 @@ function refreshPage(){
 //              Event Editor script                    //
 /////////////////////////////////////////////////////////
 
-function openEvEditor(){
+function openEvEditor(edit){
+	var editing = edit;
+	uploadNewEventHandler();
 	$('#ev-main-page').fadeOut(200, function(){
 		$('#ev-editor').fadeIn();
 		checkIfImgExistsHandler();
+	});	
+	
+	$('#add_event_meta').on('click' , function(){
+		showMetaEditor(null);	    	
 	});
+
+	//save event submit button
+    $('#save_ev').click(function(e){
+   		e.stopImmediatePropagation();
+
+   		var errorMsg = validate_event()
+
+   		if (errorMsg != ''){   			
+   			openModal("Warning", errorMsg, "ok_cancel", function(){
+   				$('#ev-image').submit();   				
+   				$('#ok_btn').text('OK');
+   			}, function(){
+   				closeModal(false);
+   			});
+   			$('#ok_btn').text('Save Anyways');   			
+   		}else{
+   			$('#ev-image').submit();
+   		}   		
+    });
+
+    $('.x-ev-box, #cancel_ev').one('click', function(){
+			if (editing) {
+				refreshPage();
+			}else{
+				closeEvEditor();
+			}			
+		});
 }
 
 function refreshEvEditor(id){
 	closeModal(true);
-	loadData(null, function(){
+	loadData(function(){
 		editEvent(id);		
 	});	
 }
@@ -349,7 +323,7 @@ function closeEvEditor(){
 		$('#save_ev').show();
 		$('#add_event').find('input, textarea').removeAttr('disabled');
 		$('#ev_main_title').text("New Event");
-		$('html, body').animate({scrollTop: 0}, 1000);
+		$('html, body').animate({scrollTop: 0}, 500);
 	});
 }
 
@@ -377,12 +351,12 @@ function editEvent(id){
 		$('#sched_title').text(temp_event.title + ' Schedule');
 		$('.edit').on('click', function(){
 			editEventBox(this.title);
-		})
-		openEvEditor();
+		});
+		openEvEditor(true);		
 	});	
 }
 
-//opens dialog to edit field in event and post it to db
+//opens dialog to edit field in event and post edits to db
 function editEventBox(field){	
 	var body = '';
 	if (field == "image") {
@@ -407,11 +381,21 @@ function editEventBox(field){
 			body = '<br><b>New ' + field +  ':</b><br><input id="edit_box_val" type="text">';
 		}
 		openModal("Edit " + field, body, "ok_cancel", 
-				function(){//function to ajax changes to db on save
-			  		temp_event[field] = $('#edit_box_val').val();
-			  		$.post( "php/editEvent.php", {'event':JSON.stringify(temp_event)} , function( data ) {			 		
-						openModal("Message", data, "ok", function(){refreshEvEditor(temp_event.id);}, null);
-					});
+				//save function for edits
+				function(){
+					temp_event[field] = $('#edit_box_val').val();
+			  		if (temp_event[field].length == 0) {
+			  			//warning if user saves empty input
+			  			openModal("Warning", "You did not enter a " + field + ".","ok_cancel", function(){
+			  				postEventEdits();//save anyway function
+			  			}, function(){
+			  				editEventBox(field);//cancel function
+			  			});
+			  			$('#ok_btn').text('Save Anyways');
+			  		}else{
+			  			//posts event edits
+			  			postEventEdits();
+			  		}			  		
 				  }, 
 				  function(){//cancel function
 				  	closeModal(true);
@@ -419,6 +403,12 @@ function editEventBox(field){
 	}
 	$('#edit_box_val').val(temp_event[field]);
 	$('#ok_btn').text("Save Changes");
+}
+
+function postEventEdits(){
+	$.post( "php/editEvent.php", {'event':JSON.stringify(temp_event)} , function( data ) {			 		
+		openModal("Message", data, "ok", function(){refreshEvEditor(temp_event.id);}, null);
+	});
 }
 
 function insertMetaInEditor(meta, num){
@@ -844,6 +834,7 @@ function validate_event(){
 	return errors;
 }
 
+//validates meta data
 function validateMeta(){
 	var errors = '';
 	var firstError = false;

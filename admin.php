@@ -40,7 +40,7 @@ include('../../dvc_private/loginProtect.php')
 			
 			<div class="link-container flex">
 			<a href="eventadmin.php">
-			<div id="new-event-box" class="page link-box shadow-box">
+			<div class="page link-box shadow-box">
 					<span>
 					Event Creator					
 					</span>
@@ -49,7 +49,7 @@ include('../../dvc_private/loginProtect.php')
 			<br>
 
 			<a href="logout.php">
-			<div id="new-event-box" class="page link-box shadow-box">
+			<div class="page link-box shadow-box">
 					<span>
 					Logout			
 					</span>

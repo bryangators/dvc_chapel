@@ -37,13 +37,13 @@
 
 
 .ev-container i{
-	color: rgb(181,55,55);
-	
+	color: rgb(181,55,55);	
 }
 
 /*styles for event creator*/
 #ev-editor{
 	display: none;
+	margin-top: 20px;
 }
 
 .x-ev-box{
@@ -56,7 +56,7 @@
 }	
 
 .event_page{
-	width: 60%;	
+	max-width: 600px;
 }
 
 .edit{
@@ -91,7 +91,6 @@
 
 #table_wrap{
 	width: 100%;
-	padding: 15px;
 	text-align: center;
 }
 
@@ -270,9 +269,11 @@ button{
 
     #new-event-box{
 		max-height: 130px;
+		width: 70%;
 	}
+
 	.ev-box{
-		width: 30%;		
+		width: 70%;		
 	}
 
 	.event_page{

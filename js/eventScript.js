@@ -111,12 +111,9 @@ function ajaxPageEvents(){
       	//converts json objects from db to event object array
       	for(var i = 0; i < data.length; i++){
       		events[i] = jQuery.extend(new Event(), data[i]);
-      	}
-      	
+      	}      	
       	//will fill page with events from database
-        fillEvents(events);
-        
-        
+        fillEvents(events);       
       }, //end of success
 
   });

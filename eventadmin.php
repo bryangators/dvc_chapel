@@ -40,7 +40,7 @@ include('../../dvc_private/loginProtect.php')
 
 		<section id="ev-main-page">
 			<div class="ev-container flex flex-wrap flex-row">
-			<div id="new-event-box" onclick="openEvEditor();" class=" ev-box shadow-box">
+			<div id="new-event-box" class=" ev-box shadow-box">
 					<span>
 					New	Event
 					<br>
@@ -55,7 +55,7 @@ include('../../dvc_private/loginProtect.php')
 
 		<section id="ev-editor">
 			<div class="page center shadow-box event_page">
-			<span class="x-ev-box" onclick="closeEvEditor();" style="float: right;">
+			<span class="x-ev-box" style="float: right;">
 			<i class="fa fa-times fa-2x" aria-hidden="true"></i>
 			</span>	
 			<div id="table_wrap" class="center">

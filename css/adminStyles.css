@@ -25,3 +25,13 @@
 .link-box-btns span{
 	margin: 10px;
 }
+
+@media only screen and (max-width: 790px) {
+    /* For mobile phones */
+	
+.link-box{
+	width: 70%;
+}
+
+
+}

@@ -91,10 +91,7 @@ function ajaxNavEvents(){
       	for(var i = 0; i < data.length; i++){
       		events[i] = jQuery.extend(new Event(), data[i]); 	
       	}
-      	
-        fillEventLinks(events);
-        
-        
+      	fillEventLinks(events);        
       }, //end of success
 
   });

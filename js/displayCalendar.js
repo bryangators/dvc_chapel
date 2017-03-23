@@ -14,10 +14,23 @@ var event_meta = new Array();
 
 window.onload = function(){
 	
-	ajaxDataFromDB('php/grabEvents.php', 'events');
-	ajaxDataFromDB('php/grabEventMeta.php', 'event_meta');
+	//ajax post for events
+	$.post( 'php/grabEvents.php', function( data ) {			 		
+		var newEvents = new Array();
+      	for(var i = 0; i < data.length; i++){
+  			cal_events[i] = jQuery.extend(new Event(), data[i]);       			
+      	} 
+	},"json");
 
-	// when ajax request complete calendar is loaded
+	//ajax post for meta data
+	$.post( 'php/grabEventMeta.php', function( data ) {			 		
+		var newMeta = new Array();
+      	for(var i = 0; i < data.length; i++){
+  			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
+  		} 
+	}, "json");
+
+	// fills calendar when ajax functions complete
 	$(document).ajaxStop(function () {
       startCalendar();      
 	});	
@@ -317,26 +330,19 @@ function ajaxDataFromDB(url, dataType){
       url: url,
       dataType: 'json',
       success: function(data)
-      {
-      	
-        if (dataType == 'events'){
-        	
+      {      	
+        if (dataType == 'events'){        	
         	var newEvents = new Array();
           	for(var i = 0; i < data.length; i++){
       			cal_events[i] = jQuery.extend(new Event(), data[i]);       			
-      		}
-      	
-      		
+      		}      		
       	} 
      
         if (dataType == 'event_meta'){
         	var newMeta = new Array();
           	for(var i = 0; i < data.length; i++){
       			event_meta[i] = jQuery.extend(new Event_meta(), data[i]);      			 	
-      		} 
-      		
-      		
-      		
+      		}      		
         }
         
        
