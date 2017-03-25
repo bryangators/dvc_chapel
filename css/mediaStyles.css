@@ -64,13 +64,13 @@
 
 /*Flashing class for loading div*/
 .flash {
-  -moz-animation: flash 1s ease-out;
+  -moz-animation: flash 1.5s ease-out;
   -moz-animation-iteration-count: infinite;
 
-  -webkit-animation: flash 1s ease-out;
+  -webkit-animation: flash 1.5s ease-out;
   -webkit-animation-iteration-count: infinite;
 
-  -ms-animation: flash 1s ease-out;
+  -ms-animation: flash 1.5s ease-out;
   -ms-animation-iteration-count: infinite;
 }
 
