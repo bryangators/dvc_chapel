@@ -35,12 +35,12 @@ function loadGalleries(){
 
 function createPlaceholderGalleries(){
 	
-	var place_holder_img = '<div class="placeholder-picture shadow-box"><span class="placeholder-img-cont">' +
+	var place_holder_img = '<div class="placeholder-picture flash shadow-box"><span class="placeholder-img-cont">' +
 						   '<i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span></div>';
 	
 	var placeholder_html = '<div class="place_holder_container">' +
 						   '<div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">' +
-						   '<div class="title"><div id="placeholder-title"></div></div>' + place_holder_img + 
+						   '<div class="title"><div class="flash" id="placeholder-title"></div></div>' + place_holder_img + 
 						   	place_holder_img + place_holder_img + place_holder_img + place_holder_img + 
 						   	place_holder_img + '</div></div>';
 
