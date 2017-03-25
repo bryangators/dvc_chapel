@@ -213,6 +213,7 @@ button{
 	width: 60%;
 	min-width: 300px;
 	max-width: 960px;
+	margin-top: 20px;
 	display: none;
 }
 

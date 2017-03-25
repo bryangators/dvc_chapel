@@ -102,10 +102,6 @@
 				</p>
 				<br>
 				<p>			 
-					Over our summer, the disciples set up concerts and movies in the parks. This has been a fruitful time of discipleship, raising up men and seeing souls saved! Disciples saw responses of up to 50 souls in one event! In the month of January alone, the collective effort of the church saw 200 souls saved. God is incredible.
-				</p>
-				<br>
-				<p>			 
 					In March, Pastor Mitchell demonstrated the power of Jesus Christ at our annual Miracle Healing crusade. Many nationalities were represented. There were at least 52 decisions for Christ, and 17 demonstrated miracles. 
 				</p>
 				<br>

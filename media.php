@@ -21,76 +21,39 @@
 		include_once('navbar.php');
 		?>
 		<!-- End of Navigation bar -->
-		<div style="height: 40px;"></div>
-		<section>
-			<div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">
-			<span class="title">Photo Gallery Title</span>
-				<div class="picture shadow-box">
-				<a href="images/media_images2/church0.jpg">
-					<img src="images/media_images2/church0.jpg" alt="Image">
-				</a>
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church1.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church2.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church3.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church4.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church5.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church6.jpg">
-				</div>	
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church7.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church8.jpg">
-				</div>
-							
-			</div>
-
-			<div style="height: 40px;"></div>
-
+				
+		<section id="place_holder">
 			<!-- <div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">
-			<span class="title">Photo Gallery Title</span>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church10.jpg">
+			 	<div class="title">
+			 	<div id="placeholder-title"></div>
+			 	</div>
+
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
 				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church11.jpg">
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
 				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church12.jpg">
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
 				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church13.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church14.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church15.jpg">
-				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church16.jpg">
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
 				</div>	
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church17.jpg">
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
 				</div>
-				<div class="picture shadow-box">
-					<img class="myImg" src="images/media_images2/church18.jpg">
-				</div>
-			</div>
- -->
+				<div class="placeholder-picture shadow-box">
+					<span class="placeholder-img-cont"><i class="fa fa-file-image-o fa-5x" aria-hidden="true"></i></span>
+				</div> 
 							
+			</div> -->
+		</section>
+
+		<section id="img_galleries">
+			<div style="width: 80%" class="page center shadow-box flex flex-wrap flex-row">
+			 		<!-- Images will be dynamically loaded here -->
+			</div>							
 		</section>		
 		
 	
