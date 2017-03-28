@@ -7,7 +7,10 @@
 
 
 <!-- The Modal Frame is filled in when called in js files -->
-			<div id="myModal" class="modal">			
+			<div id="myModal" class="modal">		
+			<div class="close-modal">
+			<i class="fa fa-times-circle-o" aria-hidden="true"></i>
+			</div>
 			  <!-- Modal content -->
 			  <div class="modal-content">
 			   <!-- Modal header -->
@@ -26,6 +29,10 @@
 			    	</span>
 			  	</div> 
 			  	<!-- end of modal footer -->
+			  </div>
+
+			  <div style="display: none;" class="modal-gallery-content">			  
+			  	
 			  </div>
 
 			</div>

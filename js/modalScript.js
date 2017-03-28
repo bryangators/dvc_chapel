@@ -70,3 +70,24 @@ function enableScreen(){
 function disableScreen(){
 	$(':input').not('#myModal :input, #save_ev, #cancel_ev, #fileToUpload').attr('disabled', true);
 }
+
+function openGallery(gallery){
+	$('.modal-header').hide();
+	$('.modal-footer').hide();
+	$('.modal-gallery-content').html(gallery);
+	$('.modal-gallery-content').show();
+	$('.modal-content').hide();
+	$('#myModal').fadeIn(200);
+	$('#myModal:not(.modal-gallery-content)').hover(function(){
+		$(this).css('cursor', 'pointer');		
+	})
+	
+	$('#myModal:not(.modal-gallery-content)').on('click', function(){
+		closeGallery();
+	})
+}
+
+function closeGallery(){
+	$('.modal-gallery-content').empty();
+	$('#myModal').fadeOut(200);
+}

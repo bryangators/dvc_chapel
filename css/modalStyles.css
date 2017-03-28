@@ -52,6 +52,35 @@
     text-align: center;
 }
 
+/*Modal gallery styles*/
+
+.modal-gallery-content{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  
+}
+
+.modal-gallery-content div{
+  width: 100%;
+  max-height: 80%;
+  vertical-align: middle;
+}
+
+.close-modal{  
+  font-size: 3em;
+  color:white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+}
+
+.close-modal:hover{
+  cursor: pointer;
+}
+/*end of gallery styles*/
+
 /* The Close Button */
 .close {
     color: #aaa;
@@ -100,4 +129,9 @@
    #table_wrap{
    	width: 95%;
    }
+
+  .close-modal{  
+    font-size: 2em;
+    padding-right: 3px;
+  }
 }

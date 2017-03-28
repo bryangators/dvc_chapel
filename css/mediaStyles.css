@@ -3,9 +3,21 @@
 }
 
 .picture{
+    position: relative;
 	margin:1em;
-	width: 250px;
-	height: 250px;    
+	width: 350px;
+	height: 350px; 
+    margin-bottom: 50px;
+    background-color: white; 
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.picture img{
+    width: 100%;
+    height: 80%;
 }
 
 .img_gallery_container,
@@ -17,46 +29,23 @@
     display: none;
 }
 
-#placeholder-title{
-    margin: 0 auto;
-    min-height: 50px;
-    max-width: 250px;
-    width: 40%;
-    background-color: #DBDBDB;
-}
-
-.placeholder-picture{
-    background-color: #DBDBDB;
-    width: 250px;
-    height: 250px; 
-    margin: 1em; 
-    display: table;   
-}
-
-#place_holder{
-    margin-top: 50px;
-}
-
-.placeholder-picture span{  
-    margin: 0 auto;
-    vertical-align: middle;
-    text-align: center;
-    color: #F4F4F4;
-    font-size: 2.2em;
-    display: table-cell;
-}
-
-.picture img{
-	width: 100%;
-	height: 100%;
+.expand{
+    display: none;
+    font-size: 2.5em;
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-40%);
 }
 
 /* Style the Image Used to Trigger the Modal */
-.picture:hover
-{
+.picture:hover{
 	opacity: 0.7;
 	cursor: pointer;
 }
+
 .picture img {
     cursor: pointer;
     transition: 0.3s;
