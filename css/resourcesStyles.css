@@ -1,11 +1,22 @@
 .resource-wrap{
 	width: 80%;
+	overflow: auto;
 }
 
-#links-list{
-	list-style-type: none;
-	color: rgb(181,55,55);
+#link-container{
+	align-content: space-between;
+	margin: 20px;
 }
+
+#link-container div{
+	width: 40%;
+	margin: 20px;
+}
+
+#link-container img{
+	width: 100%;
+}
+
 #cfmmap{
 	min-height: 800px;
 	text-align: center;

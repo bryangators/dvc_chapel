@@ -34,7 +34,7 @@
 				<img src="https://c1.staticflickr.com/3/2823/33296490890_40571718be_c.jpg" alt="church5">			
 				<p>Baptism</p>
 				<div class="expand">
-					<i class="fa fa-expand fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-eye fa-2x" aria-hidden="true"></i>
 				</div>
 			</div>	
 
@@ -42,7 +42,7 @@
 				<img src="https://c1.staticflickr.com/3/2923/33685748525_db322fc4c1_c.jpg" width="800" height="534" alt="church14">
 				<p>Fishing Trip</p>
 				<div class="expand">
-					<i class="fa fa-expand fa-3x" aria-hidden="true"></i>
+					<i class="fa fa-eye fa-2x" aria-hidden="true"></i>
 				</div>
 			</div>
 

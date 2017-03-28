@@ -28,9 +28,17 @@
 		<div style="height: 40px;"></div>
 
 		<section>
-			<div class="resource-wrap center page shadow-box" style="min-height: 400px;">
+			<div class="resource-wrap center page shadow-box">
 				<span class="title">Resources</span>
-			
+				<div id="link-container" class="flex">
+					<div><a target="new" href="http://www.worldcfm.com/">
+						<img src="images/worldcfm.png">
+					</a></div>
+
+					<div><a target="new" href="http://www.prescottpottershouse.com/">
+						<img src="images/prescott.png">
+					</a></div>
+				</div>
 			
 			</div>
 		</section>
@@ -40,6 +48,7 @@
 		<section>
 			<div style="text-align: center;" class="resource-wrap page center shadow-box">
 				<span class="title">Christian Fellowship Ministries Map</span>
+				<p>Below is an interactive map of all of our churches around the world.</p>
 				<span class="mobile_hidden map-hint">(click to use map)</span>
 				<span class="mobile_show map-hint">(click to open map)</span>
 				<div class="maps" id="cfmmap">

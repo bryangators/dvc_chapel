@@ -55,15 +55,14 @@
 /*Modal gallery styles*/
 
 .modal-gallery-content{
-  width: 80%;
+  width: 90%;
   height: 100%;
-  margin: 0 auto;
-  
+  margin: 0 auto;  
 }
 
-.modal-gallery-content div{
+.modal-gallery-content iframe{
   width: 100%;
-  max-height: 80%;
+ height: 100%;
   vertical-align: middle;
 }
 
@@ -133,5 +132,9 @@
   .close-modal{  
     font-size: 2em;
     padding-right: 3px;
+  }
+
+  .modal-gallery-content{
+    width: 80%;
   }
 }
