@@ -6,7 +6,7 @@
 if (isset($_POST['submit'])) {
 	
 	//message destination
-	$to = "bryan@bryankristofferson.com"; // this will change to pastors email address after setup is complete
+	$to = "pastor@deltonavictorychapel.com"; // this will change to pastors email address after setup is complete
 
 	//fields from contact form
 	$from = $_POST['email'];
