@@ -14,8 +14,8 @@ if (isset($_POST['submit'])) {
 	$phone = $_POST['phone'];
 
 	//subjects for both emails
-	$subject = "Contact Form - Deltona Victory Chapel";
-	$subject2 = "Message Received - Deltona Victory Chapel";
+	$subject = "Message - deltonavictorychapel.com";
+	$subject2 = "Message Received";
 
 	//headers for original message sent
 	$headers = "From: " . $from . "\r\n";
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
 	//message sent from page to receiver
 	$message = '<html><body>';
-	$message .= "<h1>Message Received - Deltona Victory Chapel</h1><b>Message from:</b> " . $name . "<br><b>Phone: " . 
+	$message .= "<h3>New Message - Deltona Victory Chapel</h3><b>Message from:</b> " . $name . "<br><b>Phone: " . 
 				$phone . "</b><br>" . "<b>Email: " . $from . "</b><br><hr><p>" . 
 				$_POST['message'];
 	$message .= '</body></html>' . "</p>";
