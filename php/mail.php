@@ -44,8 +44,8 @@ if (isset($_POST['submit'])) {
 
 
 	//message sent to receiver checks if sent and displays message
-	if(mail($to, $subject, $message, $headers, '-fbryan@bryankristofferson.com')){
-		mail($from, $subject2, $message2, $headers2, '-fbryan@bryankristofferson.com');
+	if(mail($to, $subject, $message, $headers, '-fpastor@deltonavictorychapel.com')){
+		mail($from, $subject2, $message2, $headers2, '-fpastor@deltonavictorychapel.com');
 		$msg = "Thank You! We will be in contact shortly.";	
 		$_POST = array();
 		$from = "";
