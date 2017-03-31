@@ -13,7 +13,6 @@
 #about_sec{
 	padding-top: 40px;
 	padding-bottom: 20px;
-
 }
 
 .about_wrap{
@@ -23,8 +22,7 @@
 /*Stats styling*/
 
 #stats{
-	text-align: center;
-	
+	text-align: center;	
 }
 
 #stats ul{

@@ -1,3 +1,7 @@
+.media-wrap{
+    width: 80%;
+}
+
 #img_galleries{    
     margin-top: 50px;
 }
@@ -5,9 +9,7 @@
 .picture{
     position: relative;
 	margin:1em;
-	width: 350px;
-	height: 350px; 
-    /*margin-bottom: 50px;*/
+	width: 40%;
     background-color: white; 
     text-align: center;
     font-size: 1.2em;
@@ -20,8 +22,7 @@
     height: 80%;
 }
 
-.img_gallery_container,
-.place_holder_container{
+.img_gallery_container{
     margin-top: 50px;
 }
 
@@ -29,6 +30,7 @@
     display: none;
 }
 
+.mob_expand,
 .expand{
     display: none;
     font-size: 2.5em;
@@ -51,31 +53,39 @@
     transition: 0.3s;
 }
 
-/*Flashing class for loading div*/
-.flash {
-  -moz-animation: flash 1.5s ease-out;
-  -moz-animation-iteration-count: infinite;
-
-  -webkit-animation: flash 1.5s ease-out;
-  -webkit-animation-iteration-count: infinite;
-
-  -ms-animation: flash 1.5s ease-out;
-  -ms-animation-iteration-count: infinite;
+p{
+    display: block; 
+    font-size: 1.2em;
+    margin:0 auto;  
+    text-align: left;
+    width: 85%;
 }
 
-@-webkit-keyframes flash {
-    0% { background-color: none; }
-    50% { background-color: #ededed; }
-    100% { background-color: none; }
+.img_wrap img{
+    width: 100%;
+    height: 100%;
 }
 
-@-moz-keyframes flash {
-    0% { background-color: none; }
-    50% { background-color: #ededed; }
-    100% { background-color: none; }
+.img_wrap{
+    width: 85%;
+    margin: 0 auto;
 }
 
-@-ms-keyframes flash {
-    0% { background-color: none; }
-    50% { background-color: #ededed; }
-    100% { background-color: none; }
+@media only screen and (max-width: 790px) {
+    /* For mobile phones: */
+    .picture{
+        width: 80%;
+    }
+    
+    .mobile_show{
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 790px) {
+    /*For larger screens only*/
+    .mobile_show{
+        display: none;
+    }
+}
