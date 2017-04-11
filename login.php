@@ -21,6 +21,12 @@ if(isset($_POST['userid']) && isset($_POST['userPassword'])){
 	}
 }
 ?>
+
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

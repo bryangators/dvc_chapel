@@ -4,12 +4,10 @@
 //the navbar and footer as well as general styling and rules 
 ////////////////////////////////////////////////////////////// -->
 
-<!-- Version for cache busting purposes. Changing the version number here will cause the browser to load all files new -->
-<?php 
-//version variable
-$version = "1.0";
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
 ?>
-
 
 <!--meta data -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

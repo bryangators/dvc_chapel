@@ -7,6 +7,11 @@
 //*********DO NOT MAKE CHANGES TO THIS FILE**************//
 ////////////////////////////////////////////////////////// -->
 
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

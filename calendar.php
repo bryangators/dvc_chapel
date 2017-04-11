@@ -1,4 +1,3 @@
-
 <!-- calendar -->
 
 <div style="width:<?php echo $calWidth ?>;" id="calBox" class="flex center flex-wrap calendarDiv shadow-box">

@@ -1,5 +1,10 @@
 <!-- Index page for Deltona Victory Chapel -->
 
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
