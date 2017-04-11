@@ -23,14 +23,14 @@ include('php/site_version.php')
 <script src="js/navbar.js?v=<?php echo $version; ?>"></script>
 
 
-<!-- Favicon links for different devices -->
-<link rel="apple-touch-icon" sizes="180x180" href="http://bryankristofferson.com/dvc_chapel/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="http://bryankristofferson.com/dvc_chapel/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="http://bryankristofferson.com/dvc_chapel/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="http://bryankristofferson.com/manifest.json">
-<link rel="mask-icon" href="http://bryankristofferson.com/safari-pinned-tab.svg" color="#2d70ce">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="images/favicon/favicon.ico">
+<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<!-- End of Favicon links -->
 
 <title>Deltona Victory Chapel</title>
 
