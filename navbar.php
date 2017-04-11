@@ -4,18 +4,23 @@
 //the navbar and footer as well as general styling and rules 
 ////////////////////////////////////////////////////////////// -->
 
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
+?>
+
 <!--meta data -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 
 <!-- CSS files -->
-<link rel="stylesheet" type="text/css" href="css/headerFooterStyles.css?ver=1.0">
-<link rel="stylesheet" type="text/css" href="css/generalPageStyles.css?ver=1.0">
+<link rel="stylesheet" type="text/css" href="css/headerFooterStyles.css?v=<?php echo $version; ?>">
+<link rel="stylesheet" type="text/css" href="css/generalPageStyles.css?v=<?php echo $version; ?>">
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!-- Javascript file -->
-<script src="js/navbar.js"></script>
+<script src="js/navbar.js?v=<?php echo $version; ?>"></script>
 
 
 <!-- Favicon links for different devices -->
@@ -56,9 +61,11 @@
 					<a href="about.php" >About</a>
 					</li>
 					
-					<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
+
+					<!-- this page is deleted until pastor gives teestimonials
+					<li <?php // if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
 					<a href="ministries.php">Ministries</a>
-					</li>
+					</li> -->
 
 
 					<li class="dropdown" <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
@@ -125,9 +132,9 @@
 				<li>About</li>
 				</a>
 
-				<a href="ministries.php">
+				<!-- <a href="ministries.php">
 				<li >Ministries</li>
-				</a>
+				</a> -->
 
 				<a href="events.php">
 				<li>Events</li>

@@ -1,9 +1,9 @@
 <!-- CSS files -->
-<link rel="stylesheet" type="text/css" href="css/modalStyles.css">
+<link rel="stylesheet" type="text/css" href="css/modalStyles.css?v=<?php echo $version; ?>">
 
 
 <!-- Javascript file -->
-<script src="js/modalScript.js"></script>
+<script src="js/modalScript.js?v=<?php echo $version; ?>"></script>
 
 
 <!-- The Modal Frame is filled in when called in js files -->

@@ -3,16 +3,21 @@
 include('../../dvc_private/loginProtect.php')
 ?>
 
+<!-- Version for caching -->
+<?php
+include('php/site_version.php')
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/eventadminStyles.css">
+<link rel="stylesheet" type="text/css" href="css/eventadminStyles.css?v=<?php echo $version; ?>">
 
 <!-- java script files -->
 <script src="resources/moment.js"></script>
 <script src="resources/jquery-3.1.1.min.js"></script>
-<script src="js/eventadmin.js"></script>
+<script src="js/eventadmin.js?v=<?php echo $version; ?>"></script>
 </head>
 
 <body>

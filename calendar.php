@@ -1,4 +1,3 @@
-
 <!-- calendar -->
 
 <div style="width:<?php echo $calWidth ?>;" id="calBox" class="flex center flex-wrap calendarDiv shadow-box">
@@ -143,6 +142,6 @@
 <!-- Calendar files -->
 <!-- Javascript files -->
 <script src="resources/moment.js"></script>
-<script src="js/displayCalendar.js"></script>
+<script src="js/displayCalendar.js?v=<?php echo $version; ?>"></script>
 <!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/calendarStyles.css?ver=1.0">
+<link rel="stylesheet" type="text/css" href="css/calendarStyles.css?v=<?php echo $version; ?>">
