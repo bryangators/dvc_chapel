@@ -7,7 +7,7 @@
 <!-- Version for cache busting purposes. Changing the version number here will cause the browser to load all files new -->
 <?php 
 //version variable
-$version = 1.0;
+$version = "1.0";
 ?>
 
 
