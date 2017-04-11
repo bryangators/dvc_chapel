@@ -9,7 +9,7 @@
 <!-- The Modal Frame is filled in when called in js files -->
 			<div id="myModal" class="modal">		
 			<div class="close-modal">
-			<i class="fa fa-times-circle-o" aria-hidden="true"></i>
+			<i class="fa fa-times" aria-hidden="true"></i>
 			</div>
 			  <!-- Modal content -->
 			  <div class="modal-content">

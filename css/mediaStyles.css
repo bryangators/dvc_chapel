@@ -30,7 +30,6 @@
     display: none;
 }
 
-.mob_expand,
 .expand{
     display: none;
     font-size: 2.5em;
@@ -76,16 +75,9 @@ p{
     .picture{
         width: 80%;
     }
-    
-    .mobile_show{
-        display: block;
-    }
 
-}
-
-@media screen and (min-width: 790px) {
-    /*For larger screens only*/
-    .mobile_show{
-        display: none;
+    .expand{
+        font-size: 1.5em;
     }
+  
 }

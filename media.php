@@ -29,23 +29,18 @@
 			<div id="gallery1" class="picture">
 				<img src="https://c1.staticflickr.com/3/2823/33296490890_40571718be_c.jpg" alt="church5">			
 				<span class="gallery-title">Baptism</span>
-				<div class="expand mobile_hidden">
+				<div class="expand">
 					View Gallery
-				</div>
-				<div class="mob_expand mobile_show">
-					View Gallery
-				</div>
+				</div>				
 			</div>	
 
 			<div id="gallery2" class="picture">
 				<img src="https://c1.staticflickr.com/3/2923/33685748525_db322fc4c1_c.jpg" width="800" height="534" alt="church14">
 				<span class="gallery-title">Fishing Trip</span>
-				<div class="expand mobile_hidden">
+				<div class="expand">
 					View Gallery
 				</div>
-				<div class="mob_expand mobile_show">
-					View Gallery
-				</div>
+				
 			</div>
 
 			</div>
