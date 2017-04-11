@@ -4,7 +4,7 @@
 <html>
 <head>
 <!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/indexStyles.css?ver=1.0">
+<link rel="stylesheet" type="text/css" href="css/indexStyles.css?v=<?php echo $version; ?>">
 <!-- java script files -->
 <script src="resources/jquery-3.1.1.min.js"></script>
 

@@ -25,7 +25,7 @@ if(isset($_POST['userid']) && isset($_POST['userPassword'])){
 <html>
 <head>
 <!-- style sheet -->
-<link href="css/loginStyles.css" rel="stylesheet" type="text/css">
+<link href="css/loginStyles.css?v=<?php echo $version; ?>" rel="stylesheet" type="text/css">
 
 <!-- java script files -->
 <script src="resources/jquery-3.1.1.min.js"></script>

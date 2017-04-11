@@ -4,11 +4,11 @@
 <html>
 <head>
 <!-- style sheet -->
-<link rel="stylesheet" type="text/css" href="css/resourcesStyles.css">
+<link rel="stylesheet" type="text/css" href="css/resourcesStyles.css?v=<?php echo $version; ?>">
 
 <!-- java script files -->
 <script src="resources/jquery-3.1.1.min.js"></script>
-<script src="js/resources.js"></script>
+<script src="js/resources.js?v=<?php echo $version; ?>"></script>
 
 
 

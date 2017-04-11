@@ -4,18 +4,25 @@
 //the navbar and footer as well as general styling and rules 
 ////////////////////////////////////////////////////////////// -->
 
+<!-- Version for cache busting purposes. Changing the version number here will cause the browser to load all files new -->
+<?php 
+//version variable
+$version = 1.0;
+?>
+
+
 <!--meta data -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 
 <!-- CSS files -->
-<link rel="stylesheet" type="text/css" href="css/headerFooterStyles.css?ver=1.0">
-<link rel="stylesheet" type="text/css" href="css/generalPageStyles.css?ver=1.0">
+<link rel="stylesheet" type="text/css" href="css/headerFooterStyles.css?v=<?php echo $version; ?>">
+<link rel="stylesheet" type="text/css" href="css/generalPageStyles.css?v=<?php echo $version; ?>">
 <link rel="stylesheet" href="resources/fontawesome/css/font-awesome.min.css">
 <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 <!-- Javascript file -->
-<script src="js/navbar.js"></script>
+<script src="js/navbar.js?v=<?php echo $version; ?>"></script>
 
 
 <!-- Favicon links for different devices -->

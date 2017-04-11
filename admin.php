@@ -8,7 +8,7 @@ include('../../dvc_private/loginProtect.php')
 <html>
 <head>
 <!-- style sheet -->
-<link href="css/adminStyles.css" rel="stylesheet" type="text/css">
+<link href="css/adminStyles.css?v=<?php echo $version; ?>" rel="stylesheet" type="text/css">
 
 <!-- java script files -->
 <script src="resources/jquery-3.1.1.min.js"></script>
