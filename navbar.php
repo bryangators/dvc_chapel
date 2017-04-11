@@ -56,9 +56,11 @@
 					<a href="about.php" >About</a>
 					</li>
 					
-					<li <?php if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
+
+					<!-- this page is deleted until pastor gives teestimonials
+					<li <?php // if($thisPage == 'ministries') echo "id = 'currentPage'";?> >
 					<a href="ministries.php">Ministries</a>
-					</li>
+					</li> -->
 
 
 					<li class="dropdown" <?php if($thisPage == 'events') echo "id = 'currentPage'";?> >
@@ -125,9 +127,9 @@
 				<li>About</li>
 				</a>
 
-				<a href="ministries.php">
+				<!-- <a href="ministries.php">
 				<li >Ministries</li>
-				</a>
+				</a> -->
 
 				<a href="events.php">
 				<li>Events</li>
