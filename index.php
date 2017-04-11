@@ -9,6 +9,13 @@ include('php/site_version.php')
 <html>
 <head>
 
+<meta name="keywords" 
+         content="PASTOR JOSHUA SHAPIRO WAYMAN MITCHELL PENTECOSTAL DELTONA FLORIDA MINISTRY VICTORY CHAPEL GLOBAL CHURCH">
+
+<meta name="description" 
+         content="At Deltona Victory Chapel, our lively worship services are Pentecostal in nature, 
+         featuring music, praise, Bible-Based preaching, ministry and prayer for personal needs.">
+
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
