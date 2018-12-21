@@ -1,9 +1,8 @@
-<?php 
+<?php
 //This file will add events and return id for event meta to add event id
 
 // db object from outside public dir tree
-include('../../../dvc_private/dbObject.php');
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
@@ -20,14 +19,14 @@ $time = $event_meta['time'];
 
 if (strlen($end_date) == 0) {
 	$end_date = 'NULL';
-	$sql = "INSERT INTO `event_meta` 
+	$sql = "INSERT INTO `event_meta`
 		(`event_id`, `repeating`, `start_date`, `end_date`, week_day_num, `rpt_interval`, `time`)
-	 	VALUES 
+	 	VALUES
 	 	('$event_id', '$repeating', '$start_date', $end_date, '$week_day_num', '$rpt_interval', '$time')";
 }else{
-	$sql = "INSERT INTO `event_meta` 
+	$sql = "INSERT INTO `event_meta`
 		(`event_id`, `repeating`, `start_date`, `end_date`, week_day_num, `rpt_interval`, `time`)
-	 	VALUES 
+	 	VALUES
 	 	('$event_id', '$repeating', '$start_date', '$end_date', '$week_day_num', '$rpt_interval', '$time')";
 }
 

@@ -1,9 +1,8 @@
-<?php 
+<?php
 //This file will add events and return id for event meta to add event id
 
 // db object from outside public dir tree
-include('../../../dvc_private/dbObject.php');
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
@@ -11,7 +10,7 @@ if ($db->connect_error) {
 
 $event = json_decode($_POST['event'], true);
 $id = $event['id'];
-$title = addslashes($event['title']); 
+$title = addslashes($event['title']);
 $img_url = addslashes($event['img_url']);
 $summary = addslashes($event['summary']);
 $speaker = addslashes($event['speaker']);

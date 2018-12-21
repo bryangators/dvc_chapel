@@ -1,9 +1,8 @@
-<?php 
+<?php
 // This file will grab all event meta data from database
 
 //database object
-include('../../../dvc_private/dbObject.php');
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
@@ -15,9 +14,9 @@ if ($result = $db->query("SELECT * FROM event_meta ORDER BY start_date")) {
 			while($row = mysqli_fetch_assoc($result)) {
 		   		$array[] = $row;
 			}
-			
-			echo json_encode($array);			
-}	
+
+			echo json_encode($array);
+}
 
 mysqli_close( $db );
 ?>

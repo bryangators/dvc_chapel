@@ -1,9 +1,8 @@
-<?php 
+<?php
 
 
 //database object
-include('../../../dvc_private/dbObject.php');
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 
 if ($db->connect_error) {
@@ -17,9 +16,9 @@ if ($result = $db->query("SELECT * FROM event ORDER by title")) {
 			while($row = mysqli_fetch_assoc($result)) {
 		   		$array[] = array_map("nl2br",$row);
 			}
-			
-			echo json_encode($array);			
-}	
+
+			echo json_encode($array);
+}
 
 mysqli_close( $db );
 ?>

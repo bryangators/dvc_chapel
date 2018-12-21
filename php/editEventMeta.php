@@ -1,9 +1,7 @@
 <?php
 
 // db object from outside public dir tree
-include('../../../dvc_private/dbObject.php');
-
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
@@ -32,7 +30,7 @@ if($db->query($sql)===true) {
 	//success
 	echo "Successfully made changes to schedule.";
 }else{
-	echo mysqli_error($db);	
+	echo mysqli_error($db);
 }
 
 

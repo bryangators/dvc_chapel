@@ -1,17 +1,15 @@
-<?php 
+<?php
 //this file will delete all event data and associated dependencies
 //i.e. event photo and all meta data associated with the event to
 //be deleted
 
 // db object from outside public dir tree
-include('../../../dvc_private/dbObject.php');
-
-$db = new mysqli($servername,$username,$password,$dbname);
+require_once '../../../db/connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);
 }
-	
+
 $event_id = $_POST['event_id'];
 
 $photo = $_POST['img_url'];
@@ -62,7 +60,7 @@ function deleteEvent($id){
 
 function deleteAssociatedMeta($id){
 	global $db;
-	
+
 	$sql = "DELETE FROM event_meta WHERE event_id = '".$id."'";
 
 	if($db->query($sql)===true) {

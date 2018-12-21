@@ -1,6 +1,6 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
-include('../../dvc_private/loginProtect.php')
+require_once '../../db/connect.php';
 ?>
 
 <!-- Version for caching -->
@@ -33,7 +33,7 @@ include('php/site_version.php')
 <body>
 <!-- Wrapper used to position footer and header on page -->
 	<div id="wrapper">
-		
+
 		<!-- Navigation Bar included from php -->
 		<?php
 		$thisPage = 'eventadmin';
@@ -62,7 +62,7 @@ include('php/site_version.php')
 					<i class="fa fa-plus" aria-hidden="true"></i>
 					</span>
 			</div>
-					
+
 			</div>
 
 		</section>
@@ -72,22 +72,22 @@ include('php/site_version.php')
 			<div class="page center shadow-box event_page">
 			<span class="x-ev-box" style="float: right;">
 			<i class="fa fa-times fa-2x" aria-hidden="true"></i>
-			</span>	
+			</span>
 			<div id="table_wrap" class="center">
 			<span id="ev_main_title" class="admin_title">New Event</span>
 			<br>
-			
+
 			<table id="add_event" >
 			<tr>
 				<td>
 				<label>Event Title:</label>
-				<span class="edit" title="title" ><i class="fa fa-pencil" title="Edit" aria-hidden="true"></i></span>	
-				</td>				
+				<span class="edit" title="title" ><i class="fa fa-pencil" title="Edit" aria-hidden="true"></i></span>
+				</td>
 			</tr>
 			<tr>
 				<td>
 				<input id="ev_title" type="text" name="event_title">
-							
+
 				</td>
 			</tr>
 			<tr>
@@ -96,13 +96,13 @@ include('php/site_version.php')
 				<span class="edit" title="image">
 				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
 				</span>
-				</td>				
+				</td>
 			</tr>
 			<form action="" method="post" class="center" id="ev-image" enctype="multipart/form-data">
 			<tr>
-				<td>				
-					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">					
-				</td>				
+				<td>
+					<input type="file" name="fileToUpload" class="inputfile" id="fileToUpload">
+				</td>
 			</tr>
 			</form>
 			<tr>
@@ -110,7 +110,7 @@ include('php/site_version.php')
 				<div style="font-weight: bold; display: inline;" id="current_img">
 					<!-- current image will be displayed here -->
 				</div>
-				
+
 				</td>
 
 			</tr>
@@ -120,12 +120,12 @@ include('php/site_version.php')
 				<span class="edit" title="summary">
 				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
 				</span>
-				</td>				
+				</td>
 			</tr>
 			<tr>
 				<td>
 				<textarea id="ev_desc" name="desc1" rows="6"></textarea>
-				</td>				
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -133,38 +133,38 @@ include('php/site_version.php')
 				<span class="edit" title="speaker">
 				<i class="fa fa-pencil" title="Edit" aria-hidden="true"></i>
 				</span>
-				</td>								
+				</td>
 			</tr>
 			<tr>
 				<td>
 				<input id="ev_spk" type="text" name="event_title">
 				</td>
 			</tr>
-			
+
 			</table>
 			<!-- Event schedule section  -->
 			<div class="event_times">
 				<span id="sched_title" class="admin_title">Schedule</span>
 				<br>
 				<div id="meta_schedule">
-					
+
 				</div>
-				
+
 				<div id="add_event_meta"><span>
 				<i class="fa fa-plus fa-lg" aria-hidden="true"></i> New Schedule</span>
 				</div>
 
-											
+
 			</div>
 			<br>
 			<span style="text-align: center;" class="form_btns">
 				<button id="save_ev">Save</button>
 				<button onclick="closeEvEditor();" id="cancel_ev">Cancel</button>
-				<br>					
+				<br>
 			</span>
-			
+
 			</div>
-			
+
 			</div>
 		</section>
 
@@ -183,18 +183,18 @@ include('php/site_version.php')
 			</a>
 		</div>
 
-		<table id="event_desc">		
+		<table id="event_desc">
 		<tr>
 		<td colspan="2" id="event_title">
 			Worship Service
 		</td>
 
 		</tr>
-		<tr>			
+		<tr>
 		<td >
-			<b>When:</b> 
+			<b>When:</b>
 		</td>
-		<td id="eventTime">	
+		<td id="eventTime">
 		Preview Mode
 		</td>
 		</tr>
@@ -202,7 +202,7 @@ include('php/site_version.php')
 			<td>
 				<b>About:</b>
 			</td>
-			<td colspan="1" id="about">						
+			<td colspan="1" id="about">
 			</td>
 		</tr>
 
@@ -211,31 +211,31 @@ include('php/site_version.php')
 				<b>Speaker(s):</b>
 			</td>
 			<td colspan="1" id="speaker">
-				
+
 			</td>
 		</tr>
 		</table>
-			
-			
-		</div>	
 
-	</div>			
+
+		</div>
+
+	</div>
 </div>
 		</section>
 		<div style="height: 40px"></div>
-		
+
 		<?php
 		include_once('modal.php');
-		?>	
+		?>
 
 		</div><!-- end of page content -->
-		
+
 		<?php
 		include_once('footer.php');
-		?>		
+		?>
 
 	</div><!-- #wrapper -->
-	
+
 </body>
 
 
