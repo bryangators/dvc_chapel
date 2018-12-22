@@ -4,7 +4,7 @@
 //be deleted
 
 // db object from outside public dir tree
-require_once '../../../db/connect.php';
+require_once '../../../db/dvc_connect.php';
 
 if ($db->connect_error) {
 	die("Connection failed: " . $db->connect_error);

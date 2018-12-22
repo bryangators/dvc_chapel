@@ -2,7 +2,7 @@
 
 
 //database object
-require_once '../../../db/connect.php';
+require_once '../../../db/dvc_connect.php';
 
 
 if ($db->connect_error) {

@@ -1,6 +1,6 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
-include('../../dvc_private/loginProtect.php')
+include('php/loginProtect.php')
 ?>
 
 <!-- Version for caching -->
@@ -31,7 +31,7 @@ include('php/site_version.php')
 <body>
 <!-- Wrapper used to position footer and header on page -->
 	<div id="wrapper">
-		
+
 		<!-- Navigation Bar included from php -->
 		<?php
 		$thisPage = 'admin';
@@ -51,12 +51,12 @@ include('php/site_version.php')
 		<div style="height: 20px"></div>
 
 		<section>
-			
+
 			<div class="link-container flex">
 			<a href="eventadmin.php">
 			<div class="page link-box shadow-box">
 					<span>
-					Event Creator					
+					Event Creator
 					</span>
 			</div>
 			</a>
@@ -65,22 +65,22 @@ include('php/site_version.php')
 			<a href="logout.php">
 			<div class="page link-box shadow-box">
 					<span>
-					Logout			
+					Logout
 					</span>
-			</div>	
+			</div>
 			</a>
 			</div>
 
 		</section>
-				
+
 		</div><!-- end of page content -->
-		
+
 		<?php
 		include_once('footer.php');
 		?>
-		
+
 	</div><!-- #wrapper -->
-	
+
 </body>
 
 </body>

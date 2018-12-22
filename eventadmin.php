@@ -1,6 +1,6 @@
 <?php
 //login protection will redirect to login screen if user is not logged in
-require_once '../../db/connect.php';
+require_once '../../db/dvc_connect.php';
 ?>
 
 <!-- Version for caching -->

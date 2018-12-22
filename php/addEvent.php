@@ -2,7 +2,7 @@
 //This file will add events and return id for event meta to add event id
 
 // db object from outside public dir tree
-require_once '../../../db/connect.php';
+require_once '../../../db/dvc_connect.php';
 
 $event = json_decode($_POST['myString'], true);
 $title = addslashes($event['title']);
