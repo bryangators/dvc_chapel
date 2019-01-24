@@ -28,20 +28,20 @@ include('php/site_version.php')
 <body>
 <!-- Wrapper used to position footer and header on page -->
 	<div id="wrapper">
-		
+
 		<!-- Navigation Bar included from php -->
 		<?php
 		$thisPage = 'about';
 		include_once('navbar.php');
 		?>
 		<!-- End of Navigation bar -->
-		
+
 		<section id="about_sec">
 			<div id="stats" class="about_wrap center shadow-box page">
 				<span class="title">Christian Fellowship Ministries</span>
 				<ul >
 					<li class="first">
-					<div class="number">2100</div>
+					<div class="number">2400+</div>
 					Churches
 					</li>
 					<li class="second">
@@ -53,7 +53,7 @@ include('php/site_version.php')
 					&nbsp;&nbsp;Nations
 					</li>
 				</ul>
-				<div style="height: 20px;"></div>			
+				<div style="height: 20px;"></div>
 			</div>
 
 			<div style="height: 40px;"></div>
@@ -70,26 +70,26 @@ include('php/site_version.php')
 					From the beginning, Pastor Mitchell understood that  concert ministry was to be a training ground of ministry development; It was run by young people who were committed to Jesus and His church.  From the beginning, people who had been radically converted sought to share with others what God had done in them. Personal evangelism began to be one of the basic foundations of the church.  Then came impact teams: Groups of people that would travel to other nearby cities to help people there experience what God was doing here. Over time, God began to reveal His plan of discipleship: Training young couples for ministry within a local church.  In 1973 the first couple was launched directly into the ministry – and God blessed them!  Churches then began to be planted throughout the Southwestern United States, and then further across America as converts prayed for the Gospel to be preached in their hometowns.
 				</p>
 				<br>
-		 		<p>			 
+		 		<p>
 					In 1978 the first couple was planted into another nation – Australia; and we discovered the Gospel worked there, just like it did here.  After that, churches were planted in Mexico, Holland and Germany then as we came to understand God’s global mission more and more, churches began to be planted throughout the world. To date, there are over 2100 churches in 44 US states, and 117 nations of the world.
 				</p>
 				<br>
 				<div style="height: 20px;"></div>
 			</div>
 			<div style="height: 40px;"></div>
-			
+
 		</section>
 
 		<!-- Page Content goes here -->
-				
-		
-		
+
+
+
 		<?php
 		include_once('footer.php');
 		?>
-	</div><!-- end of page content -->	
+	</div><!-- end of page content -->
 	</div><!-- #wrapper -->
-	
+
 </body>
 
 </body>
