@@ -79,8 +79,8 @@ include('php/site_version.php')
 						</th>
 						<tr>
 							<td colspan="3" id="email-td">
-							<a href="mailto:pastor@deltonavictorychapel.com?subject=Deltona Victory Chapel">
-							pastor@deltonavictorychapel.com
+							<a href="mailto:orlandovictorychapel@gmail.com?subject=Deltona Victory Chapel">
+							orlandovictorychapel@gmail.com
 							</a></td>
 						</tr>
 						<th><h3>Phone</h3></th>
